@@ -1,0 +1,103 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_v1.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-V1",
+  "title": "DISJOINT GENERIC CHANNEL VALIDATION",
+  "mode": "FINAL_ONE_SHOT_PUBLIC_VALIDATION",
+  "bindings": {
+    "ccal1_main_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal1/MAIN_AUDIT.json",
+    "ccal1_main_sha256": "bb5896baf3b5ad22ef01e14700ce8be497afdd019d14330e3e8d67e7d9e6f1a4",
+    "ccal1_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal1/TERMINAL.json",
+    "ccal1_terminal_sha256": "e20a264062022f81cedc2952e2e5fa1179664ff55101def386dc4c40e4a9f7ea",
+    "ccal1_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_THRESHOLDS_INSTANTIATED",
+    "frozen_v1_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal1/FROZEN_V1_CONFIGURATION.json",
+    "frozen_v1_sha256": "3076c06f01d1bccbd45a5385ed0a9d6c9b2484bc4feee9722534a9b268e4942c",
+    "rng2_r0_main_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/MAIN_AUDIT.json",
+    "rng2_r0_main_sha256": "f1ff72c71cf17b02a5132e365cef9d745f33840c43d6e9f9b1b3d9c25690f2c7",
+    "role_bindings_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/ROLE_MIGRATION_BINDINGS.json",
+    "role_bindings_sha256": "7833e750aa4276e2ea5a6ce60c2a4bb58f8c704ea33539864e2994aa672d1430",
+    "sealed_allocation_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/FULL_ALLOCATION.sealed",
+    "sealed_allocation_sha256": "4a9bd2b145443ad1a574da2e2e4bd81306d21e7e381a4fb4c02ce0797ff0afd3",
+    "agg_s0_config_path": "protocol/csw-am-scb-m1-car-agg-s0/CONFIG.json",
+    "agg_s0_config_sha256": "54480f21c70a1af3a054dbe90a9b87bfa0208fa59aff7f3aefcf331d4833b239",
+    "detector_protocol_path": "protocol/csw-am-scb-m1-car-agg-s0/DETECTOR_PROTOCOL.json",
+    "detector_protocol_sha256": "1c4a66692743b76769e9cc723e00f10d83d5fe9f16e49c5668dc2610c0466ed8"
+  },
+  "controller": {
+    "allocation_secret_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-car-agg-r0/CONTROLLER_SECRET.json",
+    "sampler_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-v1/VALIDATION_SAMPLER_KEY.json",
+    "sealed_aad": "EXP33A|SCB-M1|CAR-AGG-R0|FULL-ALLOCATION|V1",
+    "key_commitment_domain": "EXP33A|SCB-M1|RNG2-V1|SAMPLER-KEY-COMMITMENT|V1"
+  },
+  "source_population": {
+    "path": "artifacts/dev_only/csw-am-t1-d2/authoritative/correction-1/public-allocation/D2_FRESH_EVALUATION_ROWS.jsonl",
+    "sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767"
+  },
+  "surface_channel": {
+    "checkpoint_path": "artifacts/dev_only/csw-a0/training/seed1/CHECKPOINT.pt",
+    "checkpoint_sha256": "333cd0017ac815391d8e517691fbb310cc917c2dc6de1c30a8f81d4c60254ede",
+    "bias": 2.0,
+    "eligible_positions": 24,
+    "model_steps": 49
+  },
+  "role": {
+    "sealed_role": "AGG_VALIDATION",
+    "public_role": "RNG2_VALIDATION",
+    "closures": 512,
+    "oriented_rows": 1024,
+    "membership_root": "cf121cb23d0d2fc85aaa01c2ec30cb9617efe4e748789dd2a6726d7c18ef11e1",
+    "release_count": 1
+  },
+  "thresholds": {
+    "T": 4.041451884327381,
+    "M": 0.0,
+    "strict_exceedance": true,
+    "ties_reject": true
+  },
+  "denominators": {
+    "closures": 512,
+    "oriented_rows": 1024,
+    "sides": 1024,
+    "authority_on_outputs": 8192,
+    "carrier_off_outputs": 8192,
+    "outputs": 16384,
+    "model_steps": 802816,
+    "eligible_positions": 393216,
+    "primitive_authority_scores": 262144,
+    "aggregate_authority_scores": 32768,
+    "side_decisions": 1024,
+    "closure_pair_decisions": 512,
+    "carrier_off_closure_events": 512,
+    "wrong_confusion_closure_events": 512
+  },
+  "gates": {
+    "computation_fidelity_fraction": 1.0,
+    "semantic_validity_fraction": 1.0,
+    "natural_side_success_minimum": 0.8,
+    "alias_side_success_minimum": 0.8,
+    "closure_pair_success_minimum": 0.75,
+    "maximum_carrier_off_familywise_events": 1,
+    "maximum_wrong_confusion_familywise_events": 1,
+    "production_reference_exact_agreement": true
+  },
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-v1/CONFIG.json",
+    "tools/csw_am_scb_m1_rng2_v1_controller.py",
+    "tools/csw_am_scb_m1_rng2_v1.py",
+    "tools/csw_am_scb_m1_rng2_v1_reference.py",
+    "tests/test_csw_am_scb_m1_rng2_v1.py"
+  ],
+  "terminals": {
+    "valid": "MAIN_CSW_AM_SCB_M1_RNG2_V1_GENERIC_CHANNEL_VALIDATED",
+    "scientific_failed": "MAIN_CSW_AM_SCB_M1_RNG2_V1_GENERIC_CHANNEL_FAILED",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_V1_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+  },
+  "authorizations": {
+    "validation_release_once": true,
+    "second_sampler_key": false,
+    "replacement_closures": false,
+    "reserve_release": false,
+    "receipt_integration_release": false,
+    "protected_release": false,
+    "automatic_successor": false
+  }
+}

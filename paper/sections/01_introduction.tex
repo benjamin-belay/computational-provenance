@@ -1,0 +1,85 @@
+\section{Introduction}
+
+% claims: C01 C13
+Consider two executions that receive the same prompt and return the same answer.
+Internally, however, they pass through different states that affect the model's
+downstream computation. Can the generated output carry evidence of which
+internal path occurred?
+
+\begin{figure}[t]
+  \centering
+  \small
+  \fbox{\shortstack{Execution 1\\internal path $A$}}
+  $\searrow$
+  \fbox{\shortstack{same visible answer\\and surface content}}
+  $\swarrow$
+  \fbox{\shortstack{Execution 2\\internal path $B$}}\\[-0.5mm]
+  \centerline{\emph{Can the output distinguish the producing path?}}
+  % claims: C01 C03; sources: S03 S04
+  \caption{The provenance gap studied here. Identical answers need not arise
+  from identical internal computations. We ask whether generated text can
+  carry a state-selected signal without treating that signal as proof of the
+  execution by itself.}
+  \label{fig:problem}
+\end{figure}
+
+% claims: C01 C05 C13; sources: S01 S02 S05 S06 S13
+Existing mechanisms answer adjacent questions. A cryptographic receipt can
+report that trusted infrastructure observed a particular internal event, but it
+normally travels beside the output. A statistical watermark can place a keyed
+regularity inside the output, but its key need not correspond to any causally
+relevant part of the producing computation. The missing property is a
+controlled link between an authenticated internal state and a signal carried
+by the generated artifact itself.
+
+% claims: C01 C04 C05
+We study \emph{state-conditioned computational provenance}: after trusted
+instrumentation verifies an internal state category, that category selects the
+statistical signal embedded during output generation. The signal is not itself
+a proof of the state or exact execution. Rather, it indicates compatibility
+with a state identity established by separate receipts.
+
+% claims: C02 C03 C09; sources: S03 S04 S10 S12 S13
+Our testbed makes the question experimentally sharp. A learned arithmetic model
+must compute through a hard path
+$\text{input}\rightarrow\ztwo\rightarrow\zthree\rightarrow\text{answer}$.
+We compare a natural execution with an \emph{alias} intervention that changes
+authenticated \ztwo{} and model-generated \zthree{} while preserving the final
+answer. The pair also shares the prompt, printed surface payload, generation
+configuration, output indices, and position-indexed random draws. Thus the
+experiment asks whether the output signal follows the authenticated state
+rather than the unchanged visible task or primitive randomness.
+
+% claims: C03 C07 C08 C10 C11; sources: S04 S09 S10 S14 S15 S16 S17
+The evidence is deliberately layered. A separate intervention study first
+confirmed causal transport through the selected model. Exact-event and
+abstract-state receipts were then confirmed under the trusted instrumentation
+boundary, followed by prospective validation of a generic 16-identity carrier.
+The public receipt-bound integration was prospectively validated on 128/128
+held-out public closures. Protected qualification was not earned: one of 128
+closures failed computation fidelity, the descriptive result was 127/128, and
+final protected confirmation was not run.
+
+% claims: C01 C04 C05 C09
+Our contributions are:
+\begin{itemize}
+  \item a four-layer decomposition of causal computation, authenticated state
+  evidence, state-derived carrier selection, and output-side statistical
+  scoring;
+  \item a matched natural/alias experiment that fixes the visible task,
+  semantic payload, generation settings, and primitive randomness while
+  changing the authenticated state and its downstream consequences; and
+  \item an end-to-end public result reported together with the selected-model
+  causal evidence, generic-carrier validation, protected non-qualification,
+  and the strongest trusted-middleware interpretation.
+\end{itemize}
+
+% claims: C01 C05 C10 C12 C13; sources: S01 S02 S14 S15 S18
+The claim is intentionally narrow. We demonstrate bounded feasibility in one
+selected engineered model with supervised mandatory states, a trusted
+\hmac{} issuer and controller, and constrained text. We do not establish
+output-only authentication, naturally emerging states, whole-reasoning
+provenance, deception detection, open-ended language robustness, protected
+generalisation, or frontier-model applicability. A sidecar or inline MAC
+remains simpler and cryptographically stronger for declared metadata; the
+additional property here is statistical carriage inside the output.

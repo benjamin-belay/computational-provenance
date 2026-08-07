@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code or evidence package, please cite the associated paper."
+title: "Can Generated Text Carry Evidence of an Authenticated Causal State?"
+type: software
+authors:
+  - family-names: "Belay"
+    given-names: "Benjamin"
+repository-code: "https://github.com/benjamin-belay/computational-provenance"
+version: 1.0.0
+date-released: 2026-08-07
+license: MIT

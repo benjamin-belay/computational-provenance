@@ -1,0 +1,101 @@
+\section{Supplementary experimental record}
+
+\subsection{Chronology and preserved negative stages}
+% claims: C07 C08 C10 C11 C12; sources: S08 S09 S10 S14 S15 S16 S17 S18 S21 S22
+% source-path: artifacts/dev_only/csw-am-scb-m1-car-agg-d0/MAIN_AUDIT.json
+\begin{table}[H]
+\caption{Compact experimental chronology. Later designs do not overwrite earlier negatives or invalid stages.}
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Stage & Classification & Outcome \\
+\midrule
+SCB-T1 & valid negative & 2/3 seeds; registered advancement failed \\
+SCB confirmation & formal positive & selected-model causal transport confirmed \\
+REC-C1 & formal positive & exact, abstract, and chain receipts confirmed \\
+Initial carrier & operating-point negative & 88/128; frozen 75\% gate failed \\
+AGG-D0 & protocol-incoherent & history-based draws broke post-divergence pairing \\
+RNG2-D0 & implementation positive & position-indexed sampler validated \\
+First calibration & chronology invalid & no valid pre-scoring raw commitment \\
+Clean calibration & calibration positive & $T=4.041451884327381$, $M=0$ \\
+RNG2-V1 & prospective positive & generic 16-authority channel validated \\
+\intvone{} & public positive & 128/128 \\
+\intqone{} & non-qualification & descriptive 127/128 plus terminal defect \\
+Protected \intcone{} & sealed & carrier confirmation prohibited and unexecuted \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The source programme called the selected-model causal confirmation ``SCB-M1-C1.'' It is unrelated to protected \intcone{}, the final receipt-bound carrier-confirmation role. We use \emph{SCB confirmation} for the former throughout the paper.
+
+\subsection{Stage denominators and causal outcomes}
+% claims: C03 C04 C07 C08 C10 C11; sources: S04 S06 S08 S09 S10 S14 S16 S17
+\begin{table}[H]
+\caption{Roles and primary denominators. Roles answer different prospective questions.}
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Role & Primary denominator & Outcome \\
+\midrule
+SCB confirmation & 256 closures; 512 oriented examples; 3,584 cases & all registered families 512/512 \\
+Receipt confirmation & 512 packages; 2,560 envelopes; 9,216 attacks & exact, abstract, and chain gates passed \\
+Clean RNG2 calibration & 512 closure statistics; 16,384 outputs & fixed $T=4.041451884327381$, $M=0$ \\
+Generic RNG2 validation & 512 closures; 16,384 outputs & 512/512 closure pairs \\
+Public \intvone{} & 128 closures & 128/128 validated \\
+Protected \intqone{} & 128 closures & 127/128 descriptive; not qualified \\
+Protected \intcone{} & 256 registered closures & sealed; not run \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+In the SCB confirmation, natural \ztwo{}, \zthree{}, answer, and joint correctness were 512/512. Alias, same-state, and sham families preserved the registered answer at 512/512; non-alias, wrong-state, and direct-\zthree{} families changed it at 512/512. Every non-natural family also passed exact target consumption, conditional transport, and complete joint success at 512/512. Following \ztwo{} substitution, \zthree{} was model-generated rather than assigned by the controller.
+
+\subsection{Registered denominators and gates}
+% claims: C08 C10 C11; sources: S10 S11 S14 S16 S17
+Public \intvone{} comprised 128 closures, 256 natural/alias execution packages, 1,280 receipt envelopes and generation authorizations, 10,240 outputs, 501,760 model steps, 245,760 eligible positions, 163,840 primitive authority scores, 20,480 aggregate scores, and 1,024 attack packages. Protected \intqone{} used the same registered denominators. Protected \intcone{} registered 256 closures but produced no executions, receipts, outputs, or decisions.
+
+% claims: C08; sources: S10 S11
+A complete closure required both sides to pass computation, exact receipt, abstract receipt, chain, semantic, threshold, unique-rank, strict-margin, carrier-off, wrong-authority, and attack gates. Failures could not compensate for one another.
+
+The post hoc Wilson intervals in the main paper were deterministically computed from the frozen closure counts with $z=1.96$:
+\begin{equation}
+\frac{\hat p+z^2/(2n)\ \pm\ z\sqrt{\hat p(1-\hat p)/n+z^2/(4n^2)}}{1+z^2/n}.
+\end{equation}
+They were not preregistered endpoints and do not assert that closures are population-representative.
+
+\subsection{Training and channel details}
+% claims: C01 C02; sources: S03 S10
+% source-path: protocol/csw-am-scb-t1/CONFIG.json
+% source-path: protocol/csw-a0/CSW_A0_SPECIFICATION.json
+% source-path: artifacts/dev_only/csw-a0-q1/FROZEN_CHANNEL.json
+Model 1 used AdamW with initial learning rate $10^{-3}$, decay to $5\times10^{-5}$ after 750 warm-up steps, weight decay $10^{-4}$, batch size 256, gradient clipping at 1.0, and a maximum of 10,000 CPU float32 steps. The realiser used AdamW at 0.003, weight decay $10^{-4}$, batch size 64, ten epochs, and seed 817331. Its data contained 320 training, 96 calibration, and 96 untouched channel-qualification semantic objects, each with eight training variants.
+
+\subsection{Protected-Q1 interpretation}
+\label{app:q1}
+% claims: C10; sources: S14 S15
+The protected release, chronology, denominator, raw-evidence commitment, and reconstruction were valid. Scientifically, one closure failed computation fidelity and caused two dependent attack-expectation failures. Its root cause cannot be diagnosed or repaired from the closed evidence. The frozen adjudicator had no scientific-negative terminal and therefore emitted an implementation-or-evidence-invalid terminal. Both facts are preserved: \intqone{} did not qualify, and the historical terminal remains unchanged.
+
+\subsection{Threat-model matrix}
+% claims: C04 C05 C13; sources: S05 S06 S13
+\begin{table}[H]
+\caption{Trusted and unestablished components.}
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Component & Assumed or tested & Not established \\
+\midrule
+Model/instrumentation & frozen checkpoint; registered hard boundaries & malicious or uninstrumented computation \\
+Receipt system & HMAC integrity; frozen mutation/replay suite & malicious issuer, public verification, key compromise \\
+Controller/verifier & correct verification-before-authority ordering & compromised verifier or arbitrary authority selection \\
+Surface carrier & fixed grammar and frozen operating point & editing, paraphrase, copy, collusion, open-ended language \\
+Auditor & retained-row reconstruction & independent neural regeneration \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Claim boundary}
+% claims: C01 C02 C10 C11 C12; sources: S01 S02 S03 S04 S14 S15 S16 S17 S18
+The evidence is limited to selected Model 1, one supervised categorical ontology, a mandatory hard bottleneck, trusted \hmac{} authorities, a trusted controller, the engineered \rngtwo{} realiser, and frozen tasks and attacks. It does not establish natural-model, open-ended-language, output-only, public-key, whole-reasoning, universal, or protected generalisation.

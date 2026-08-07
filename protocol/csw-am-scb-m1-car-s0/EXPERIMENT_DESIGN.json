@@ -1,0 +1,153 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_s0.experiment_design.v1",
+  "identity": "SCB_M1_RECEIPT_BOUND_ALL16_PAIRED_CARRIER_V1",
+  "stage_order": [
+    "CAR_S0_STATIC_PROTOCOL",
+    "CAR_D0_PUBLIC_IMPLEMENTATION_AND_OPERATING_POINT_VERIFICATION",
+    "CAR_Q1_EXCLUDED_FROZEN_PATH_QUALIFICATION",
+    "CAR_C1_ONE_SHOT_SEALED_CONFIRMATION"
+  ],
+  "output_design_per_closure": {
+    "execution_sides": 2,
+    "state_outputs_per_side": 4,
+    "carrier_off_outputs_per_side": 4,
+    "control_outputs_per_side": {
+      "PROMPT": 1,
+      "ANSWER": 1,
+      "GENERIC": 1
+    },
+    "state_outputs": 8,
+    "carrier_off_outputs": 8,
+    "control_outputs": 6,
+    "total_outputs": 22
+  },
+  "detector_design_per_closure": {
+    "candidate_state_authorities": 16,
+    "state_output_all_state_decisions": 128,
+    "carrier_off_all_state_decisions": 128,
+    "control_output_own_authority_decisions": 6,
+    "control_output_all_state_decisions": 96,
+    "total_detector_decisions": 358,
+    "all16_tie_rule": "INDETERMINATE",
+    "all16_maximum_wrong_state_included": true
+  },
+  "qualification_denominators": {
+    "closures": 128,
+    "SCB_execution_packages": 256,
+    "receipt_envelopes": 1280,
+    "state_outputs": 1024,
+    "carrier_off_outputs": 1024,
+    "control_outputs": 768,
+    "generated_outputs": 2816,
+    "detector_decisions": 45824,
+    "eligible_positions": 67584
+  },
+  "confirmation_denominators": {
+    "closures": 256,
+    "SCB_execution_packages": 512,
+    "receipt_envelopes": 2560,
+    "state_outputs": 2048,
+    "carrier_off_outputs": 2048,
+    "control_outputs": 1536,
+    "generated_outputs": 5632,
+    "detector_decisions": 91648,
+    "eligible_positions": 135168
+  },
+  "primary_unit": "DEPENDENCY_CLOSURE",
+  "reporting_units": [
+    "closure",
+    "natural_alias_execution_pair",
+    "stochastic_output",
+    "detector_decision"
+  ],
+  "receipt_and_chain_gates": {
+    "exact_execution_receipt_accept_fraction": 1.0,
+    "abstract_z2_receipt_accept_fraction": 1.0,
+    "causal_chain_accept_fraction": 1.0,
+    "wrong_present_receipt": "REJECT",
+    "missing_required_receipt": "ABSTAIN"
+  },
+  "semantic_and_boundary_gates": {
+    "visible_prompt_pair_equality": 1.0,
+    "final_answer_pair_equality": 1.0,
+    "semantic_payload_byte_equality": 1.0,
+    "semantic_parser_success": 1.0,
+    "canonical_field_preservation": 1.0,
+    "answer_preservation": 1.0,
+    "contradiction_rate_max": 0.0,
+    "realiser_boundary_trace_pass": 1.0,
+    "paired_nonce_equality": 1.0
+  },
+  "statistical_gates": {
+    "detector_threshold": 20,
+    "minimum_eligible_positions": 24,
+    "matching_state_output_power_min": 0.8,
+    "side_success_definition": "AT_LEAST_3_OF_4_MATCHING_STATE_OUTPUTS_ACCEPT_AND_EVERY_WRONG_STATE_AUTHORITY_REJECTS",
+    "side_success_fraction_min": 0.8,
+    "closure_pair_switch_success_definition": "NATURAL_SIDE_SUCCESS_AND_ALIAS_SIDE_SUCCESS_AND_NATURAL_Z2_DIFFERS_FROM_ALIAS_Z2_AND_ANSWERS_EQUAL",
+    "closure_pair_switch_success_fraction_min": 0.75,
+    "state_output_max_over_15_wrong_authorities_false_accept_max": 0.01,
+    "carrier_off_max_over_16_state_authorities_false_accept_max": 0.01,
+    "paired_matching_minus_best_wrong_margin_mean_min": 1.0,
+    "prompt_answer_generic_authority_non_switch_fraction": 1.0,
+    "prompt_answer_generic_paired_output_byte_equality": 1.0,
+    "control_matching_power_min": 0.8,
+    "no_gate_compensation": true
+  },
+  "all16_integration_boundary": {
+    "A0_Q1_qualified_candidate_authorities": 8,
+    "integrated_candidate_state_authorities": 16,
+    "channel_bias_changed": false,
+    "detector_threshold_changed": false,
+    "eligible_positions_changed": false,
+    "alternatives_changed": false,
+    "green_fraction_changed": false,
+    "tokenizer_changed": false,
+    "all16_familywise_error_inherited_from_A0_Q1": false,
+    "all16_familywise_error_must_pass_CAR_Q1": true
+  },
+  "lifecycle": {
+    "freeze_source_before_key_commitments": true,
+    "commit_receipt_and_carrier_keys_before_role_release": true,
+    "commit_all_raw_receipts_outputs_and_traces_before_key_reveal": true,
+    "no_precommit_detector_scoring": true,
+    "no_precommit_output_filtering": true,
+    "no_result_dependent_semantic_exclusion": true,
+    "retries": 0,
+    "replacement_closures": 0,
+    "Q1_and_C1_denominators_not_pooled": true
+  },
+  "decision_matrix": {
+    "correct_receipts_chain_and_matching_state_output": {
+      "exact_execution_receipt": "ACCEPT",
+      "abstract_state_receipt": "ACCEPT",
+      "causal_chain": "ACCEPT",
+      "statistical_state_carrier": "ACCEPT"
+    },
+    "different_exact_execution_same_abstract_state": {
+      "exact_execution_receipt": "REJECT",
+      "abstract_state_receipt": "ACCEPT",
+      "causal_chain": "REJECT",
+      "statistical_state_carrier": "ACCEPT_IF_OUTPUT_MATCHES_SHARED_STATE_AUTHORITY"
+    },
+    "wrong_state_receipt_present": {
+      "exact_execution_receipt": "REJECT",
+      "abstract_state_receipt": "REJECT",
+      "causal_chain": "REJECT",
+      "statistical_state_carrier": "REJECT"
+    },
+    "required_receipt_missing": {
+      "exact_execution_receipt": "ABSTAIN",
+      "abstract_state_receipt": "ABSTAIN",
+      "causal_chain": "ABSTAIN",
+      "statistical_state_carrier": "INDETERMINATE"
+    }
+  },
+  "stage_authorization": {
+    "valid_S0_authorizes": "PUBLIC_CAR_D0_ONLY",
+    "valid_D0_may_request": "CAR_Q1_AUTHORIZATION",
+    "valid_Q1_may_request": "CAR_C1_AUTHORIZATION",
+    "protected_role_release_in_S0": false,
+    "automatic_successor": false
+  }
+}

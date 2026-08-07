@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="480" viewBox="0 0 1400 480" role="img" aria-labelledby="title desc">
+<title id="title">Public and protected outcomes</title>
+<desc id="desc">Public validation passed 128 of 128, protected qualification did not qualify at 127 of 128, and protected confirmation was not tested.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#17324d"/>
+</marker>
+</defs>
+<rect width="1400" height="480" fill="#ffffff"/>
+<text x="700" y="42" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500" fill="#1f2933">Public and protected outcomes</text>
+<rect x="60" y="80" width="1280" height="55" fill="#17324d"/>
+<text x="95" y="114" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="500" fill="#ffffff">Role</text>
+<text x="720" y="114" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="500" fill="#ffffff">Complete result</text>
+<text x="1280" y="114" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="500" fill="#ffffff">Formal status</text>
+<rect x="60" y="150" width="1280" height="82" fill="#e8f4ef" stroke="#ffffff" stroke-width="2"/>
+<text x="95" y="199" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#1f2933">Public validation</text>
+<text x="720" y="199" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" fill="#1f2933">128 / 128</text>
+<text x="1280" y="199" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#2f7d5b">Prospectively validated</text>
+<rect x="60" y="234" width="1280" height="82" fill="#faf1df" stroke="#ffffff" stroke-width="2"/>
+<text x="95" y="283" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#1f2933">Protected qualification</text>
+<text x="720" y="283" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" fill="#1f2933">127 / 128</text>
+<text x="1280" y="283" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#9b6a12">Not qualified</text>
+<rect x="60" y="318" width="1280" height="82" fill="#f7f9fb" stroke="#ffffff" stroke-width="2"/>
+<text x="95" y="367" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#1f2933">Protected confirmation</text>
+<text x="720" y="367" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500" fill="#1f2933">0 / 256 executed</text>
+<text x="1280" y="367" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#52616f">Not tested · sealed</text>
+<text x="70" y="432" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52616f">Public and protected denominators are separate and must not be pooled.</text>
+<text x="70" y="457" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52616f">INT-Q1 includes one computation-fidelity failure and two dependent attack failures.</text>
+</svg>
+

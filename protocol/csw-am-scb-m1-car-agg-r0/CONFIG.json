@@ -1,0 +1,100 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_agg_r0.config.v1",
+  "identity": "CSW-AM-SCB-M1-CAR-AGG-R0",
+  "title": "PUBLIC ROLE ALLOCATION AND RELEASE BINDING",
+  "mode": "ONE_SHOT_CLUSTER_ALLOCATION_WITH_STAGED_RELEASE",
+  "source_paths": [
+    "protocol/csw-am-scb-m1-car-agg-r0/CONFIG.json",
+    "protocol/csw-am-scb-m1-car-agg-r0/ALLOCATION_SPEC.json",
+    "tools/csw_am_scb_m1_car_agg_r0.py",
+    "tools/csw_am_scb_m1_car_agg_r0_reference.py",
+    "tests/test_csw_am_scb_m1_car_agg_r0.py"
+  ],
+  "lineage": {
+    "agg_s0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-s0/MAIN_AUDIT.json",
+    "agg_s0_main_audit_sha256": "9b6d226d3365a0e4e3619c0a19a76ad5b030964676ff02073762ee3bc15bf115",
+    "agg_s0_terminal": "MAIN_CSW_AM_SCB_M1_CAR_AGG_S0_PROTOCOL_READY",
+    "public_source_path": "artifacts/dev_only/csw-am-t1-d2/authoritative/correction-1/public-allocation/D2_FRESH_EVALUATION_ROWS.jsonl",
+    "public_source_sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767",
+    "closed_car_d0_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/raw/PUBLIC_ROWS.jsonl",
+    "closed_car_d0_sha256": "51e3a7463185ea5a8e3051f84721b83578468d5a4c59064b761d444b0e878aba"
+  },
+  "population": {
+    "source_closures": 2048,
+    "excluded_closed_car_d0_closures": 128,
+    "eligible_closures": 1920,
+    "rows_per_closure": 2,
+    "allocation_unit": "COMPLETE_DEPENDENCY_CLOSURE"
+  },
+  "roles": [
+    {
+      "role": "AGG_DEVELOPMENT",
+      "closures": 256,
+      "rows": 512,
+      "release_in_r0": true
+    },
+    {
+      "role": "AGG_CALIBRATION",
+      "closures": 512,
+      "rows": 1024,
+      "release_in_r0": false
+    },
+    {
+      "role": "AGG_VALIDATION",
+      "closures": 512,
+      "rows": 1024,
+      "release_in_r0": false
+    },
+    {
+      "role": "PUBLIC_RESERVE",
+      "closures": 640,
+      "rows": 1280,
+      "release_in_r0": false
+    }
+  ],
+  "secret_material": {
+    "allocation_seed_bytes": 32,
+    "encryption_key_bytes": 32,
+    "role_salt_bytes": 32,
+    "commitment_domain": "EXP33A|SCB-M1|CAR-AGG-R0|SECRET-COMMITMENT|V1",
+    "allocation_domain": "EXP33A|SCB-M1|CAR-AGG-R0|ALLOCATION|V1",
+    "role_leaf_domain": "EXP33A|SCB-M1|CAR-AGG-R0|ROLE-LEAF|V1",
+    "full_root_domain": "EXP33A|SCB-M1|CAR-AGG-R0|FULL-ROOT|V1",
+    "sealed_payload_aad": "EXP33A|SCB-M1|CAR-AGG-R0|FULL-ALLOCATION|V1"
+  },
+  "chronology": [
+    "FREEZE_SOURCE",
+    "CREATE_AND_COMMIT_SECRET_COMMITMENTS",
+    "ALLOCATE_EXACTLY_ONCE",
+    "COMMIT_FULL_SEALED_ALLOCATION_AND_ROLE_ROOTS",
+    "RELEASE_AGG_DEVELOPMENT_ONLY",
+    "STOP"
+  ],
+  "release_policy": {
+    "roles_releasable_in_r0": [
+      "AGG_DEVELOPMENT"
+    ],
+    "calibration_requires": "AGG_D0_IMPLEMENTATION_FREEZE",
+    "validation_requires": "COMMITTED_T_AND_M",
+    "reserve_release": "PROHIBITED",
+    "arbitrary_membership_queries": false,
+    "protected_carrier_roles_accessible": false
+  },
+  "authorizations": {
+    "agg_d0_public_implementation": true,
+    "agg_cal1": false,
+    "agg_v1": false,
+    "agg_q1": false,
+    "agg_c1": false,
+    "protected_release": false,
+    "automatic_successor": false
+  },
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_CAR_AGG_R0_PUBLIC_ALLOCATION_READY",
+    "population_invalid": "MAIN_CSW_AM_SCB_M1_CAR_AGG_R0_POPULATION_INVALID",
+    "balance_failed": "MAIN_CSW_AM_SCB_M1_CAR_AGG_R0_BALANCE_FAILED",
+    "commitment_invalid": "MAIN_CSW_AM_SCB_M1_CAR_AGG_R0_COMMITMENT_INVALID",
+    "release_boundary_failed": "MAIN_CSW_AM_SCB_M1_CAR_AGG_R0_RELEASE_BOUNDARY_FAILED",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_CAR_AGG_R0_IMPLEMENTATION_INVALID"
+  }
+}

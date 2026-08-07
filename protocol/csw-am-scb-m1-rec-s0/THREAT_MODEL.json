@@ -1,0 +1,34 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rec_s0.threat_model.v1",
+  "identity": "SCB_M1_RECEIPT_TRUST_MODEL_V1",
+  "trusted_components": [
+    "frozen Model-1 checkpoint and mandatory hard-state architecture",
+    "receipt instrumentation at the consumed z2, consumed z3, and answer boundaries",
+    "pre-execution key commitment service",
+    "immutable raw-evidence commitment chronology"
+  ],
+  "untrusted_or_adversarial_actions": [
+    "receipt field mutation",
+    "receipt truncation or extension",
+    "receipt replay across run, context, execution, or nonce",
+    "crossing exact z2 and exact z3 events",
+    "substitution across model, checkpoint, protocol, or purpose domains",
+    "reordering otherwise authentic events",
+    "removal of required evidence"
+  ],
+  "issuer_trust_limitation": "HMAC receipts do not protect against a malicious receipt issuer holding the master key. The bounded claim assumes trusted instrumentation and authenticates committed evidence against post-issuance mutation, crossing, replay, and substitution.",
+  "public_reconstruction": {
+    "master_key_committed_before_scientific_execution": true,
+    "unrevealed_raw_evidence_committed_before_key_reveal": true,
+    "revealed_key_allows_independent_reconstruction": true,
+    "raw_evidence_digest_excludes_post_reveal_insertions": true
+  },
+  "claim_exclusions": [
+    "public-key nonrepudiation",
+    "malicious-issuer resistance",
+    "distributed-activation provenance",
+    "unconstrained-model provenance",
+    "cross-model robustness",
+    "statistical output carriage"
+  ]
+}

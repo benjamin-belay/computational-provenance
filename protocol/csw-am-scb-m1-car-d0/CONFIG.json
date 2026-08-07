@@ -1,0 +1,141 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_d0.config.v1",
+  "identity": "CSW-AM-SCB-M1-CAR-D0",
+  "title": "PUBLIC RECEIPT-BOUND CARRIER INTEGRATION",
+  "mode": "PUBLIC_DEVELOPMENT_WITH_FINAL_FROZEN_OPERATING_POINT_RUN",
+  "claim_scope": "PUBLIC_IMPLEMENTATION_READINESS_NOT_PROTECTED_OUTPUT_PROVENANCE",
+  "source_file_paths": [
+    "protocol/csw-am-scb-m1-car-d0/CONFIG.json",
+    "protocol/csw-am-scb-m1-car-d0/PUBLIC_MANIFEST.jsonl",
+    "tools/csw_am_scb_m1_car_d0.py",
+    "tools/csw_am_scb_m1_car_d0_reference.py",
+    "tests/test_csw_am_scb_m1_car_d0.py"
+  ],
+  "lineage": {
+    "CAR_S0_main_audit_commit": "ab4697cd60fd3f9a472a9271381eabebd007a06f",
+    "CAR_S0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-car-s0/MAIN_AUDIT.json",
+    "CAR_S0_main_audit_sha256": "afbeb2f860ad51af5d4c2129b63775467863dc3c69845898a72970354b4c1a90",
+    "CAR_S0_main_terminal": "MAIN_CSW_AM_SCB_M1_CAR_S0_PROTOCOL_READY",
+    "CAR_S0_source_commit": "da4e220361ed1bbe79229032b0d5608aae55ffe0",
+    "REC_D0_source_commit": "0d3a840fcdfae089b5846f8ef4146b0eb74123ff",
+    "REC_D0_production_path": "tools/csw_am_scb_m1_rec_d0.py",
+    "REC_D0_production_sha256": "3527fb5349c01c1421e6b46a7d761ef5a8a5a2b4405d1d0c92686795a0400a07",
+    "REC_D0_reference_path": "tools/csw_am_scb_m1_rec_d0_reference.py",
+    "REC_D0_reference_sha256": "c4ad69b355c87f9b69dac34d4a74dd8db635e261ec7f7feaf86104410f164316",
+    "M1_source_commit": "827784f478d9a0ba9cb0172c96b064bbcec72df1",
+    "M1_source_path": "tools/csw_am_scb_m1.py",
+    "M1_source_sha256": "729417403d1e868d7d09069ba563a331fc800d05a9aacaf4cbc3f2b4d76eafdf",
+    "M1_checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+    "A0_Q1_immutable_commit": "458208dcbcd7f44978994e8ecde671b9c480efba",
+    "A0_production_path": "tools/csw_a0_stochastic_channel.py",
+    "A0_production_sha256": "df467bb4d91353637fa6f5fff0ce785d65191218587e5525868a46e1788cffd5",
+    "A0_reference_path": "tools/csw_a0_reference.py",
+    "A0_reference_sha256": "346f19655825a10c8f5467302b67481d7eb835a03e91556f7edc8d08f0b2720a",
+    "A0_checkpoint_path": "artifacts/dev_only/csw-a0/training/seed1/CHECKPOINT.pt",
+    "A0_checkpoint_sha256": "333cd0017ac815391d8e517691fbb310cc917c2dc6de1c30a8f81d4c60254ede"
+  },
+  "public_population": {
+    "source_path": "artifacts/dev_only/csw-am-t1-d2/authoritative/correction-1/public-allocation/D2_FRESH_EVALUATION_ROWS.jsonl",
+    "source_sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767",
+    "source_closures": 2048,
+    "selection_domain": "EXP33A|SCB-M1|CAR-D0|PUBLIC-CLOSURE-SELECTION|V1",
+    "selection_rule": "ONE_LOW_ORIENTATION_CLOSURE_PER_REACHABLE_(Z2_MOD8,ANSWER,TEMPLATE)_CELL_LOWEST_SHA256_PRIORITY",
+    "reachable_cells": 128,
+    "selected_closures": 128,
+    "selected_rows": 128,
+    "manifest_path": "protocol/csw-am-scb-m1-car-d0/PUBLIC_MANIFEST.jsonl",
+    "previously_consumed_public_only": true,
+    "protected_overlap_authorized": false
+  },
+  "execution": {
+    "sides": [
+      "NATURAL",
+      "ALIAS_Z2"
+    ],
+    "alias_offset_mod_16": 8,
+    "SCB_execution_packages": 256,
+    "receipt_envelopes": 1280,
+    "state_outputs_per_side": 4,
+    "carrier_off_outputs_per_side": 4,
+    "control_outputs_per_side": {
+      "PROMPT": 1,
+      "ANSWER": 1,
+      "GENERIC": 1
+    },
+    "outputs_per_closure": 22,
+    "generated_outputs": 2816,
+    "state_authority_scores_per_output": 16,
+    "state_authority_scores": 45056,
+    "own_family_control_scores": 768,
+    "detector_decisions": 45824,
+    "eligible_positions": 67584
+  },
+  "channel": {
+    "bias": 2.0,
+    "threshold": 20,
+    "eligible_positions_per_output": 24,
+    "minimum_eligible_length": 24,
+    "alternatives_per_position": 8,
+    "green_fraction": 0.5,
+    "candidate_state_authorities": 16,
+    "sampler": "FROZEN_A0_Q1_HISTORY_CONDITIONED_COUNTER_UNIFORM",
+    "position_only_randomness_substitution": false,
+    "retuned_parameters": []
+  },
+  "keys": {
+    "receipt_master_bytes": 32,
+    "carrier_root_bytes": 32,
+    "receipt_commitment_domain": "EXP33A|SCB-M1|CAR-D0|RECEIPT-MASTER|V1",
+    "carrier_commitment_domain": "EXP33A|SCB-M1|CAR-D0|CARRIER-ROOT|V1",
+    "receipt_and_carrier_keys_distinct": true,
+    "commit_before_final_run": true,
+    "raw_commit_before_reveal": true
+  },
+  "gates": {
+    "receipt_and_chain_accept_fraction": 1.0,
+    "authority_derivation_accuracy": 1.0,
+    "all16_authorities_distinct": 1.0,
+    "same_state_different_exact_authority_equality": 1.0,
+    "payload_pair_byte_equality": 1.0,
+    "paired_nonce_equality": 1.0,
+    "baseline_authority_equality": 1.0,
+    "baseline_output_byte_equality": 1.0,
+    "state_authority_switch_fraction": 1.0,
+    "semantic_parser_success": 1.0,
+    "semantic_payload_preservation": 1.0,
+    "matching_state_output_power_min": 0.8,
+    "side_success_fraction_min": 0.8,
+    "closure_pair_switch_success_fraction_min": 0.75,
+    "state_output_any_wrong_state_false_accept_max": 0.01,
+    "carrier_off_any_state_false_accept_max": 0.01,
+    "paired_matching_minus_best_wrong_margin_mean_min": 1.0,
+    "control_matching_power_min": 0.8,
+    "invalid_receipt_control": "REJECT",
+    "missing_receipt_control": "ABSTAIN",
+    "production_reference_exact_agreement": 1.0,
+    "complete_denominator": true,
+    "no_gate_compensation": true
+  },
+  "lifecycle": {
+    "implementation_corrections_allowed_before_source_freeze": true,
+    "source_freeze_before_key_commitment": true,
+    "no_detector_scoring_before_raw_commit": true,
+    "no_output_filtering": true,
+    "retries": 0,
+    "regenerations": 0,
+    "replacement_closures": 0,
+    "protected_releases": 0
+  },
+  "terminals": {
+    "ready": "CSW_AM_SCB_M1_CAR_D0_PUBLIC_INTEGRATION_READY",
+    "operating_point_failed": "CSW_AM_SCB_M1_CAR_D0_PUBLIC_OPERATING_POINT_FAILED",
+    "evaluator_mismatch": "CSW_AM_SCB_M1_CAR_D0_REFERENCE_DISAGREEMENT",
+    "invalid": "CSW_AM_SCB_M1_CAR_D0_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+  },
+  "authorizations": {
+    "CAR_Q1_protocol_request_after_ready": true,
+    "CARRIER_EXCLUDED_QUALIFICATION_release": false,
+    "CARRIER_SEALED_CONFIRMATION_release": false,
+    "automatic_successor": false
+  }
+}

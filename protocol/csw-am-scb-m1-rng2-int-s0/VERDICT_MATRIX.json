@@ -1,0 +1,67 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_s0.verdict_matrix.v1",
+  "channels": [
+    "exact_event_receipt",
+    "abstract_state_receipt",
+    "causal_chain",
+    "statistical_state_carrier",
+    "integrated_provenance"
+  ],
+  "decisions": {
+    "exact_event_receipt": ["ACCEPT", "REJECT", "ABSTAIN"],
+    "abstract_state_receipt": ["ACCEPT", "REJECT", "ABSTAIN"],
+    "causal_chain": ["ACCEPT", "REJECT", "ABSTAIN"],
+    "statistical_state_carrier": ["ACCEPT", "REJECT", "INDETERMINATE"],
+    "integrated_provenance": ["ACCEPT", "REJECT", "ABSTAIN", "INDETERMINATE"]
+  },
+  "cases": [
+    {
+      "case": "ALL_VALID_AND_CARRIER_MATCHES",
+      "exact": "ACCEPT",
+      "abstract": "ACCEPT",
+      "chain": "ACCEPT",
+      "carrier": "ACCEPT",
+      "integrated": "ACCEPT"
+    },
+    {
+      "case": "VALID_RECEIPTS_CARRIER_INSUFFICIENT",
+      "exact": "ACCEPT",
+      "abstract": "ACCEPT",
+      "chain": "ACCEPT",
+      "carrier": "INDETERMINATE",
+      "integrated": "INDETERMINATE"
+    },
+    {
+      "case": "WRONG_OR_CROSSED_PRESENT_RECEIPT",
+      "exact": "REJECT",
+      "abstract": "REJECT",
+      "chain": "REJECT",
+      "carrier": "REJECT",
+      "integrated": "REJECT"
+    },
+    {
+      "case": "MISSING_REQUIRED_RECEIPT",
+      "exact": "ABSTAIN",
+      "abstract": "ABSTAIN",
+      "chain": "ABSTAIN",
+      "carrier": "INDETERMINATE",
+      "integrated": "ABSTAIN"
+    },
+    {
+      "case": "CARRIER_MATCHES_CHAIN_INVALID",
+      "exact": "ACCEPT",
+      "abstract": "ACCEPT",
+      "chain": "REJECT",
+      "carrier": "ACCEPT",
+      "integrated": "REJECT"
+    },
+    {
+      "case": "SAME_STATE_DIFFERENT_EXECUTION",
+      "exact": "REJECT",
+      "abstract": "ACCEPT",
+      "chain": "REJECT",
+      "carrier": "ACCEPT",
+      "integrated": "REJECT"
+    }
+  ]
+}

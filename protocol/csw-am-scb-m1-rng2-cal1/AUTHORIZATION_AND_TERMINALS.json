@@ -1,0 +1,33 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_cal1.authorization.v1",
+  "authorization": {
+    "stage": "CSW-AM-SCB-M1-RNG2-CAL1",
+    "authorized_role": "RNG2_CALIBRATION",
+    "authorized_membership_root": "7518f095e22dafe7c7bd5fb7baaf05818e77c0c823aab4b851fb01ef79af311a",
+    "authorized_closures": 512,
+    "authorized_release_count": 1,
+    "purpose": "MECHANICAL_INSTANTIATION_OF_T_AND_M_ONLY",
+    "matching_power_adjudication": false,
+    "validation_release": false,
+    "reserve_release": false,
+    "protected_release": false
+  },
+  "terminal_precedence": [
+    "SOURCE_DIGEST_MISMATCH",
+    "ROLE_OR_MEMBERSHIP_INVALID",
+    "COMMITMENT_CHRONOLOGY_INVALID",
+    "CALIBRATION_EVIDENCE_INCOMPLETE",
+    "STATISTIC_UNDEFINED",
+    "PRODUCTION_REFERENCE_DISAGREEMENT",
+    "THRESHOLDS_INSTANTIATED"
+  ],
+  "valid_threshold_semantics": {
+    "large_T_is_valid": true,
+    "large_M_is_valid": true,
+    "power_gate_in_CAL1": false,
+    "T": "MAXIMUM_CARRIER_OFF_CLOSURE_STATISTIC",
+    "M": "MAXIMUM_OF_ZERO_AND_WRONG_CONFUSION_CLOSURE_STATISTICS",
+    "future_comparisons": "STRICT_GREATER_THAN",
+    "ties": "REJECT"
+  }
+}

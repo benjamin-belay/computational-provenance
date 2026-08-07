@@ -1,0 +1,123 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rec_d0.attack_manifest.v1",
+  "identity": "SCB_M1_REC_D0_CONCRETE_ATTACKS_V1",
+  "construction": "DETERMINISTIC_FROM_IMMUTABLE_RECEIPT_PACKAGES_AND_FROZEN_RULES",
+  "families": {
+    "SAME_Z2_DIFFERENT_EXACT": {
+      "expected": {
+        "exact_z2_event": "REJECT",
+        "abstract_z2_compatibility": "ACCEPT"
+      }
+    },
+    "SAME_Z3_DIFFERENT_EXACT": {
+      "expected": {
+        "exact_z3_event": "REJECT",
+        "abstract_z3_compatibility": "ACCEPT"
+      }
+    },
+    "DIFFERENT_Z2_DIFFERENT_EXACT": {
+      "expected": {
+        "exact_z2_event": "REJECT",
+        "abstract_z2_compatibility": "REJECT"
+      }
+    },
+    "NATURAL_Z2_ALIAS_Z3": {
+      "expected": {
+        "chain_consistency": "REJECT"
+      }
+    },
+    "ALIAS_Z2_NATURAL_Z3": {
+      "expected": {
+        "chain_consistency": "REJECT"
+      }
+    },
+    "REVERSED_EVENT_ORDER": {
+      "expected": {
+        "chain_authenticator": "ACCEPT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "DUPLICATE_EVENT_SEQUENCE": {
+      "expected": {
+        "chain_authenticator": "ACCEPT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "WRONG_PARENT_RECEIPT": {
+      "expected": {
+        "chain_consistency": "REJECT"
+      }
+    },
+    "WRONG_ANSWER_DIGEST": {
+      "expected": {
+        "chain_authenticator": "ACCEPT",
+        "registered_answer_consistency": "REJECT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "EXACT_CROSSED_ABSTRACT_COMPATIBLE": {
+      "expected": {
+        "exact_z2_event": "REJECT",
+        "abstract_z2_compatibility": "ACCEPT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "NATURAL_PACKAGE_TRANSPLANTED_TO_ALIAS": {
+      "expected": {
+        "exact_z2_event": "REJECT",
+        "exact_z3_event": "REJECT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "WRONG_STATE_ONTOLOGY": {
+      "expected": {
+        "abstract_z2_state": "REJECT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "WRONG_RECEIPT_DOMAIN": {
+      "expected": {
+        "exact_z2_event": "REJECT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "MUTATED_PRESENT_RECEIPT": {
+      "expected": {
+        "exact_z2_event": "REJECT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "WRONG_CONTEXT_BINDING": {
+      "expected": {
+        "exact_z2_event": "REJECT",
+        "exact_z3_event": "REJECT",
+        "chain_consistency": "REJECT"
+      }
+    },
+    "MISSING_EXACT_Z2": {
+      "expected": {
+        "exact_z2_event": "ABSTAIN",
+        "abstract_z2_state": "ABSTAIN",
+        "chain_consistency": "ABSTAIN"
+      }
+    },
+    "MISSING_ABSTRACT_Z2": {
+      "expected": {
+        "exact_z2_event": "ACCEPT",
+        "abstract_z2_state": "ABSTAIN",
+        "chain_consistency": "ABSTAIN"
+      }
+    },
+    "MISSING_CHAIN": {
+      "expected": {
+        "chain_authenticator": "ABSTAIN",
+        "chain_consistency": "ABSTAIN"
+      }
+    }
+  },
+  "attack_families": 18,
+  "attacks_per_base_package": 18,
+  "expected_attack_rows": 4608,
+  "summary_mutation_prohibited": true,
+  "concrete_verifier_inputs_required": true
+}

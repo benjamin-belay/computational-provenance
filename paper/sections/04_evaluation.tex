@@ -1,0 +1,58 @@
+\section{Evaluation}
+
+% claims: C08; sources: S10 S11
+We organise evaluation around five scientific questions. The primary unit for
+the integrated tests is the closure defined in Section~2: one matched
+natural/alias pair judged by an all-or-nothing endpoint. Generated outputs,
+positions, authority scores, receipt checks, and attack checks inside a closure
+are dependent measurements.
+
+\paragraph{Q1: Is the internal state causally operative?}
+% claims: C02 C03; sources: S03 S04
+We intervene on hard \ztwo{} while leaving the learned transition responsible
+for \zthree{}. Alias interventions must change \ztwo{} and \zthree{} while
+preserving the answer; non-alias controls must change the answer. Same-state,
+sham, wrong-state, and direct-\zthree{} families test target consumption and
+registered downstream behaviour. This is a prospective selected-model test,
+not evidence that the state emerged naturally or that the recipe is robust
+across seeds.
+
+\paragraph{Q2: Can exact and abstract evidence be authenticated?}
+% claims: C04 C05; sources: S05 S06
+Genuine exact, abstract, and chain receipts are evaluated together with frozen
+mutation, replay, crossing, omission, and context-substitution tests. The
+endpoint asks whether the trusted verifier distinguishes a precise event, a
+reusable state class, and the registered causal chain. It does not test a
+malicious issuer, compromised key, or public nonrepudiation.
+
+\paragraph{Q3: Can the carrier transmit a generic authority?}
+% claims: C06 C07; sources: S07 S08 S09
+Clean carrier-off calibration fixes the threshold and margin before a separate
+prospective test of 16 generic authorities. The generic test uses 512 closures
+and no receipts, isolating statistical carriage from state authentication. It
+tests the frozen operating point in this grammar, not channel capacity,
+imperceptibility, or robustness to editing.
+
+\paragraph{Q4: Does the integrated signal follow authenticated state?}
+% claims: C08 C09; sources: S10 S11 S12 S13
+The public integrated evaluation uses 128 closures. In each, natural and alias
+executions share the prompt, answer, surface payload, configuration, output
+indices, and indexed random draws; authenticated \ztwo{} and its registered
+downstream consequences switch as in Figure~\ref{fig:contrast}. A closure passes
+only if both sides satisfy computation fidelity; exact, abstract, and chain
+verification; parsing; intended-authority acceptance; carrier-off rejection;
+absence of wrong-authority confusion; and every frozen protocol-consistency
+attack. The comparison controls these listed alternatives within the trusted
+pipeline; it cannot rule out an arbitrary controller already trusted with the
+state label.
+
+\paragraph{Q5: Does the result survive public and protected evaluation?}
+% claims: C08 C10 C11; sources: S10 S11 S14 S15 S16 S17
+Public validation, protected qualification, and protected confirmation have
+separate populations and frozen roles. Gates are non-compensatory: a carrier
+success cannot offset a computation or attack failure. ``Held out'' means that
+public closures were disjoint from model training and released to integration
+only after calibration and generic validation were frozen; it does not mean
+independent models, grammars, or templates. Public and protected populations
+share the checkpoint, ontology, grammar, and controller but use distinct
+closure identities and keys. Their outcomes must not be pooled.

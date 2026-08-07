@@ -1,0 +1,55 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_s0.numeric_schedule.v1",
+  "probability_pipeline": [
+    "CURRENT_HISTORY_TO_FROZEN_MODEL_LOGITS",
+    "CONVERT_REGISTERED_CANDIDATE_LOGITS_TO_IEEE754_BINARY64",
+    "ADD_FROZEN_CARRIER_BIAS_IN_REGISTERED_CANDIDATE_ORDER",
+    "NO_TOP_K_OR_TOP_P_TRUNCATION",
+    "TORCH_FLOAT64_SOFTMAX_IN_REGISTERED_CANDIDATE_ORDER",
+    "BINARY64_CUMULATIVE_SUM_LEFT_TO_RIGHT",
+    "SELECT_FIRST_BIN_WITH_U_LE_CUMULATIVE"
+  ],
+  "candidate_order": "EXACT_ORDER_SUPPLIED_BY_FROZEN_GRAMMAR_NOT_LEXICAL_OR_GLOBAL_TOKEN_ID_ORDER",
+  "inverse_cdf": {
+    "interval_convention": "FIRST_BIN_INCLUDES_U_EQUAL_TO_ITS_UPPER_CDF_BOUNDARY",
+    "u_zero": "VALID_STATIC_BOUNDARY_FIXTURE_SELECT_FIRST_POSITIVE_BIN_BUT_NEVER_EMITTED_BY_PRF",
+    "exact_boundary": "SELECT_LOWER_INDEX_BIN",
+    "rounding_residual": "SELECT_FINAL_BIN_AND_RECORD_FINAL_BIN_FALLBACK",
+    "negative_probability": "REJECT",
+    "nonfinite_probability_or_logit": "REJECT",
+    "zero_total_probability": "REJECT",
+    "u_outside_closed_static_fixture_interval_0_1": "REJECT"
+  },
+  "draw_schedule": {
+    "total_model_steps": 49,
+    "order_steps": 1,
+    "fields": 4,
+    "operations_per_field": 12,
+    "formula": "1 + 4 * 12 = 49",
+    "model_steps": "0_TO_48_INCLUSIVE",
+    "subdraws_per_step": 1,
+    "subdraw_index": 0,
+    "branch_dependent_draw_consumption": "PROHIBITED",
+    "rejection_sampling": "PROHIBITED",
+    "result_dependent_resampling": "PROHIBITED",
+    "parser_repair_randomness": "PROHIBITED",
+    "tie_break_randomness": "PROHIBITED"
+  },
+  "none_and_termination": {
+    "NONE_is_optional_visible_suppression_token": true,
+    "NONE_is_appended_to_model_history": true,
+    "NONE_is_not_appended_to_public_tokens": true,
+    "model_advances_on_NONE": true,
+    "NONE_does_not_terminate_generation": true,
+    "EOS_is_not_a_candidate_in_the_49_step_schedule": true,
+    "all_49_uniforms_are_defined_and_consumed": true,
+    "generation_ends_after_model_step_48": true,
+    "eligible_positions_are_the_24_registered_group_choices": true
+  },
+  "production_reference_agreement": {
+    "same_uniform_bytes_required": true,
+    "same_selected_token_required": true,
+    "probability_vector_absolute_tolerance": 1e-15,
+    "full_49_step_trace_required": true
+  }
+}

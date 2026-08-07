@@ -1,0 +1,82 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_r0.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-R0",
+  "title": "MEMBERSHIP-PRESERVING PUBLIC ROLE MIGRATION",
+  "mode": "SEALED_CONTROLLER_ROOT_INHERITANCE_WITH_ZERO_NEW_RELEASE",
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-r0/CONFIG.json",
+    "protocol/csw-am-scb-m1-rng2-r0/MIGRATION_SPEC.json",
+    "tools/csw_am_scb_m1_rng2_r0.py",
+    "tools/csw_am_scb_m1_rng2_r0_reference.py",
+    "tests/test_csw_am_scb_m1_rng2_r0.py"
+  ],
+  "lineage": {
+    "rng2_s0_audit_path": "artifacts/dev_only/csw-am-scb-m1-rng2-s0/MAIN_AUDIT.json",
+    "rng2_s0_audit_sha256": "435a784227891e2242bbe7ec2789b2e815ed65d075f532c0ed4190434186e476",
+    "rng2_s0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-s0/TERMINAL.json",
+    "rng2_s0_terminal_sha256": "7da1a56a9112cee3dd65edd55c913928a200646c45d765e4113d1b03048541c5",
+    "rng2_s0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_S0_PROTOCOL_READY_FOR_ROLE_MIGRATION",
+    "agg_r0_config_path": "protocol/csw-am-scb-m1-car-agg-r0/CONFIG.json",
+    "agg_r0_config_sha256": "5ee15eda233a48dd7698dc760d2cff65abafd394494b0f196dcf9c250dbb4f46",
+    "agg_r0_audit_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/MAIN_AUDIT.json",
+    "agg_r0_audit_sha256": "f8c07311531f9aad31ad493c104a47d3c27cd035bcb8e54599a0d7e0a1ef6bcb",
+    "old_role_commitments_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/ROLE_COMMITMENTS.json",
+    "old_role_commitments_sha256": "1b8a4f57816806074eaa0df431ce4ebe4a3bd4ac21f1c949fe1980b16d2eca62",
+    "old_allocation_manifest_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/ALLOCATION_MANIFEST.json",
+    "old_allocation_manifest_sha256": "4559cfe09a4640da8a415ec41f64db6486811d938bc7a426101877784b7fc784",
+    "old_full_allocation_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/FULL_ALLOCATION.sealed",
+    "old_full_allocation_sha256": "4a9bd2b145443ad1a574da2e2e4bd81306d21e7e381a4fb4c02ce0797ff0afd3",
+    "development_release_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_RELEASE.json",
+    "development_release_sha256": "1ddb1b59266d0f37e5eea1c0f693f1d7d7d6d989c3617d7fcfb5cde7f7cf5ac8",
+    "development_closures_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_CLOSURES.jsonl",
+    "development_closures_sha256": "89e84d57ccd115d0489f8a3b1cb78d3e5f5bca5df4a9ae01cb3c66e77d737c18",
+    "development_rows_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_ROWS.jsonl",
+    "development_rows_sha256": "a93b30d690d3e09e4cd4049bada835054f5e72ecdaf402f72392d6b2d2fe45d1",
+    "scb_protected_boundary_audit_path": "artifacts/dev_only/csw-am-scb-r0/MAIN_AUDIT.json",
+    "scb_protected_boundary_audit_sha256": "a6169f9d39f03f5ca861f23c9f19de9aecb224d617249f832dbbc58b5decd8b0"
+  },
+  "controller": {
+    "default_secret_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-car-agg-r0/CONTROLLER_SECRET.json",
+    "old_aad": "EXP33A|SCB-M1|CAR-AGG-R0|FULL-ALLOCATION|V1",
+    "attestation_key_domain": "EXP33A|SCB-M1|RNG2-R0|CONTROLLER-ATTESTATION-KEY|V1",
+    "attestation_domain": "EXP33A|SCB-M1|RNG2-R0|CONTROLLER-ATTESTATION|V1",
+    "migration_binding_domain": "EXP33A|SCB-M1|RNG2-R0|ROLE-MIGRATION-BINDING|V1",
+    "full_binding_domain": "EXP33A|SCB-M1|RNG2-R0|FULL-MIGRATION-BINDING|V1"
+  },
+  "accounting": {
+    "public_population_closures": 1920,
+    "development_closures": 256,
+    "calibration_closures": 512,
+    "validation_closures": 512,
+    "reserve_closures": 640,
+    "historical_excluded_CAR_D0_closures": 128,
+    "previously_executed_development_fixture_closures": 1,
+    "new_identity_releases": 0,
+    "model_forwards": 0,
+    "stochastic_outputs": 0,
+    "receipts": 0,
+    "detector_scores": 0,
+    "threshold_derivations": 0,
+    "protected_access": 0
+  },
+  "authorizations": {
+    "RNG2_D0_after_ready": true,
+    "RNG2_CAL1": false,
+    "RNG2_V1": false,
+    "RNG2_INT_D0": false,
+    "RNG2_INT_V1": false,
+    "RNG2_Q1": false,
+    "RNG2_C1": false,
+    "protected_release": false,
+    "automatic_successor": false
+  },
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_RNG2_R0_PUBLIC_ROLE_MIGRATION_READY",
+    "old_allocation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_R0_OLD_ALLOCATION_INVALID",
+    "membership_changed": "MAIN_CSW_AM_SCB_M1_RNG2_R0_MEMBERSHIP_CHANGED",
+    "exposure_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_R0_EXPOSURE_STATUS_INVALID",
+    "identity_leak": "MAIN_CSW_AM_SCB_M1_RNG2_R0_IDENTITY_LEAK",
+    "protected_boundary_failed": "MAIN_CSW_AM_SCB_M1_RNG2_R0_PROTECTED_BOUNDARY_FAILED",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_R0_IMPLEMENTATION_INVALID"
+  }
+}

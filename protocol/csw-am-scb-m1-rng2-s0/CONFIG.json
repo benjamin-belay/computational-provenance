@@ -1,0 +1,59 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_s0.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-S0",
+  "title": "POSITION-INDEXED STOCHASTIC CHANNEL STATIC PROTOCOL",
+  "mode": "STATIC_SAMPLER_NUMERICS_VALIDATION_AND_ALLOCATION_PROTOCOL",
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-s0/CONFIG.json",
+    "protocol/csw-am-scb-m1-rng2-s0/SAMPLER_PROTOCOL.json",
+    "protocol/csw-am-scb-m1-rng2-s0/NUMERIC_AND_SCHEDULE_PROTOCOL.json",
+    "protocol/csw-am-scb-m1-rng2-s0/VALIDATION_PROTOCOL.json",
+    "protocol/csw-am-scb-m1-rng2-s0/ALLOCATION_PROTOCOL.json",
+    "tools/csw_am_scb_m1_rng2_s0.py",
+    "tools/csw_am_scb_m1_rng2_s0_reference.py",
+    "tests/test_csw_am_scb_m1_rng2_s0.py"
+  ],
+  "lineage": {
+    "closed_agg_d0_commit": "63ff7c78232c9f56d9dcc2e967c22f6c3da6a14f",
+    "closed_agg_d0_audit_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-d0-closure/MAIN_AUDIT.json",
+    "closed_agg_d0_audit_sha256": "a8bfc31ae18d1c458c6023ba0e7a104a10656f27533dc780a25da1c40296e950",
+    "closed_agg_d0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-d0-closure/TERMINAL.json",
+    "closed_agg_d0_terminal_sha256": "06f0ba573a5e6dd0c050475a00b9114eb46ba03ebe22f6e881b7fde24f268c26",
+    "closed_agg_d0_terminal": "MAIN_CSW_AM_SCB_M1_CAR_AGG_D0_CLOSURE_CONFIRMED",
+    "rng2_boundary_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-d0-closure/RNG2_SUCCESSOR_BOUNDARY.json",
+    "rng2_boundary_sha256": "cab6ddcc8553f75304d71688b7b150b828bafa55878a4b01e6fd916ee0adf6e6",
+    "resource_status_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-d0-closure/RESOURCE_STATUS.json",
+    "resource_status_sha256": "544c3005ec87f855d5b74810c639f66a06b70d8f285f3bd7257e7ac424b0d744",
+    "frozen_a0_realiser_path": "tools/csw_a0_stochastic_channel.py",
+    "frozen_a0_realiser_sha256": "df467bb4d91353637fa6f5fff0ce785d65191218587e5525868a46e1788cffd5"
+  },
+  "static_accounting": {
+    "new_model_generations": 0,
+    "new_stochastic_outputs": 0,
+    "new_detector_scores": 0,
+    "sealed_identity_releases": 0,
+    "protected_releases": 0,
+    "role_migrations": 0
+  },
+  "authorizations": {
+    "RNG2_R0_after_ready": true,
+    "RNG2_D0": false,
+    "RNG2_CAL1": false,
+    "RNG2_V1": false,
+    "RNG2_INT_D0": false,
+    "RNG2_INT_V1": false,
+    "RNG2_Q1": false,
+    "RNG2_C1": false,
+    "protected_release": false,
+    "automatic_successor": false
+  },
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_RNG2_S0_PROTOCOL_READY_FOR_ROLE_MIGRATION",
+    "sampler_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_S0_SAMPLER_PROTOCOL_INVALID",
+    "numeric_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_S0_NUMERIC_PROTOCOL_INVALID",
+    "schedule_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_S0_DRAW_SCHEDULE_INVALID",
+    "capacity_insufficient": "MAIN_CSW_AM_SCB_M1_RNG2_S0_PUBLIC_CAPACITY_INSUFFICIENT",
+    "boundary_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_S0_SEALED_BOUNDARY_INVALID",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_S0_IMPLEMENTATION_INVALID"
+  }
+}

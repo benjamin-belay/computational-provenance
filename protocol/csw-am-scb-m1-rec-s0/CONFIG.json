@@ -1,0 +1,75 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rec_s0.config.v1",
+  "identity": "CSW-AM-SCB-M1-REC-S0",
+  "title": "EXACT, ABSTRACT, AND CAUSAL-CHAIN CONSISTENCY RECEIPT PROTOCOL",
+  "mode": "STATIC_PROTOCOL_AND_SEALED_ALLOCATION",
+  "claim_scope": "SELECTED_MODEL_ENGINEERED_HARD_BOTTLENECK_RECEIPT_PROTOCOL",
+  "source_file_paths": [
+    "protocol/csw-am-scb-m1-rec-s0/CONFIG.json",
+    "protocol/csw-am-scb-m1-rec-s0/RECEIPT_PROTOCOL.json",
+    "protocol/csw-am-scb-m1-rec-s0/SPLIT_SPEC.json",
+    "protocol/csw-am-scb-m1-rec-s0/THREAT_MODEL.json",
+    "tools/csw_am_scb_m1_rec_s0.py",
+    "tools/csw_am_scb_m1_rec_s0_reference.py",
+    "tests/test_csw_am_scb_m1_rec_s0.py"
+  ],
+  "lineage": {
+    "M1_main_terminal": "MAIN_CSW_AM_SCB_M1_CAUSAL_TRANSPORT_CONFIRMED",
+    "M1_main_audit_commit": "eef1098bbf318d61b998bb37633c48b728dd2061",
+    "M1_c1_evidence_commit": "bac6103af255694452ddd3fb79207498ae275ddf",
+    "M1_main_audit_path": "artifacts/dev_only/csw-am-scb-m1/MAIN_AUDIT.json",
+    "M1_main_audit_sha256": "c27f641b624ee1066a95f150b8047cdf05ed4cb370e3e8a7d67a081d214ac1f4",
+    "model_1_checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+    "T1_three_seed_result": "VALID_HETEROGENEITY_2_OF_3",
+    "T1_result_superseded": false,
+    "selected_model_only": true,
+    "engineered_mandatory_bottleneck": true
+  },
+  "reserve_binding": {
+    "controller_allocation_argument": true,
+    "controller_manifest_argument": true,
+    "R0_full_allocation_sha256": "1a46ea1b07d778e3dc3a0ce22fe8e59a4f8a809f192b8613a2d7c953fe25f0c8",
+    "R0_sealed_manifest_sha256": "73050d878bf848ab041482d613c606d304010ae88a4553984429b48b462e2e80",
+    "source_role": "SCB_UNTOUCHED_RESERVE",
+    "source_closures": 800,
+    "source_oriented_rows": 1600,
+    "source_merkle_root": "3469186df61d0b7a60de7b17f870763b3eb5c4413c21de49ec810928c1686f33"
+  },
+  "public_development": {
+    "uses_already_consumed_public_closures": true,
+    "consumes_reserve_closures": 0,
+    "receipt_iteration_allowed_only_before_REC_D0_freeze": true
+  },
+  "authentication": {
+    "primitive": "HMAC-SHA256",
+    "master_key_bytes": 32,
+    "key_commitment": "SHA256(domain || 0x00 || master_key)",
+    "domain_derivation": "HMAC-SHA256(master_key, canonical([protocol_id, purpose, version]))",
+    "key_commitment_before_execution": true,
+    "raw_evidence_commitment_before_key_reveal": true,
+    "key_reveal_after_raw_evidence_commitment": true,
+    "post_reveal_receipts_excluded_by_raw_evidence_digest": true
+  },
+  "zero_work": {
+    "model_loads": 0,
+    "neural_forwards": 0,
+    "interventions": 0,
+    "scientific_receipts": 0,
+    "protected_role_releases": 0,
+    "carrier_operations": 0
+  },
+  "terminals": {
+    "ready": "CSW_AM_SCB_M1_REC_S0_PROTOCOL_AND_ALLOCATION_READY",
+    "protocol_invalid": "CSW_AM_SCB_M1_REC_S0_PROTOCOL_INVALID",
+    "allocation_invalid": "CSW_AM_SCB_M1_REC_S0_ALLOCATION_INVALID",
+    "implementation_invalid": "CSW_AM_SCB_M1_REC_S0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "REC_D0": true,
+    "REC_C1": false,
+    "carrier": false,
+    "model_2_transfer": false,
+    "model_3_transfer": false,
+    "automatic_successor": false
+  }
+}

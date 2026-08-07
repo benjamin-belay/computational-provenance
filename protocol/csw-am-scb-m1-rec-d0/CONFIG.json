@@ -1,0 +1,108 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rec_d0.config.v1",
+  "identity": "CSW-AM-SCB-M1-REC-D0",
+  "title": "PUBLIC RECEIPT IMPLEMENTATION AND ATTACK DEVELOPMENT",
+  "mode": "DEVELOPMENT_WITH_FINAL_FROZEN_LIFECYCLE_REHEARSAL",
+  "claim_scope": "IMPLEMENTATION_READINESS_NOT_SCIENTIFIC_RECEIPT_CONFIRMATION",
+  "source_file_paths": [
+    "protocol/csw-am-scb-m1-rec-d0/CONFIG.json",
+    "protocol/csw-am-scb-m1-rec-d0/ATTACK_MANIFEST.json",
+    "tools/csw_am_scb_m1_rec_d0.py",
+    "tools/csw_am_scb_m1_rec_d0_reference.py",
+    "tests/test_csw_am_scb_m1_rec_d0.py"
+  ],
+  "lineage": {
+    "REC_S0_main_audit_commit": "d2afa6aa0f5645626b21c9dd07c763470fb64644",
+    "REC_S0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rec-s0/MAIN_AUDIT.json",
+    "REC_S0_main_audit_sha256": "d09651dbf4a9d0a62504163de98b2ffa3e5021cc8f74da24ed3b76a0a39baa34",
+    "REC_S0_main_terminal": "MAIN_CSW_AM_SCB_M1_REC_S0_PROTOCOL_AND_ALLOCATION_READY",
+    "REC_S0_source_commit": "1ca0c53b12b9535c37b2d7c3835920ce94608d5f",
+    "M1_source_commit": "827784f478d9a0ba9cb0172c96b064bbcec72df1",
+    "M1_checkpoint_path": "artifacts/dev_only/csw-am-scb-t1/public/checkpoints/MODEL_1_STEP_3000.pt",
+    "M1_checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+    "T1_three_seed_result": "VALID_HETEROGENEITY_2_OF_3",
+    "selected_model_only": true,
+    "engineered_mandatory_bottleneck": true
+  },
+  "public_population": {
+    "path": "artifacts/dev_only/csw-am-t1-d2/authoritative/correction-1/public-allocation/D2_FRESH_EVALUATION_ROWS.jsonl",
+    "sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767",
+    "closures": 2048,
+    "oriented_rows": 4096,
+    "roles_per_row": [
+      "NATURAL",
+      "ALIAS_Z2"
+    ],
+    "execution_packages": 8192,
+    "receipts_per_package": 5,
+    "receipt_envelopes": 40960,
+    "attack_base_packages": 256,
+    "attack_base_natural": 128,
+    "attack_base_alias": 128
+  },
+  "alias_rule": {
+    "offset_mod_16": 8,
+    "target_derived_from": "REGISTERED_NATURAL_Z2",
+    "answer_relation": "UNCHANGED"
+  },
+  "key_lifecycle": {
+    "master_key_bytes": 32,
+    "commitment_domain": "EXP33A|CSW-AM-SCB-M1-REC-D0|MASTER-KEY|V1",
+    "run_id_domain": "EXP33A|CSW-AM-SCB-M1-REC-D0|RUN-ID|V1",
+    "nonce_domain": "EXP33A|CSW-AM-SCB-M1-REC-D0|NONCE|V1",
+    "source_freeze_before_key_commitment": true,
+    "key_commitment_before_execution": true,
+    "raw_evidence_commit_before_reveal": true,
+    "reveal_commit_before_evaluation": true,
+    "retries": 0,
+    "replacement_rows": 0
+  },
+  "structured_decisions": [
+    "exact_z2_event",
+    "abstract_z2_state",
+    "exact_z3_event",
+    "abstract_z3_state",
+    "chain_authenticator",
+    "registered_transition_consistency",
+    "registered_answer_consistency",
+    "chain_consistency"
+  ],
+  "readiness_gates": {
+    "execution_package_completeness": 1,
+    "receipt_envelope_completeness": 1,
+    "unmodified_exact_authenticity": 1,
+    "unmodified_abstract_linkage": 1,
+    "unmodified_chain_authenticator": 1,
+    "attack_expected_verdict_accuracy": 1,
+    "production_reference_exact_agreement": 1,
+    "canonical_roundtrip_accuracy": 1,
+    "complete_lifecycle": 1
+  },
+  "semantic_interpretation": {
+    "receipt_authenticity_requires_registered_model_correctness": false,
+    "registered_transition_consistency_scored_separately": true,
+    "registered_answer_consistency_scored_separately": true,
+    "incorrect_computation_must_remain_authentically_receiptable": true
+  },
+  "zero_protected_work": {
+    "REC_qualification_releases": 0,
+    "REC_confirmation_releases": 0,
+    "carrier_qualification_releases": 0,
+    "carrier_confirmation_releases": 0,
+    "remaining_reserve_releases": 0,
+    "model_2_operations": 0,
+    "model_3_operations": 0,
+    "carrier_operations": 0
+  },
+  "terminals": {
+    "ready": "CSW_AM_SCB_M1_REC_D0_IMPLEMENTATION_READY",
+    "failed": "CSW_AM_SCB_M1_REC_D0_IMPLEMENTATION_FAILED",
+    "invalid": "CSW_AM_SCB_M1_REC_D0_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+  },
+  "authorizations": {
+    "REC_excluded_qualification_after_ready": true,
+    "REC_sealed_confirmation": false,
+    "carrier": false,
+    "automatic_successor": false
+  }
+}

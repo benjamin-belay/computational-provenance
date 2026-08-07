@@ -1,0 +1,18 @@
+\begin{table}[t]
+% claims: C04 C05; sources: S05 S06 S13
+\caption{Exact-event evidence is not abstract-state or carrier evidence.}
+\label{tab:provenance}
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}Yccc@{}}
+\toprule
+Candidate evidence & Exact & Abstract & Carrier claim \\
+\midrule
+Correct execution and state & \Accept & \Accept & compatible \\
+Different execution, same state & \Reject & \Accept & compatible \\
+Different registered state & \Reject & \Reject & incompatible \\
+Required receipt missing & \Abstain & \Abstain & none \\
+Present but invalid receipt & \Reject & \Reject & none \\
+\bottomrule
+\end{tabularx}
+\end{table}

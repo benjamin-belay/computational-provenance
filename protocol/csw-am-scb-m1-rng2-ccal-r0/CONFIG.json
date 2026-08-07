@@ -1,0 +1,77 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_ccal_r0.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-CCAL-R0",
+  "title": "CLEAN-ROOM CALIBRATION RESERVE ALLOCATION",
+  "mode": "ONE_SHOT_SEALED_RESERVE_SPLIT_ZERO_IDENTITY_RELEASE",
+  "lineage": {
+    "CAL1_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rng2-cal1/MAIN_AUDIT.json",
+    "CAL1_main_audit_sha256": "6dfad9ddcf4082696f89f973d0433129ea39c989f8c03c71431d830b93950fcd",
+    "CAL1_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-cal1/TERMINAL.json",
+    "CAL1_terminal_sha256": "f455f70fbe0434a7146bbf06f38d0eb564f13849e9dbeb1d3190c4c14c0245d6",
+    "CAL1_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_CAL1_COMMITMENT_CHRONOLOGY_INVALID",
+    "RNG2_role_bindings_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/ROLE_MIGRATION_BINDINGS.json",
+    "RNG2_role_bindings_sha256": "7833e750aa4276e2ea5a6ce60c2a4bb58f8c704ea33539864e2994aa672d1430",
+    "RNG2_exposure_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/EXPOSURE_STATUS.json",
+    "RNG2_exposure_sha256": "bc7d7500273b5e1ebe4681b643a1be3fd8fad0f68b30df82cd8ff9ad7ad2bc57",
+    "old_config_path": "protocol/csw-am-scb-m1-car-agg-r0/CONFIG.json",
+    "old_config_sha256": "5ee15eda233a48dd7698dc760d2cff65abafd394494b0f196dcf9c250dbb4f46",
+    "old_full_allocation_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/FULL_ALLOCATION.sealed",
+    "old_full_allocation_sha256": "4a9bd2b145443ad1a574da2e2e4bd81306d21e7e381a4fb4c02ce0797ff0afd3",
+    "old_role_commitments_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/ROLE_COMMITMENTS.json",
+    "old_role_commitments_sha256": "1b8a4f57816806074eaa0df431ce4ebe4a3bd4ac21f1c949fe1980b16d2eca62",
+    "old_controller_secret_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-car-agg-r0/CONTROLLER_SECRET.json",
+    "old_aad": "EXP33A|SCB-M1|CAR-AGG-R0|FULL-ALLOCATION|V1"
+  },
+  "new_controller": {
+    "default_secret_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-ccal-r0/CONTROLLER_SECRET.json",
+    "seed_commitment_domain": "EXP33A|SCB-M1|RNG2-CCAL-R0|SEED-COMMITMENT|V1",
+    "allocation_domain": "EXP33A|SCB-M1|RNG2-CCAL-R0|RESERVE-SPLIT|V1",
+    "role_leaf_domain": "EXP33A|SCB-M1|RNG2-CCAL-R0|ROLE-LEAF|V1",
+    "full_root_domain": "EXP33A|SCB-M1|RNG2-CCAL-R0|FULL-ROOT|V1",
+    "sealed_aad": "EXP33A|SCB-M1|RNG2-CCAL-R0|SEALED-ALLOCATION|V1"
+  },
+  "allocation": {
+    "source_role": "RNG2_PUBLIC_RESERVE",
+    "source_old_role": "PUBLIC_RESERVE",
+    "source_closures": 640,
+    "clean_calibration_role": "RNG2_CLEAN_CALIBRATION",
+    "clean_calibration_closures": 512,
+    "remaining_reserve_role": "RNG2_REMAINING_PUBLIC_RESERVE",
+    "remaining_reserve_closures": 128,
+    "allocation_unit": "COMPLETE_DEPENDENCY_CLOSURE",
+    "rule": "HMAC_SHA256_SEED_RANK_ASCENDING_FIRST_512",
+    "manual_swap": false,
+    "redraw": false,
+    "identity_release": false
+  },
+  "unchanged_roles": {
+    "RNG2_VALIDATION": {
+      "closures": 512,
+      "membership_root": "cf121cb23d0d2fc85aaa01c2ec30cb9617efe4e748789dd2a6726d7c18ef11e1",
+      "exposure": "SEALED_UNSEEN",
+      "authorized": false
+    }
+  },
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-ccal-r0/CONFIG.json",
+    "tools/csw_am_scb_m1_rng2_ccal_r0.py",
+    "tools/csw_am_scb_m1_rng2_ccal_r0_reference.py",
+    "tests/test_csw_am_scb_m1_rng2_ccal_r0.py"
+  ],
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_R0_SEALED_RESERVE_SPLIT_READY",
+    "lineage_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_R0_LINEAGE_INVALID",
+    "commitment_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_R0_COMMITMENT_INVALID",
+    "allocation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_R0_ALLOCATION_INVALID",
+    "identity_leak": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_R0_IDENTITY_LEAK",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_R0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "public_preflight_after_ready": true,
+    "clean_calibration_release": false,
+    "validation_release": false,
+    "remaining_reserve_release": false,
+    "protected_release": false,
+    "automatic_successor": false
+  }
+}

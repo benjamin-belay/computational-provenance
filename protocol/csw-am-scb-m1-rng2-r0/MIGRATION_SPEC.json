@@ -1,0 +1,76 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_r0.migration_spec.v1",
+  "method": "ROLE_LABEL_MIGRATION_WITH_INHERITED_MEMBERSHIP_ROOTS",
+  "new_allocation_seed": false,
+  "new_random_allocation": false,
+  "membership_root_recomputation_for_new_roles": false,
+  "old_roots_remain_immutable_membership_commitments": true,
+  "migrations": [
+    {
+      "old_role": "AGG_DEVELOPMENT",
+      "new_role": "RNG2_DEVELOPMENT",
+      "closures": 256,
+      "rows": 512,
+      "exposure": "PUBLICLY_RELEASED",
+      "prior_execution": "ONE_AGG_D0_DIAGNOSTIC_FIXTURE",
+      "new_release": false
+    },
+    {
+      "old_role": "AGG_CALIBRATION",
+      "new_role": "RNG2_CALIBRATION",
+      "closures": 512,
+      "rows": 1024,
+      "exposure": "SEALED_UNSEEN",
+      "prior_execution": "NONE",
+      "new_release": false
+    },
+    {
+      "old_role": "AGG_VALIDATION",
+      "new_role": "RNG2_VALIDATION",
+      "closures": 512,
+      "rows": 1024,
+      "exposure": "SEALED_UNSEEN",
+      "prior_execution": "NONE",
+      "new_release": false
+    },
+    {
+      "old_role": "PUBLIC_RESERVE",
+      "new_role": "RNG2_PUBLIC_RESERVE",
+      "closures": 640,
+      "rows": 1280,
+      "exposure": "SEALED_UNSEEN",
+      "prior_execution": "NONE",
+      "new_release": false
+    }
+  ],
+  "retirements": [
+    "AGG_CALIBRATION_SCIENTIFIC_AUTHORITY_RETIRED_UNUSED",
+    "AGG_VALIDATION_SCIENTIFIC_AUTHORITY_RETIRED_UNUSED",
+    "AGG_PUBLIC_RESERVE_AUTHORITY_RETIRED_UNUSED",
+    "AGG_DEVELOPMENT_AUTHORITY_RETIRED_AFTER_PUBLIC_RELEASE_AND_ONE_DIAGNOSTIC_FIXTURE"
+  ],
+  "public_equality_claim": "NEW_ROLE_MEMBERSHIP_IS_DEFINED_BY_DIRECT_REFERENCE_TO_THE_UNCHANGED_OLD_ROLE_ROOT",
+  "controller_checks": [
+    "DECRYPT_AND_AUTHENTICATE_OLD_FULL_ALLOCATION",
+    "RECOMPUTE_ALL_FOUR_OLD_ROLE_ROOTS",
+    "VERIFY_EXACT_1920_CLOSURE_PARTITION",
+    "VERIFY_NO_DUPLICATE_OR_OMITTED_CLOSURES",
+    "VERIFY_128_HISTORICAL_CAR_D0_CLOSURES_EXCLUDED",
+    "VERIFY_DEVELOPMENT_PUBLIC_SET_MATCHES_OLD_DEVELOPMENT_ROLE",
+    "VERIFY_FUTURE_ROLE_IDENTITIES_ABSENT_FROM_PUBLIC_MIGRATION_OUTPUTS",
+    "VERIFY_PROTECTED_BOUNDARY_FROM_PREDECESSOR_AUDIT"
+  ],
+  "prohibitions": [
+    "NO_REDRAW",
+    "NO_NEW_SEED",
+    "NO_MANUAL_SWAP",
+    "NO_NEW_IDENTITY_RELEASE",
+    "NO_ARBITRARY_MEMBERSHIP_QUERY",
+    "NO_CALIBRATION_ACCESS",
+    "NO_VALIDATION_ACCESS",
+    "NO_RESERVE_ACCESS",
+    "NO_PROTECTED_ACCESS",
+    "NO_RNG2_GENERATION",
+    "NO_RECEIPT_OR_DETECTOR_WORK"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_d0_closure.spec.v1",
+  "identity": "CSW-AM-SCB-M1-CAR-D0-CLOSURE",
+  "title": "UNCHANGED-A0 RECEIPT-BOUND CARRIER CLOSURE AND PUBLIC FAILURE DIAGNOSTICS",
+  "mode": "READ_ONLY_PROGRAMME_CONSOLIDATION",
+  "source_bindings": {
+    "D0_main_audit_commit": "ef7cfc3a3d4483a59ccda49ec343085a3f574340",
+    "D0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/MAIN_AUDIT.json",
+    "D0_main_audit_sha256": "a52160910a2bbd74f07ab7817d88a58c27313742f1bb5259be57877be0337432",
+    "D0_scientific_terminal": "CSW_AM_SCB_M1_CAR_D0_PUBLIC_OPERATING_POINT_FAILED",
+    "D0_main_verdict": "MAIN_CSW_AM_SCB_M1_CAR_D0_PUBLIC_OPERATING_POINT_FAILED_CONFIRMED",
+    "D0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/TERMINAL.json",
+    "D0_terminal_sha256": "74d131cb60a32a4ebeec1b5799fa8f5abd84dc2aec8abed13e3840b2b6f50fbc",
+    "production_result_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/production/PRODUCTION_RESULT.json",
+    "production_result_sha256": "5df0801fc2b93f0cbd498f2519451f267df5ce6e36eab692b7e2743ff4a9aebf",
+    "public_rows_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/raw/PUBLIC_ROWS.jsonl",
+    "public_rows_sha256": "51e3a7463185ea5a8e3051f84721b83578468d5a4c59064b761d444b0e878aba",
+    "execution_rows_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/raw/EXECUTION_ROWS.jsonl",
+    "execution_rows_sha256": "6a3c840443a7883791d1973d5a5abe39c0dceeb6a92dc07b53429229df45dba5",
+    "raw_outputs_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/raw/OUTPUT_ROWS.jsonl",
+    "raw_outputs_sha256": "4ec1706124b16f6f779a398ecf356eb30f0e6cca16cf72d73c0d95e2d2d5c91d",
+    "output_summaries_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/production/OUTPUT_SUMMARIES.jsonl",
+    "output_summaries_sha256": "e50cdb7c7ee7029775afc914cacf19b1bf2fab0e28e38a457963ab9e4c423136"
+  },
+  "frozen_side_success_rule": {
+    "state_outputs_per_side": 4,
+    "minimum_matching_accepts": 3,
+    "maximum_wrong_authority_accepts_across_side": 0
+  },
+  "required_diagnostics": [
+    "BOTH_SIDES_PASS",
+    "NATURAL_ONLY_PASS",
+    "ALIAS_ONLY_PASS",
+    "NEITHER_SIDE_PASS",
+    "NATURAL_Z2_CATEGORY",
+    "ALIAS_PAIR",
+    "TEMPLATE",
+    "ANSWER",
+    "ELIGIBLE_POSITION_COUNT",
+    "MATCHING_MARGIN",
+    "MAXIMUM_WRONG_STATE_SCORE",
+    "MATCHING_OUTPUT_PASS_COUNT",
+    "REGISTERED_STATE_AND_ANSWER_FIDELITY",
+    "PAIRED_SIDE_DEPENDENCE"
+  ],
+  "interpretation_boundary": {
+    "integration_valid": true,
+    "aggregate_state_signal_exists": true,
+    "closure_pair_reliability_sufficient": false,
+    "implementation_failure": false,
+    "total_carrier_negative": false,
+    "output_side_provenance_established": false
+  },
+  "prohibitions": {
+    "alter_D0_terminal": true,
+    "lower_pair_gate": true,
+    "rerun_with_new_key": true,
+    "post_hoc_output_pooling": true,
+    "release_CAR_Q1": true,
+    "release_CAR_C1": true,
+    "automatic_successor": true
+  },
+  "future_programme_boundary": {
+    "separate_authorization_required": true,
+    "maximum_candidate_operating_points": 3,
+    "one_capacity_axis_only": true,
+    "D0_data_diagnostic_only": true,
+    "selection_requires_separate_public_development_population": true,
+    "pair_gate_retained": 0.75,
+    "false_positive_gates_retained": true,
+    "registered_natural_and_alias_fidelity_gate_required": true,
+    "protected_identities_remain_sealed": true
+  },
+  "closure_terminal": "MAIN_CSW_AM_SCB_M1_CAR_D0_CLOSURE_CONFIRMED"
+}

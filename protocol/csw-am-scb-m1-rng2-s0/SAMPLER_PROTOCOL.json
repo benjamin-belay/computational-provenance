@@ -1,0 +1,58 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_s0.sampler_protocol.v1",
+  "identity": "RNG2_POSITION_INDEXED_HMAC_SHA256_MIDPOINT52_V1",
+  "scientific_question": "Can a position-indexed sampler preserve the registered history-conditioned categorical distribution while pairing the primitive uniform across natural and alias histories?",
+  "prf": {
+    "algorithm": "HMAC-SHA256",
+    "key_bytes": 32,
+    "domain_utf8": "EXP33A|SCB-M1|RNG2|POSITION-UNIFORM|V1",
+    "preimage": "UTF8(domain) || 0x00 || CANONICAL_JSON(index)",
+    "digest_bits_used": "FIRST_52_MOST_SIGNIFICANT_BITS",
+    "uniform_conversion": "(UINT52 + 0.5) / 2^52_IN_IEEE754_BINARY64",
+    "uniform_range": "OPEN_INTERVAL_0_1"
+  },
+  "canonical_index": {
+    "exact_field_order_under_canonical_json": [
+      "closure_id",
+      "model_step",
+      "output_index",
+      "pairing_context_id",
+      "protocol_version",
+      "sampler_domain",
+      "subdraw_index"
+    ],
+    "fields": {
+      "protocol_version": "RNG2_V1",
+      "sampler_domain": "GENERIC_STOCHASTIC_CHANNEL",
+      "pairing_context_id": "64_LOWERCASE_HEX_SHARED_BY_PAIRED_EXECUTIONS",
+      "closure_id": "64_LOWERCASE_HEX",
+      "output_index": "UINT32_0_TO_7",
+      "model_step": "UINT8_0_TO_48",
+      "subdraw_index": "UINT8_FIXED_0"
+    },
+    "prohibited_fields": [
+      "natural_or_alias_role",
+      "intervention_role",
+      "z2",
+      "z3",
+      "answer",
+      "prompt_digest",
+      "generated_history",
+      "receipt_id",
+      "receipt_bytes",
+      "exact_execution_id",
+      "exact_run_id"
+    ]
+  },
+  "pairing": {
+    "same_pairing_context_closure_output_step_subdraw_implies_same_uniform": true,
+    "pairing_context_is_distinct_from_exact_run_and_execution_identity": true,
+    "different_pairing_contexts_are_domain_separated": true,
+    "history_may_change_probabilities_but_never_the_uniform": true
+  },
+  "autoregression": {
+    "probability_distribution_depends_on_current_generated_history": true,
+    "token_choice_is_not_precomputed": true,
+    "only_the_primitive_uniform_is_history_independent": true
+  }
+}

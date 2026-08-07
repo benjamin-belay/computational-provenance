@@ -1,0 +1,18 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_s0.public_role_binding.v1",
+  "source_protocol": "CSW-AM-SCB-M1-RNG2-CCAL-R0",
+  "source_role": "RNG2_REMAINING_PUBLIC_RESERVE",
+  "target_protocol": "CSW-AM-SCB-M1-RNG2-INT",
+  "target_role": "RNG2_INT_VALIDATION",
+  "closures": 128,
+  "oriented_rows": 256,
+  "source_membership_root": "7c59bc926bf0cae1ae1fd78c2190c93fb37a0f4eb6a641cc1ee466dbb2d8346b",
+  "target_membership_root": "7c59bc926bf0cae1ae1fd78c2190c93fb37a0f4eb6a641cc1ee466dbb2d8346b",
+  "membership_preserved": true,
+  "redraw": false,
+  "manual_swap": false,
+  "identity_release": 0,
+  "exposure_before": "SEALED_UNSEEN",
+  "exposure_after_S0": "SEALED_UNSEEN",
+  "INT_V1_release_authorized": false
+}

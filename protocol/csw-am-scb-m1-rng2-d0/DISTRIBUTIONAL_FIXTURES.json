@@ -1,0 +1,48 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_d0.distributional_fixtures.v1",
+  "contexts_per_fixture": 262144,
+  "fixtures": [
+    {
+      "id": "TWO_CLASS_UNIFORM",
+      "probabilities": [0.5, 0.5]
+    },
+    {
+      "id": "EIGHT_CLASS_UNIFORM",
+      "probabilities": [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125]
+    },
+    {
+      "id": "HIGHLY_CONCENTRATED",
+      "probabilities": [0.99, 0.005, 0.005]
+    },
+    {
+      "id": "TINY_TAIL_PROBABILITY",
+      "probabilities": [0.9999, 0.0001, 0.0]
+    },
+    {
+      "id": "TIED_LOGITS",
+      "logits": [1.25, 1.25, -0.5, -0.5]
+    },
+    {
+      "id": "FROZEN_BIAS_HALF_GREEN",
+      "logits": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "green_indices": [0, 1, 2, 3],
+      "bias": 2.0
+    },
+    {
+      "id": "ALL_SIX_EIGHT_TOKEN_ELIGIBLE_GROUPS",
+      "probabilities": [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125],
+      "candidate_order_cycles_over_registered_groups": true
+    },
+    {
+      "id": "NINE_TOKEN_OPTIONAL_GROUP_WITH_NONE",
+      "probabilities": [0.1111111111111111, 0.1111111111111111, 0.1111111111111111, 0.1111111111111111, 0.1111111111111111, 0.1111111111111111, 0.1111111111111111, 0.1111111111111111, 0.1111111111111111],
+      "index_zero_is_NONE": true
+    }
+  ],
+  "gate": {
+    "positive_probability_bound": "ABS(COUNT-NP) <= 6*SQRT(NP(1-P))+1",
+    "zero_probability_observed_count": 0,
+    "all_eight_fixtures_must_pass": true,
+    "no_fixture_omission": true
+  }
+}

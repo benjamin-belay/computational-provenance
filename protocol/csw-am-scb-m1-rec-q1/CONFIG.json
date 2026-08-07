@@ -1,0 +1,100 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rec_q1.config.v1",
+  "identity": "CSW-AM-SCB-M1-REC-Q1",
+  "title": "EXCLUDED RECEIPT QUALIFICATION",
+  "mode": "ONE_SHOT_FROZEN_PATH_QUALIFICATION",
+  "claim_scope": "QUALIFICATION_EVIDENCE_NOT_FINAL_RECEIPT_CONFIRMATION",
+  "source_file_paths": [
+    "protocol/csw-am-scb-m1-rec-q1/CONFIG.json",
+    "tools/csw_am_scb_m1_rec_q1.py",
+    "tests/test_csw_am_scb_m1_rec_q1.py"
+  ],
+  "D0_binding": {
+    "source_commit": "0d3a840fcdfae089b5846f8ef4146b0eb74123ff",
+    "main_audit_commit": "6cb588b3ab0b051b4d3bb59c12839609433f0929",
+    "main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rec-d0/MAIN_AUDIT.json",
+    "main_audit_sha256": "8b03ff2628f4d44181e3bcb9bfe2ee27c9cc05e1de80a2c7548069f5e4de9e55",
+    "main_terminal": "MAIN_CSW_AM_SCB_M1_REC_D0_IMPLEMENTATION_READY",
+    "production_path": "tools/csw_am_scb_m1_rec_d0.py",
+    "production_blob": "f5c1397bc2d3ed3632a6f25fd3518897c397a6e0",
+    "production_sha256": "3527fb5349c01c1421e6b46a7d761ef5a8a5a2b4405d1d0c92686795a0400a07",
+    "reference_path": "tools/csw_am_scb_m1_rec_d0_reference.py",
+    "reference_blob": "76128df274e33d15cf6f33df90e1666b62fd8153",
+    "reference_sha256": "c4ad69b355c87f9b69dac34d4a74dd8db635e261ec7f7feaf86104410f164316",
+    "attack_manifest_path": "protocol/csw-am-scb-m1-rec-d0/ATTACK_MANIFEST.json",
+    "attack_manifest_sha256": "f066dad1be2b0cfad5298484d1fb9e1cb34beb06a14414ad404d200e9717610e",
+    "attack_families": 18,
+    "new_attack_families": 0
+  },
+  "protected_role": {
+    "identity": "REC_EXCLUDED_QUALIFICATION",
+    "closures": 96,
+    "oriented_rows": 192,
+    "execution_packages": 384,
+    "receipt_envelopes": 1920,
+    "attacks_per_execution": 18,
+    "attack_rows": 6912,
+    "merkle_root": "251e54ad15a0e31a2a4e91016488749082a33ca70c5afa0e1f3bffa62b2e2ec8",
+    "full_allocation_sha256": "fd3c64546efdaeef7e54694fc814cc594f3f8d5fe0f5175e707630e0a3b0c84d",
+    "sealed_manifest_sha256": "5a33d5cefc285aa56be27f2d1b6f402ae65653c3e985ecbe938d0abc27deefb4"
+  },
+  "run_configuration": {
+    "roles_per_oriented_row": [
+      "NATURAL",
+      "ALIAS_Z2"
+    ],
+    "attack_assignment": "FULL_CARTESIAN_384_BY_18",
+    "attack_base_packages": 384,
+    "attack_base_natural": 192,
+    "attack_base_alias": 192,
+    "alias_offset_mod_16": 8,
+    "batch_size": 192
+  },
+  "key_lifecycle": {
+    "master_key_bytes": 32,
+    "commitment_domain": "EXP33A|CSW-AM-SCB-M1-REC-Q1|MASTER-KEY|V1",
+    "run_id_domain": "EXP33A|CSW-AM-SCB-M1-REC-Q1|RUN-ID|V1",
+    "nonce_domain": "EXP33A|CSW-AM-SCB-M1-REC-Q1|NONCE|V1",
+    "authorization_before_key_commitment": true,
+    "key_commitment_before_release": true,
+    "raw_evidence_commit_before_reveal": true,
+    "reveal_commit_before_evaluation": true,
+    "retries": 0,
+    "replacement_closures": 0,
+    "second_key": false
+  },
+  "gates": {
+    "complete_role_membership": 1,
+    "genuine_package_authenticity": 1,
+    "registered_transition_consistency": 1,
+    "registered_answer_consistency": 1,
+    "attack_expected_verdict_accuracy": 1,
+    "production_reference_canonical_agreement": 1,
+    "chronology_valid": 1,
+    "zero_other_role_access": 1
+  },
+  "zero_other_role_access": {
+    "REC_SEALED_CONFIRMATION": 0,
+    "CARRIER_EXCLUDED_QUALIFICATION": 0,
+    "CARRIER_SEALED_CONFIRMATION": 0,
+    "SCB_REMAINING_RESERVE": 0,
+    "model_2_operations": 0,
+    "model_3_operations": 0,
+    "carrier_operations": 0
+  },
+  "terminals": {
+    "valid": "CSW_AM_SCB_M1_REC_Q1_EXCLUDED_QUALIFICATION_VALID",
+    "scientific_gate_failed": "CSW_AM_SCB_M1_REC_Q1_SCIENTIFIC_GATE_FAILED",
+    "attack_failed": "CSW_AM_SCB_M1_REC_Q1_ATTACK_VERDICT_FAILED",
+    "reference_disagreement": "CSW_AM_SCB_M1_REC_Q1_REFERENCE_DISAGREEMENT",
+    "population_invalid": "CSW_AM_SCB_M1_REC_Q1_POPULATION_INVALID",
+    "chronology_invalid": "CSW_AM_SCB_M1_REC_Q1_CHRONOLOGY_INVALID",
+    "implementation_mismatch": "CSW_AM_SCB_M1_REC_Q1_IMPLEMENTATION_HASH_MISMATCH",
+    "evidence_incomplete": "CSW_AM_SCB_M1_REC_Q1_EVIDENCE_INCOMPLETE"
+  },
+  "authorizations": {
+    "REC_C1_after_valid_Q1": true,
+    "carrier": false,
+    "automatic_successor": false
+  }
+}

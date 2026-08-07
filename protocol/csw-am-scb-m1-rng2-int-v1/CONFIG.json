@@ -1,0 +1,113 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_v1.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-INT-V1",
+  "title": "ONE-SHOT PUBLIC RECEIPT-BOUND INTEGRATION VALIDATION",
+  "mode": "FINAL_ONE_SHOT_PUBLIC_INTEGRATION_VALIDATION",
+  "bindings": {
+    "S0_main_path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-s0/MAIN_AUDIT.json",
+    "S0_main_sha256": "eda15322ce4bb5302f38191d83c79548eac58b992264e4807be9c856223bd1f0",
+    "S0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_INT_S0_PROTOCOL_READY",
+    "D0_main_path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-d0/MAIN_AUDIT.json",
+    "D0_main_sha256": "be751256f25339ddf8d05f765a6f631ac6d25e89e04f642e865fc2cf3faa0378",
+    "D0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-d0/TERMINAL.json",
+    "D0_terminal_sha256": "2c95b184d02e6d82d25e44673ec99b135442a7d3f0302c25f86c312dcf5de811",
+    "D0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_INT_D0_IMPLEMENTATION_READY",
+    "D0_manifest_path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-d0/EXECUTABLE_MANIFEST.json",
+    "D0_manifest_sha256": "6f3105256f62ff6e8dd34255b69aa23414407f373be91ff3f5eb3cdcaaebbedd",
+    "D0_production_path": "tools/csw_am_scb_m1_rng2_int_d0.py",
+    "D0_production_sha256": "8649c0a0f7776544b286f26926423c1bfd88a77d59617f253b71f109b6b78709",
+    "D0_reference_path": "tools/csw_am_scb_m1_rng2_int_d0_reference.py",
+    "D0_reference_sha256": "ddcee73f6b5df1d6f27b2b27084b501c371cec6ceeafd33288946a16d416c73e",
+    "sealed_allocation_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/allocation/FULL_ALLOCATION.sealed",
+    "sealed_allocation_sha256": "3f6bc644e272ea43fb10c32af9e46c7cba0d0cd595ed9a00c49ef72f85477890",
+    "role_commitments_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/allocation/ROLE_COMMITMENTS.json",
+    "role_commitments_sha256": "24bd041c0645af31602aafd8dec21e9292705401b45ca86ed235e7192ef4b735"
+  },
+  "controller": {
+    "allocation_secret_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-ccal-r0/CONTROLLER_SECRET.json",
+    "receipt_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-int-v1/RECEIPT_KEY.bin",
+    "sampler_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-int-v1/SAMPLER_KEY.bin",
+    "sealed_aad": "EXP33A|SCB-M1|RNG2-CCAL-R0|SEALED-ALLOCATION|V1",
+    "receipt_commitment_domain": "EXP33A|SCB-M1|RNG2-INT-V1|RECEIPT-KEY|V1",
+    "sampler_commitment_domain": "EXP33A|SCB-M1|RNG2-INT-V1|SAMPLER-KEY|V1"
+  },
+  "source_population": {
+    "path": "artifacts/dev_only/csw-am-t1-d2/authoritative/correction-1/public-allocation/D2_FRESH_EVALUATION_ROWS.jsonl",
+    "sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767"
+  },
+  "role": {
+    "sealed_role": "RNG2_REMAINING_PUBLIC_RESERVE",
+    "public_role": "RNG2_INT_VALIDATION",
+    "closures": 128,
+    "oriented_rows_released": 256,
+    "registered_execution_rows": 128,
+    "registered_orientation": "LOWER_C_ORIENTATION",
+    "membership_root": "7c59bc926bf0cae1ae1fd78c2190c93fb37a0f4eb6a641cc1ee466dbb2d8346b",
+    "release_count": 1
+  },
+  "carrier": {
+    "T": 4.041451884327381,
+    "M": 0.0,
+    "outputs_per_execution_condition": 8,
+    "conditions": ["STATE", "CARRIER_OFF", "PROMPT", "ANSWER", "GENERIC"],
+    "candidate_authorities": 16,
+    "model_steps_per_output": 49,
+    "eligible_positions_per_output": 24
+  },
+  "denominators": {
+    "closures": 128,
+    "oriented_rows_released": 256,
+    "registered_execution_rows": 128,
+    "execution_packages": 256,
+    "receipt_envelopes": 1280,
+    "generation_authorizations": 1280,
+    "outputs": 10240,
+    "model_steps": 501760,
+    "eligible_positions": 245760,
+    "primitive_authority_scores": 163840,
+    "aggregate_authority_scores": 20480,
+    "attack_families": 8,
+    "attack_packages": 1024,
+    "closure_decisions": 128
+  },
+  "attacks": [
+    "SAME_STATE_DIFFERENT_EXACT",
+    "NATURAL_ALIAS_CROSS",
+    "CORRECT_ABSTRACT_WRONG_EXACT",
+    "WRONG_STATE_RECEIPT",
+    "REPLAY_WRONG_CONTEXT",
+    "MISSING_RECEIPT",
+    "MALFORMED_ABSTRACT_RECEIPT",
+    "INVALID_CHAIN"
+  ],
+  "gates": {
+    "minimum_complete_closure_successes": 96,
+    "minimum_complete_closure_fraction": 0.75,
+    "maximum_carrier_off_regression_events": 0,
+    "maximum_wrong_confusion_events": 0,
+    "maximum_attack_failures": 0,
+    "production_reference_exact_agreement": true
+  },
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-int-v1/CONFIG.json",
+    "tools/csw_am_scb_m1_rng2_int_v1_controller.py",
+    "tools/csw_am_scb_m1_rng2_int_v1.py",
+    "tools/csw_am_scb_m1_rng2_int_v1_reference.py",
+    "tests/test_csw_am_scb_m1_rng2_int_v1.py"
+  ],
+  "terminals": {
+    "valid": "MAIN_CSW_AM_SCB_M1_RNG2_INT_V1_PUBLIC_INTEGRATION_VALIDATED",
+    "scientific_failed": "MAIN_CSW_AM_SCB_M1_RNG2_INT_V1_PUBLIC_INTEGRATION_FAILED",
+    "invalid": "MAIN_CSW_AM_SCB_M1_RNG2_INT_V1_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+  },
+  "authorizations": {
+    "release_once": true,
+    "second_receipt_key": false,
+    "second_sampler_key": false,
+    "replacement_closures": false,
+    "output_regeneration": false,
+    "threshold_revision": false,
+    "protected_release": false,
+    "automatic_successor": false
+  }
+}

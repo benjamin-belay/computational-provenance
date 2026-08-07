@@ -1,0 +1,100 @@
+{
+  "schema": "exp33a.csw_am_scb_m1.config.v1",
+  "identity": "CSW-AM-SCB-M1",
+  "scientific_question": "Does the prospectively designated Model 1 empirically realise registered answer-preserving and answer-changing causal transport through its mandatory learned hard-state bottleneck?",
+  "claim_scope": "SELECTED_MODEL_ENGINEERED_MANDATORY_BOTTLENECK_PROOF_OF_CONCEPT",
+  "source_file_paths": [
+    "protocol/csw-am-scb-m1/CONFIG.json",
+    "tools/csw_am_scb_m1.py",
+    "tools/csw_am_scb_m1_reference.py",
+    "tests/test_csw_am_scb_m1.py"
+  ],
+  "lineage": {
+    "SCB_T1_closure_commit": "b1a958aebfeb887e12cbd191b6ba59f10da97a1b",
+    "SCB_T1_main_terminal": "MAIN_CSW_AM_SCB_T1_MODEL_HETEROGENEITY_CONFIRMED",
+    "SCB_T1_three_seed_result": "VALID_HETEROGENEITY_2_OF_3",
+    "SCB_T1_result_superseded": false,
+    "model_1_was_prospectively_designated": true,
+    "model_1_qualification_result": "PASS",
+    "model_1_checkpoint_step": 3000,
+    "model_1_checkpoint_path": "artifacts/dev_only/csw-am-scb-t1/public/checkpoints/MODEL_1_STEP_3000.pt",
+    "model_1_checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+    "model_1_checkpoint_commit": "33045316539289069e69ca82d42338be159de081"
+  },
+  "populations": {
+    "D0_public_path": "artifacts/dev_only/csw-am-t1-d2/authoritative/correction-1/public-allocation/D2_FRESH_EVALUATION_ROWS.jsonl",
+    "D0_public_sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767",
+    "D0_closures": 2048,
+    "D0_oriented_rows": 4096,
+    "C1_role": "SCB_SELECTED_MODEL_CONFIRMATION",
+    "C1_role_merkle_root": "15b22a070571ca68a0922974b7179d988fd777af8944d29b0028f96f8aead30e",
+    "C1_closures": 256,
+    "C1_oriented_rows": 512,
+    "R0_full_allocation_sha256": "1a46ea1b07d778e3dc3a0ce22fe8e59a4f8a809f192b8613a2d7c953fe25f0c8",
+    "R0_sealed_manifest_sha256": "73050d878bf848ab041482d613c606d304010ae88a4553984429b48b462e2e80",
+    "qualification_role_reuse": false,
+    "model_2_transfer_release": false,
+    "model_3_transfer_release": false,
+    "reserve_release": false
+  },
+  "target_rules": {
+    "ALIAS_Z2": {"offset_mod_16": 8, "answer_relation": "UNCHANGED"},
+    "NON_ALIAS_Z2": {"offset_mod_16": 1, "answer_relation": "CHANGED"},
+    "WRONG_Z2": {"offset_mod_16": 3, "answer_relation": "CHANGED"},
+    "SAME_Z2": {"offset_mod_16": 0, "answer_relation": "UNCHANGED"},
+    "DIRECT_Z3": {"offset_mod_16": 1, "answer_relation": "CHANGED"}
+  },
+  "families": [
+    "NATURAL",
+    "ALIAS_Z2",
+    "NON_ALIAS_Z2",
+    "WRONG_Z2",
+    "SAME_Z2",
+    "SHAM",
+    "DIRECT_Z3"
+  ],
+  "gates": {
+    "natural_answer_accuracy": 0.97,
+    "natural_z2_accuracy": 0.99,
+    "natural_z3_accuracy": 0.99,
+    "minimum_powered_subgroup_accuracy": 0.95,
+    "minimum_powered_subgroup_denominator": 16,
+    "target_consumption_accuracy": 1.0,
+    "generated_mapping_accuracy": 0.99,
+    "conditional_transport_accuracy": 0.99,
+    "complete_denominator_joint_success": 0.98,
+    "sham_trace_identity": 1.0,
+    "direct_z3_consumption_accuracy": 1.0,
+    "complete_case_denominator_required": true
+  },
+  "budgets": {
+    "D0_logical_examples": 4096,
+    "D0_cases_per_example": 7,
+    "D0_total_cases": 28672,
+    "C1_logical_examples": 512,
+    "C1_cases_per_example": 7,
+    "C1_total_cases": 3584,
+    "batch_size": 1024,
+    "retries": 0,
+    "replacement_examples": 0,
+    "target_redraws": 0
+  },
+  "chronology": {
+    "S0_interventions": 0,
+    "D0_requires_committed_S0_ready": true,
+    "C1_requires_committed_D0_pass": true,
+    "C1_authorization_separate_from_D0": true,
+    "receipts_authorized": false,
+    "carrier_operations_authorized": false,
+    "T2_generalization_authorized": false,
+    "automatic_successor_authorized": false
+  },
+  "terminals": {
+    "S0_ready": "CSW_AM_SCB_M1_S0_PROTOCOL_READY",
+    "D0_pass": "CSW_AM_SCB_M1_D0_PUBLIC_INTERVENTION_READY",
+    "D0_fail": "CSW_AM_SCB_M1_D0_PUBLIC_INTERVENTION_FAILED",
+    "C1_pass": "CSW_AM_SCB_M1_C1_CAUSAL_TRANSPORT_CONFIRMED",
+    "C1_fail": "CSW_AM_SCB_M1_C1_CAUSAL_TRANSPORT_FAILED",
+    "invalid": "CSW_AM_SCB_M1_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+  }
+}

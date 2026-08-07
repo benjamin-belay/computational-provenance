@@ -1,0 +1,69 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_cal_s0.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-CAL-S0",
+  "title": "GENERIC CHANNEL CALIBRATION PROTOCOL",
+  "mode": "STATIC_ZERO_GENERATION_ZERO_RELEASE_PROTOCOL",
+  "bindings": {
+    "RNG2_R0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/MAIN_AUDIT.json",
+    "RNG2_R0_main_audit_sha256": "f1ff72c71cf17b02a5132e365cef9d745f33840c43d6e9f9b1b3d9c25690f2c7",
+    "RNG2_R0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_R0_PUBLIC_ROLE_MIGRATION_READY",
+    "RNG2_R0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/TERMINAL.json",
+    "RNG2_R0_terminal_sha256": "179a246c84e5658a327c58d26bdc0a6e411504a394519d467f380bcaabc89653",
+    "role_migration_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/ROLE_MIGRATION_BINDINGS.json",
+    "role_migration_sha256": "7833e750aa4276e2ea5a6ce60c2a4bb58f8c704ea33539864e2994aa672d1430",
+    "exposure_status_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/EXPOSURE_STATUS.json",
+    "exposure_status_sha256": "bc7d7500273b5e1ebe4681b643a1be3fd8fad0f68b30df82cd8ff9ad7ad2bc57",
+    "RNG2_D0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rng2-d0/MAIN_AUDIT.json",
+    "RNG2_D0_main_audit_sha256": "02b32f289dfb4e408fd73786e08e8a24dc2b398db717292ff9962af6a77e353b",
+    "RNG2_D0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_D0_IMPLEMENTATION_READY",
+    "RNG2_D0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-d0/TERMINAL.json",
+    "RNG2_D0_terminal_sha256": "49d0129d2897a85572e6d5b9b487fa90672c6ee0fe6a8eb3f39b1190748454ce"
+  },
+  "calibration_role": {
+    "role": "RNG2_CALIBRATION",
+    "closures": 512,
+    "oriented_rows": 1024,
+    "exposure": "SEALED_UNSEEN",
+    "prior_execution": "NONE",
+    "inherited_membership_root": "7518f095e22dafe7c7bd5fb7baaf05818e77c0c823aab4b851fb01ef79af311a",
+    "binding_sha256": "70e4c54ebb751670ee5e89e694ed608ec5eb772ba0328e889f2993c0e58c23a9",
+    "identities_materialized_in_S0": false
+  },
+  "familywise_control": {
+    "calibration_unit": "COMPLETE_DEPENDENCY_CLOSURE",
+    "exchangeable_units": 512,
+    "component_count": 2,
+    "component_tail_bound": "1/(N+1)",
+    "component_tail_probability": 0.001949317738791423,
+    "combined_union_bound": "2/(N+1)",
+    "combined_familywise_probability": 0.003898635477582846,
+    "combined_familywise_maximum": 0.01,
+    "within_closure_independence_assumed": false,
+    "between_output_independence_assumed": false,
+    "between_authority_independence_assumed": false
+  },
+  "static_work": {
+    "new_identity_releases": 0,
+    "stochastic_outputs": 0,
+    "model_forwards": 0,
+    "detector_scores": 0,
+    "thresholds_instantiated": 0,
+    "protected_access": 0
+  },
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_RNG2_CAL_S0_PROTOCOL_READY",
+    "binding_failed": "MAIN_CSW_AM_SCB_M1_RNG2_CAL_S0_BINDING_FAILED",
+    "role_failed": "MAIN_CSW_AM_SCB_M1_RNG2_CAL_S0_ROLE_FAILED",
+    "error_control_failed": "MAIN_CSW_AM_SCB_M1_RNG2_CAL_S0_ERROR_CONTROL_FAILED",
+    "denominator_failed": "MAIN_CSW_AM_SCB_M1_RNG2_CAL_S0_DENOMINATOR_FAILED",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CAL_S0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "separate_CAL1_request_after_ready": true,
+    "CAL1_identity_release": false,
+    "RNG2_V1_release": false,
+    "reserve_release": false,
+    "protected_release": false,
+    "automatic_successor": false
+  }
+}

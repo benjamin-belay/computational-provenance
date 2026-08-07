@@ -1,0 +1,44 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car2_s0.pure_multiplicity_protocol.v1",
+  "candidate": "PURE_MULTIPLICITY_8X",
+  "scientific_question": "Can doubling prospectively planned state-authority outputs from four to eight clear the retained 75% pair gate without changing the detector or zero-wrong side rule?",
+  "side_acceptance": {
+    "planned_outputs": 8,
+    "matching_detector_accepts_required": 6,
+    "any_wrong_authority_accept_causes_side_failure": true,
+    "malformed_output_causes_side_failure": true,
+    "semantic_failure_causes_side_failure": true,
+    "missing_output_causes_side_failure": true,
+    "replacement_or_regeneration_allowed": false
+  },
+  "pair_acceptance": {
+    "natural_side_must_accept": true,
+    "alias_side_must_accept": true,
+    "registered_natural_computation_must_be_correct": true,
+    "registered_alias_computation_must_be_correct": true,
+    "computation_failure_remains_in_full_denominator": true
+  },
+  "wrong_authority_reporting": [
+    "PER_SCORE",
+    "PER_OUTPUT_MAX_OVER_15",
+    "PER_SIDE_ANY_OVER_120",
+    "PER_CLOSURE_ANY_OVER_240"
+  ],
+  "carrier_off_reporting": [
+    "PER_SCORE",
+    "PER_OUTPUT_MAX_OVER_16",
+    "PER_SIDE_ANY",
+    "PER_CLOSURE_ANY"
+  ],
+  "paired_nonce_schedule": {
+    "count": 8,
+    "natural_alias_nonce_equal_by_draw": true,
+    "history_conditioned_randomness_retained": true,
+    "authority_only_differing_realiser_input": true
+  },
+  "interpretation": {
+    "matching_only_power_is_not_integrated_power": true,
+    "zero_wrong_familywise_exposure_increases_with_multiplicity": true,
+    "aggregate_detector_would_be_a_separate_redesign": true
+  }
+}

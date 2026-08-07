@@ -1,0 +1,104 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_s0.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-INT-S0",
+  "title": "RECEIPT-BOUND INTEGRATION PROTOCOL",
+  "mode": "STATIC_BINDING_AND_PUBLIC_ROLE_PROTOCOL",
+  "bindings": {
+    "receipt_main_path": "artifacts/dev_only/csw-am-scb-m1-rec-c1/MAIN_AUDIT.json",
+    "receipt_main_sha256": "a92402f6db730ae553d06b48051ab85fe88ef9b2d1a5e40f93c7dd3968419739",
+    "receipt_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rec-c1/evaluation/TERMINAL.json",
+    "receipt_terminal_sha256": "dc032be4fb8021bd05aeca3661bd2787b6d28614582b8194c341f6081b6d7f82",
+    "receipt_terminal": "MAIN_CSW_AM_SCB_M1_REC_C1_RECEIPT_PROVENANCE_CONFIRMED",
+    "receipt_protocol_path": "protocol/csw-am-scb-m1-rec-s0/RECEIPT_PROTOCOL.json",
+    "receipt_protocol_sha256": "29c059a2b935831d4d556498f506c192c6b3943b04d626b07f05c881a4a6f693",
+    "rng2_v1_main_path": "artifacts/dev_only/csw-am-scb-m1-rng2-v1/MAIN_AUDIT.json",
+    "rng2_v1_main_sha256": "80efda03d61ac52d8f24b88edb3e9b897d94441862b61953f3b69bba52996c60",
+    "rng2_v1_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-v1/TERMINAL.json",
+    "rng2_v1_terminal_sha256": "a0fa12b2582359a93fd68b933d95cb313ab66273bc3e6468ae7a5f6831d95f80",
+    "rng2_v1_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_V1_GENERIC_CHANNEL_VALIDATED",
+    "rng2_v1_official_path": "artifacts/dev_only/csw-am-scb-m1-rng2-v1/production/OFFICIAL_RESULT.json",
+    "rng2_v1_official_sha256": "46fe2cf1c76c4ea355d2cddb9956ad81147d0159e96313c0a0e0379130819f46",
+    "reserve_commitments_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/allocation/ROLE_COMMITMENTS.json",
+    "reserve_commitments_sha256": "24bd041c0645af31602aafd8dec21e9292705401b45ca86ed235e7192ef4b735",
+    "reserve_main_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/MAIN_AUDIT.json",
+    "reserve_main_sha256": "e806d272e3bef22b64455a9d14077873b7215a7aceb316ed1de3f8f05f833987",
+    "reserve_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/TERMINAL.json",
+    "reserve_terminal_sha256": "38cb3b7c5570430cb9b740f31ddcbd2b214458cfe1be6979af517705eb269fa2"
+  },
+  "frozen_channel": {
+    "T": 4.041451884327381,
+    "M": 0.0,
+    "outputs_per_side": 8,
+    "candidate_authorities": 16,
+    "model_steps": 49,
+    "eligible_positions_per_output": 24,
+    "strict_exceedance": true,
+    "unique_rank_first": true,
+    "strict_positive_margin": true,
+    "ties_reject": true,
+    "closure_pair_success_minimum": 0.75,
+    "statistical_changes_authorized": false
+  },
+  "state_ontology": {
+    "identity": "GATED_ALIAS16_SCB_M1_STATE_ONTOLOGY_V1",
+    "model_domain": "SCB_MODEL_1_STRICT_HARD_BOTTLENECK_V1",
+    "checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+    "categories": 16
+  },
+  "public_roles": {
+    "INT_D0": {
+      "source": "ALREADY_PUBLIC_RNG2_DEVELOPMENT",
+      "maximum_closures": 256,
+      "new_identity_release": false,
+      "implementation_only": true
+    },
+    "INT_V1": {
+      "old_role": "RNG2_REMAINING_PUBLIC_RESERVE",
+      "new_role": "RNG2_INT_VALIDATION",
+      "closures": 128,
+      "oriented_rows": 256,
+      "membership_root": "7c59bc926bf0cae1ae1fd78c2190c93fb37a0f4eb6a641cc1ee466dbb2d8346b",
+      "membership_preserved": true,
+      "exposure": "SEALED_UNSEEN",
+      "identity_release_in_S0": 0
+    }
+  },
+  "error_interpretation": {
+    "generic_one_percent_control_source": "RNG2_V1_512_CLOSURES",
+    "generic_one_percent_control_inherited": true,
+    "inheritance_requires_byte_identical_channel": true,
+    "INT_V1_closures": 128,
+    "INT_V1_maximum_carrier_off_events": 0,
+    "INT_V1_maximum_wrong_confusion_events": 0,
+    "INT_V1_role": "INTEGRATION_REGRESSION_AUDIT",
+    "INT_V1_independently_reestimates_one_percent_rate": false,
+    "zero_event_one_sided_95_upper_bound": 0.023132405251746757,
+    "claim": "ZERO_EVENT_INTEGRATION_REGRESSION_AUDIT_WITH_INHERITED_GENERIC_ERROR_CONTROL"
+  },
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-int-s0/CONFIG.json",
+    "protocol/csw-am-scb-m1-rng2-int-s0/INTEGRATION_PROTOCOL.json",
+    "protocol/csw-am-scb-m1-rng2-int-s0/VERDICT_MATRIX.json",
+    "protocol/csw-am-scb-m1-rng2-int-s0/PUBLIC_ROLE_BINDING.json",
+    "tools/csw_am_scb_m1_rng2_int_s0.py",
+    "tools/csw_am_scb_m1_rng2_int_s0_reference.py",
+    "tests/test_csw_am_scb_m1_rng2_int_s0.py"
+  ],
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_RNG2_INT_S0_PROTOCOL_READY",
+    "binding_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_INT_S0_BINDING_INVALID",
+    "channel_drift": "MAIN_CSW_AM_SCB_M1_RNG2_INT_S0_CHANNEL_DRIFT",
+    "role_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_INT_S0_PUBLIC_ROLE_INVALID",
+    "protocol_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_INT_S0_PROTOCOL_INVALID"
+  },
+  "authorizations": {
+    "INT_D0_public_implementation": true,
+    "INT_V1_release": false,
+    "reserve_identity_release": false,
+    "protected_release": false,
+    "receipt_key_release": false,
+    "generation": false,
+    "detector_scoring": false,
+    "automatic_successor": false
+  }
+}

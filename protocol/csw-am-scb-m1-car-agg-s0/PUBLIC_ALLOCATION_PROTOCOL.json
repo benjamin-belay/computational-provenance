@@ -1,0 +1,33 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_agg_s0.public_allocation_protocol.v1",
+  "unit": "COMPLETE_DEPENDENCY_CLOSURE",
+  "selection_domain": "EXP33A|SCB-M1|CAR-AGG|PUBLIC-ALLOCATION|V1",
+  "roles": [
+    {"role": "AGG_DEVELOPMENT", "closures": 256, "release": "AFTER_S0_READY"},
+    {"role": "AGG_CALIBRATION", "closures": 512, "release": "AFTER_D0_IMPLEMENTATION_FREEZE"},
+    {"role": "AGG_VALIDATION", "closures": 512, "release": "AFTER_T_AND_M_COMMITMENT"},
+    {"role": "PUBLIC_RESERVE", "closures": 640, "release": "NONE"}
+  ],
+  "exclusions": ["ALL_128_CLOSED_CAR_D0_CLOSURES"],
+  "support_rule": {
+    "joint_cell": ["Z2_MOD8", "ANSWER", "TEMPLATE"],
+    "reachable_cells": 128,
+    "minimum_per_nonreserve_role_per_cell": 1,
+    "remaining_quota_assignment": "SHA256_PRIORITY_WITHOUT_REPLACEMENT",
+    "no_performance_based_selection": true
+  },
+  "chronology": [
+    "FREEZE_ALLOCATOR",
+    "COMMIT_ALL_ROLE_ROOTS",
+    "RELEASE_DEVELOPMENT",
+    "FREEZE_IMPLEMENTATION",
+    "RELEASE_CALIBRATION",
+    "COMMIT_T_AND_M",
+    "RELEASE_VALIDATION_ONCE"
+  ],
+  "materialization": {
+    "S0_performs_capacity_census_only": true,
+    "identities_materialized_only_after_S0_ready": true,
+    "validation_identity_unavailable_before_threshold_commitment": true
+  }
+}

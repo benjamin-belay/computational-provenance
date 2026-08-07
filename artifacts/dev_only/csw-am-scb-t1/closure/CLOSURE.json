@@ -1,0 +1,104 @@
+{
+  "schema": "exp33a.csw_am_scb_t1.closure.v1",
+  "identity": "CSW-AM-SCB-T1-CLOSURE",
+  "disposition": "CLOSE_AND_CONSOLIDATE_AFTER_VALID_QUALIFICATION_HETEROGENEITY",
+  "terminal": "CSW_AM_SCB_T1_LINEAGE_CLOSED_AFTER_VALID_HETEROGENEITY",
+  "main_terminal": "MAIN_CSW_AM_SCB_T1_MODEL_HETEROGENEITY_CONFIRMED",
+  "builder_terminal": "SCB_T1_MODEL_HETEROGENEITY",
+  "lineage": {
+    "source_freeze_commit": "bfcd964e12cd567777ec22b287bcbb172326b0c0",
+    "authorization_commit": "5de4a9896539d36d2d5c0414cba2cc22041cc9f1",
+    "public_evidence_commit": "33045316539289069e69ca82d42338be159de081",
+    "qualification_evidence_commit": "df542541cee54a9151d1ef37164c5d8352f7751d",
+    "main_audit_commit": "0a217c5989e9c692e4bb2beee321d0c5f795a75e",
+    "closed_permanently": true,
+    "automatic_successor_authorized": false,
+    "T2_within_lineage_authorized": false,
+    "seed_replacement_authorized": false,
+    "qualification_rerun_authorized": false,
+    "threshold_or_subgroup_gate_change_authorized": false
+  },
+  "registered_denominator": {
+    "strict_models": 3,
+    "models_passing": 2,
+    "models_failing": 1,
+    "required_models_passing": 3,
+    "aggregate_advancement_gate_passed": false,
+    "qualification_closures": 256,
+    "qualification_oriented_rows_per_model": 512,
+    "total_protected_model_evaluations": 1536
+  },
+  "model_results": {
+    "MODEL_1": {
+      "answer": {"correct": 511, "denominator": 512},
+      "z2": {"correct": 509, "denominator": 512},
+      "z3": {"correct": 509, "denominator": 512},
+      "minimum_powered_subgroup_accuracy": 0.967741935483871,
+      "result": "PASS"
+    },
+    "MODEL_2": {
+      "answer": {"correct": 507, "denominator": 512},
+      "z2": {"correct": 507, "denominator": 512},
+      "z3": {"correct": 507, "denominator": 512},
+      "aggregate_answer_gate": "PASS",
+      "aggregate_z2_gate": "PASS",
+      "aggregate_z3_gate": "PASS",
+      "failed_gate": "MINIMUM_POWERED_SUBGROUP_ACCURACY",
+      "failed_subgroup": "natural_z2=0",
+      "failed_subgroup_correct": 29,
+      "failed_subgroup_denominator": 32,
+      "failed_subgroup_accuracy": 0.90625,
+      "registered_subgroup_threshold": 0.95,
+      "operational_minimum_correct": 31,
+      "result": "FAIL_ONE_FROZEN_SUBGROUP_GATE"
+    },
+    "MODEL_3": {
+      "answer": {"correct": 512, "denominator": 512},
+      "z2": {"correct": 512, "denominator": 512},
+      "z3": {"correct": 512, "denominator": 512},
+      "minimum_powered_subgroup_accuracy": 1.0,
+      "result": "PASS"
+    }
+  },
+  "positive_findings": [
+    "The strict hard-categorical no-bypass architecture was implemented and independently inspected.",
+    "The answer path was architecturally restricted to predicted hard z2, predicted hard z3, and the answer decoder.",
+    "True z2 and z3 labels were training targets and were not consumed downstream at inference.",
+    "The retained scored hard categories were the exact categories consumed by the transition and answer modules.",
+    "Models 1 and 3 passed every frozen protected qualification gate.",
+    "Model 2 passed all aggregate answer, z2, and z3 gates but failed one registered powered subgroup gate.",
+    "The result validly establishes seed heterogeneity under the frozen architecture, recipe, checkpoints, and qualification population."
+  ],
+  "strongest_safe_claim": "The strict no-bypass supervised bottleneck architecture was feasible in multiple frozen seeds, but the frozen architecture and training recipe did not satisfy the preregistered three-of-three robustness requirement across these three seeds.",
+  "scope_limits": {
+    "not_a_universal_architecture_negative": true,
+    "not_evidence_that_strict_bottlenecks_are_generally_unreliable": true,
+    "causal_mediation_under_intervention": "NOT_TESTED",
+    "answer_preserving_alias_transport": "NOT_TESTED",
+    "exact_or_abstract_provenance": "NOT_TESTED",
+    "statistical_carrier_binding": "NOT_TESTED",
+    "cross_model_mechanistic_transfer": "NOT_TESTED"
+  },
+  "zero_result_accounting": {
+    "hard_z2_substitutions": 0,
+    "alias_state_transport_executions": 0,
+    "non_alias_causal_control_executions": 0,
+    "answer_preserving_interventions": 0,
+    "exact_bottleneck_event_receipts": 0,
+    "abstract_state_receipts": 0,
+    "statistical_carrier_operations": 0,
+    "same_prompt_same_answer_provenance_tests": 0,
+    "selected_model_confirmation_model_evaluations": 0,
+    "model_2_transfer_model_evaluations": 0,
+    "model_3_transfer_model_evaluations": 0,
+    "mechanistic_transfer_executions": 0
+  },
+  "future_programme_boundary": {
+    "models_1_and_3_may_advance_inside_this_lineage": false,
+    "model_2_may_be_retrained_or_replaced_inside_this_lineage": false,
+    "future_selected_model_question_requires_separate_authorization": true,
+    "future_robustness_question_requires_new_seeds_and_frozen_rules": true,
+    "T1_heterogeneity_result_must_remain_in_denominator": true,
+    "no_future_result_may_state_that_T1_passed_three_seed_robustness": true
+  }
+}

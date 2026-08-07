@@ -1,0 +1,53 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rec_s0.split_spec.v1",
+  "identity": "SCB_M1_RECEIPT_AND_CARRIER_RESERVE_SPLIT_V1",
+  "allocation_unit": "COMPLETE_DEPENDENCY_CLOSURE",
+  "source_role": "SCB_UNTOUCHED_RESERVE",
+  "source_closures": 800,
+  "source_oriented_rows_per_closure": 2,
+  "roles": {
+    "REC_EXCLUDED_QUALIFICATION": 96,
+    "REC_SEALED_CONFIRMATION": 128,
+    "CARRIER_EXCLUDED_QUALIFICATION": 128,
+    "CARRIER_SEALED_CONFIRMATION": 256,
+    "SCB_REMAINING_RESERVE": 192
+  },
+  "public_receipt_development_uses_source_reserve": false,
+  "balance_features": [
+    "natural_z2",
+    "answer",
+    "template_id"
+  ],
+  "balance_requirements": {
+    "every_role_contains_all_16_natural_z2_values": true,
+    "every_role_contains_all_8_answers": true,
+    "every_role_contains_all_4_templates": true,
+    "maximum_z2_count_range": 14,
+    "maximum_answer_count_range": 8,
+    "maximum_template_count_range": 20
+  },
+  "allocation": {
+    "method": "ONE_SHOT_SEEDED_GREEDY_PROPORTIONAL_MARGINAL_BALANCING",
+    "seed_bytes": 32,
+    "commitment_domain": "EXP33A|CSW-AM-SCB-M1-REC-S0|ALLOCATION-SEED|V1",
+    "row_rank_domain": "EXP33A|CSW-AM-SCB-M1-REC-S0|ROW-RANK|V1",
+    "role_order": [
+      "REC_EXCLUDED_QUALIFICATION",
+      "REC_SEALED_CONFIRMATION",
+      "CARRIER_EXCLUDED_QUALIFICATION",
+      "CARRIER_SEALED_CONFIRMATION",
+      "SCB_REMAINING_RESERVE"
+    ],
+    "redraws": 0,
+    "manual_swaps": 0,
+    "post_commit_source_changes": false
+  },
+  "release_policy": {
+    "REC_EXCLUDED_QUALIFICATION": "ONLY_AFTER_REC_D0_SOURCE_AND_RULE_FREEZE",
+    "REC_SEALED_CONFIRMATION": "ONLY_AFTER_VALID_REC_QUALIFICATION",
+    "CARRIER_EXCLUDED_QUALIFICATION": "ONLY_AFTER_VALID_REC_C1_AND_CARRIER_FREEZE",
+    "CARRIER_SEALED_CONFIRMATION": "ONLY_AFTER_VALID_CARRIER_QUALIFICATION",
+    "SCB_REMAINING_RESERVE": "NO_RELEASE_AUTHORIZED"
+  },
+  "seed_reveal_policy": "AFTER_ALL_PROTECTED_RECEIPT_AND_CARRIER_EXPERIMENTS"
+}

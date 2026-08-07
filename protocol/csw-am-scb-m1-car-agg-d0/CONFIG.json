@@ -1,0 +1,117 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_agg_d0.config.v1",
+  "identity": "CSW-AM-SCB-M1-CAR-AGG-D0",
+  "title": "PUBLIC AGGREGATE-CARRIER IMPLEMENTATION",
+  "mode": "PUBLIC_IMPLEMENTATION_WITH_MANDATORY_LITERAL_INVARIANT_PREFLIGHT",
+  "claim_scope": "IMPLEMENTATION_FIDELITY_ONLY_NOT_STATISTICAL_QUALIFICATION",
+  "source_paths": [
+    "protocol/csw-am-scb-m1-car-agg-d0/CONFIG.json",
+    "protocol/csw-am-scb-m1-car-agg-d0/EVIDENCE_SCHEMA.json",
+    "tools/csw_am_scb_m1_car_agg_d0.py",
+    "tools/csw_am_scb_m1_car_agg_d0_reference.py",
+    "tests/test_csw_am_scb_m1_car_agg_d0.py"
+  ],
+  "lineage": {
+    "r0_audit_commit": "3e4ea5dc0cbd069d4d75a7cf139c424bada6b341",
+    "r0_audit_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/MAIN_AUDIT.json",
+    "r0_audit_sha256": "f8c07311531f9aad31ad493c104a47d3c27cd035bcb8e54599a0d7e0a1ef6bcb",
+    "r0_terminal": "MAIN_CSW_AM_SCB_M1_CAR_AGG_R0_PUBLIC_ALLOCATION_READY",
+    "development_release_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_RELEASE.json",
+    "development_release_sha256": "1ddb1b59266d0f37e5eea1c0f693f1d7d7d6d989c3617d7fcfb5cde7f7cf5ac8",
+    "development_closures_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_CLOSURES.jsonl",
+    "development_closures_sha256": "89e84d57ccd115d0489f8a3b1cb78d3e5f5bca5df4a9ae01cb3c66e77d737c18",
+    "development_rows_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_ROWS.jsonl",
+    "development_rows_sha256": "a93b30d690d3e09e4cd4049bada835054f5e72ecdaf402f72392d6b2d2fe45d1",
+    "agg_s0_detector_path": "protocol/csw-am-scb-m1-car-agg-s0/DETECTOR_PROTOCOL.json",
+    "agg_s0_detector_sha256": "1c4a66692743b76769e9cc723e00f10d83d5fe9f16e49c5668dc2610c0466ed8",
+    "car_d0_production_path": "tools/csw_am_scb_m1_car_d0.py",
+    "car_d0_production_sha256": "2036301dc7580df3d07812f6d887016986676a6bb7472c88ad36b5c5a2c536f8",
+    "a0_production_path": "tools/csw_a0_stochastic_channel.py",
+    "a0_production_sha256": "df467bb4d91353637fa6f5fff0ce785d65191218587e5525868a46e1788cffd5",
+    "m1_production_path": "tools/csw_am_scb_m1.py",
+    "m1_production_sha256": "729417403d1e868d7d09069ba563a331fc800d05a9aacaf4cbc3f2b4d76eafdf",
+    "receipt_production_path": "tools/csw_am_scb_m1_rec_d0.py",
+    "receipt_production_sha256": "3527fb5349c01c1421e6b46a7d761ef5a8a5a2b4405d1d0c92686795a0400a07",
+    "authority_protocol_path": "protocol/csw-am-scb-m1-car-s0/AUTHORITY_PROTOCOL.json",
+    "authority_protocol_sha256": "1df1661d6aae069ab24a29bf2fee945b3c0da377d22c075297df0fb0dd261a4b",
+    "realiser_boundary_path": "protocol/csw-am-scb-m1-car-s0/REALISER_BOUNDARY.json",
+    "realiser_boundary_sha256": "b8e8ba787c3d681892bbc3fdcd88a1c2122ef57f0092204326bbf4e493d76bfb",
+    "m1_checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e"
+  },
+  "development_population": {
+    "closures": 256,
+    "oriented_rows": 512,
+    "natural_rows_used_per_complete_run": 256,
+    "selection_for_literal_preflight": "LEXICOGRAPHICALLY_LOWEST_RELEASED_CLOSURE_ID",
+    "calibration_closures_accessed": 0,
+    "validation_closures_accessed": 0,
+    "reserve_closures_accessed": 0,
+    "protected_closures_accessed": 0
+  },
+  "complete_run_denominators": {
+    "sides": 512,
+    "receipt_packages": 512,
+    "receipt_envelopes": 2560,
+    "state_outputs": 4096,
+    "carrier_off_outputs": 2048,
+    "baseline_outputs": 1536,
+    "total_outputs": 7680,
+    "state_authority_scores": 122880,
+    "own_baseline_scores": 1536,
+    "detector_decisions": 124416,
+    "eligible_positions": 184320
+  },
+  "channel": {
+    "state_outputs_per_side": 8,
+    "carrier_off_outputs_per_side": 4,
+    "baseline_outputs_per_side": 3,
+    "eligible_positions_per_output": 24,
+    "minimum_eligible_positions": 24,
+    "bias": 2.0,
+    "alternatives_per_position": 8,
+    "green_fraction": 0.5,
+    "candidate_state_authorities": 16,
+    "sampler": "FROZEN_A0_Q1_HISTORY_CONDITIONED_COUNTER_UNIFORM",
+    "position_only_randomness_substitution": false,
+    "retuned_parameters": []
+  },
+  "threshold_independent_evidence": {
+    "normalization": "(GREEN_COUNT-N/2)/SQRT(N/4)",
+    "side_aggregation": "SUM_8_Z/SQRT(8)",
+    "absolute_threshold_T": "NOT_YET_INSTANTIATED",
+    "margin_threshold_M": "NOT_YET_INSTANTIATED",
+    "absolute_threshold_decision": "NOT_YET_INSTANTIATED",
+    "margin_decision": "NOT_YET_INSTANTIATED",
+    "rank_and_raw_margin_retained": true,
+    "malformed_or_insufficient_output": "REGISTERED_SIDE_FAILURE_NOT_DROPPED"
+  },
+  "mandatory_preflight_invariant": {
+    "name": "PAIRED_PRIMITIVE_RANDOM_DRAW_ALIGNMENT",
+    "rule": "SAME_CLOSURE_AND_OUTPUT_INDEX_AND_MODEL_STEP_MUST_USE_IDENTICAL_BASE_UNIFORM",
+    "authority_is_only_permitted_realiser_difference": true,
+    "failure_action": "STOP_BEFORE_COMPLETE_DEVELOPMENT_RUN",
+    "sampler_change_allowed": false
+  },
+  "calibration_machinery": {
+    "unit": "COMPLETE_CLOSURE",
+    "absolute_alpha": 0.005,
+    "confusion_alpha": 0.005,
+    "strict_order_statistic": "CEIL((N+1)*(1-ALPHA))",
+    "threshold_T_source": "CARRIER_OFF_CLOSURE_MAX16",
+    "margin_M_source": "MAX_WRONG_CLAIM_GAP",
+    "synthetic_fixture_testing_only_in_D0": true
+  },
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_CAR_AGG_D0_IMPLEMENTATION_READY",
+    "randomness_incoherent": "MAIN_CSW_AM_SCB_M1_CAR_AGG_D0_SYNCHRONIZED_RANDOMNESS_INCOHERENT",
+    "evaluator_mismatch": "MAIN_CSW_AM_SCB_M1_CAR_AGG_D0_REFERENCE_DISAGREEMENT",
+    "invalid": "MAIN_CSW_AM_SCB_M1_CAR_AGG_D0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "agg_cal1_after_ready": true,
+    "calibration_release": false,
+    "validation_release": false,
+    "protected_release": false,
+    "automatic_successor": false
+  }
+}

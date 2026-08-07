@@ -1,0 +1,36 @@
+{
+  "authorizations": {
+    "automatic_successor": false,
+    "protected_confirmation": false,
+    "protected_release": false
+  },
+  "deliverables": {
+    "claims_matrix": "CLAIMS_MATRIX.md",
+    "environment_record": "ENVIRONMENT.md",
+    "experiment_chronology": "EXPERIMENT_CHRONOLOGY.md",
+    "figure_table_data": [
+      "results_summary.csv",
+      "chronology.csv"
+    ],
+    "independent_review_template": "INDEPENDENT_REVIEW_TEMPLATE.md",
+    "limitations_and_non_claims": "LIMITATIONS_AND_NON_CLAIMS.md",
+    "minimal_reproduction_guide": "REPRODUCIBILITY.md",
+    "paper_ready_result": "PROGRAMME_RESULT.md",
+    "public_artifact_manifest": "PUBLIC_ARTIFACT_MANIFEST.json",
+    "sealed_population_attestation": "SEALED_POPULATION_ATTESTATION.json",
+    "verifier": "verify_handoff.py"
+  },
+  "identity": "CSW-AM-SCB-M1-RNG2-INT",
+  "independent_review": {
+    "status": "PENDING_EXTERNAL_REVIEW",
+    "template_provided": true
+  },
+  "scientific_status": {
+    "final_protected_confirmation": "NOT_TESTED",
+    "protected_qualification": "NOT_QUALIFIED_DESCRIPTIVE_127_OF_128",
+    "public_receipt_bound_output_provenance": "PROSPECTIVELY_VALIDATED_128_OF_128"
+  },
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_handoff.v1",
+  "terminal": "MAIN_CSW_AM_SCB_M1_RNG2_INT_HANDOFF_COMPLETE",
+  "zero_new_scientific_work": true
+}

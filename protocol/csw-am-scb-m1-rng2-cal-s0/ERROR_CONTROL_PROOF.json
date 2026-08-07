@@ -1,0 +1,41 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_cal_s0.error_control.v1",
+  "assumption": "THE_512_CALIBRATION_CLOSURES_AND_ONE_FUTURE_CLOSURE_ARE_EXCHANGEABLE_AT_THE_COMPLETE_CLOSURE_LEVEL",
+  "dependence_handling": {
+    "within_output_positions": "ABSORBED_INSIDE_PER_OUTPUT_SCORE",
+    "eight_outputs_within_side": "ABSORBED_INSIDE_SIDE_AGGREGATE",
+    "sixteen_authorities": "ABSORBED_BY_MAXIMUM",
+    "two_oriented_sides": "ABSORBED_BY_CLOSURE_MAXIMUM",
+    "no_output_or_score_is_COUNTED_AS_AN_INDEPENDENT_CALIBRATION_UNIT": true
+  },
+  "calibration_closures": 512,
+  "strict_maximum_rule": {
+    "one_component_exceedance_bound": "1 / (512 + 1)",
+    "one_component_exceedance_probability": 0.001949317738791423,
+    "components": 2,
+    "union_bound": "2 / (512 + 1)",
+    "union_bound_probability": 0.003898635477582846,
+    "registered_familywise_budget": 0.01,
+    "safety_margin": 0.006101364522417154,
+    "passes": true
+  },
+  "components": {
+    "carrier_off_any_authority": {
+      "calibration_statistic": "N_C",
+      "future_error_event": "ANY_OF_16_AUTHORITIES_EXCEEDS_T_ON_EITHER_SIDE_OF_A_CARRIER_OFF_CLOSURE",
+      "bound": "1/513"
+    },
+    "wrong_authority_confusion": {
+      "calibration_statistic": "C_C",
+      "future_error_event": "ANY_WRONG_AUTHORITY_EXCEEDS_THE_STRONGEST_COMPETITOR_BY_MORE_THAN_M_ON_EITHER_SIDE",
+      "bound": "1/513"
+    }
+  },
+  "tie_handling": {
+    "thresholds_are_observed_maxima": true,
+    "future_acceptance_requires_strict_exceedance": true,
+    "ties_at_T_or_M_reject": true,
+    "randomized_tie_breaking": false
+  },
+  "scope": "FINITE_SAMPLE_DISTRIBUTION_FREE_BOUND_CONDITIONAL_ON_CLOSURE_LEVEL_EXCHANGEABILITY_NOT_A_POWER_GUARANTEE"
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_s0.validation_protocol.v1",
+  "RNG2_D0_requirements": {
+    "literal_production_path": true,
+    "complete_49_step_natural_alias_fixture": true,
+    "post_history_divergence_uniform_equality": true,
+    "production_reference_exact_token_agreement": true,
+    "no_receipt_binding": true,
+    "no_detector_aggregation": true,
+    "software_corrections_before_D0_freeze": true,
+    "scientific_sampler_or_distribution_failure_after_freeze_is_terminal": true
+  },
+  "distributional_fixtures": [
+    "TWO_CLASS_UNIFORM",
+    "EIGHT_CLASS_UNIFORM",
+    "HIGHLY_CONCENTRATED",
+    "TINY_TAIL_PROBABILITY",
+    "TIED_LOGITS",
+    "FROZEN_BIAS_HALF_GREEN",
+    "ALL_SIX_EIGHT_TOKEN_ELIGIBLE_GROUPS",
+    "NINE_TOKEN_OPTIONAL_GROUP_WITH_NONE"
+  ],
+  "distributional_test": {
+    "contexts_per_fixture": 262144,
+    "context_variation": "DISTINCT_PAIRING_CONTEXT_IDS_UNDER_ONE_COMMITTED_DEVELOPMENT_KEY",
+    "per_category_bound": "ABS(COUNT-NP) <= 6*SQRT(NP(1-P))+1",
+    "zero_probability_category_count": 0,
+    "no_result_dependent_fixture_omission": true,
+    "same_fixed_index_is_never_repeated_as_a_distributional_sample": true
+  },
+  "boundary_fixtures": [
+    "U_EQUALS_ZERO",
+    "U_EQUALS_FIRST_CDF_BOUNDARY",
+    "U_IMMEDIATELY_ABOVE_BOUNDARY",
+    "U_IMMEDIATELY_BELOW_ONE",
+    "FINAL_BIN_ROUNDING_FALLBACK",
+    "NONFINITE_REJECTION",
+    "NEGATIVE_PROBABILITY_REJECTION",
+    "MALFORMED_INDEX_REJECTION"
+  ],
+  "generic_channel_requalification": {
+    "A0_Q1_power_inherited": false,
+    "A0_Q1_semantic_guarantee_inherited": false,
+    "A0_Q1_false_positive_guarantee_inherited": false,
+    "required_future_properties": [
+      "SEMANTIC_VALIDITY",
+      "MATCHING_AUTHORITY_POWER",
+      "WRONG_AUTHORITY_CONFUSION",
+      "MAX_OVER_16_CARRIER_OFF_FALSE_POSITIVES",
+      "OUTPUT_LENGTH_BEHAVIOUR",
+      "ELIGIBLE_POSITION_COVERAGE",
+      "AGGREGATE_PAIR_RELIABILITY"
+    ],
+    "receipt_rebinding_before_generic_validation": "PROHIBITED"
+  },
+  "hard_stops": [
+    "TARGET_CATEGORICAL_DISTRIBUTION_DISTORTED",
+    "PRODUCTION_REFERENCE_TOKEN_DISAGREEMENT",
+    "POST_DIVERGENCE_UNIFORM_MISMATCH",
+    "UNDEFINED_NONE_OR_LENGTH_SEMANTICS",
+    "GENERIC_PUBLIC_VALIDATION_FAILURE",
+    "SECOND_SAMPLER_REQUIRED"
+  ]
+}

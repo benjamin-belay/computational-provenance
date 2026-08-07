@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-labelledby="title desc">
+<title id="title">Evidence hierarchy</title>
+<desc id="desc">Five distinct evidence classes separate formal positives, scientific negatives, invalid stages, descriptive evidence, and sealed populations.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#17324d"/>
+</marker>
+</defs>
+<rect width="1400" height="620" fill="#ffffff"/>
+<text x="700" y="42" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500" fill="#1f2933">Evidence hierarchy</text>
+<circle cx="110" cy="132" r="27" fill="#e8f4ef" stroke="#2f7d5b" stroke-width="2"/>
+<text x="110" y="139" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#1f2933">1</text>
+<rect x="170" y="90" width="1120" height="84" rx="12" fill="#e8f4ef" stroke="#2f7d5b" stroke-width="2"/>
+<text x="210" y="123" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="500" fill="#1f2933">Positive stages · 5</text>
+<text x="210" y="152" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52616f">Causal transport, receipts, sampler/channel, public integration</text>
+<circle cx="110" cy="233" r="27" fill="#faf1df" stroke="#9b6a12" stroke-width="2"/>
+<text x="110" y="240" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#1f2933">2</text>
+<rect x="170" y="191" width="1120" height="84" rx="12" fill="#faf1df" stroke="#9b6a12" stroke-width="2"/>
+<text x="210" y="224" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="500" fill="#1f2933">Valid negative · 1</text>
+<text x="210" y="253" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52616f">SCB-T1 three-seed robustness requirement was not met</text>
+<circle cx="110" cy="334" r="27" fill="#f8e8e8" stroke="#a63d40" stroke-width="2"/>
+<text x="110" y="341" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#1f2933">3</text>
+<rect x="170" y="292" width="1120" height="84" rx="12" fill="#f8e8e8" stroke="#a63d40" stroke-width="2"/>
+<text x="210" y="325" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="500" fill="#1f2933">Protected non-qualification · 1</text>
+<text x="210" y="354" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52616f">INT-Q1: 127/128 descriptive result; qualification not earned</text>
+<circle cx="110" cy="435" r="27" fill="#e8f1f8" stroke="#2867a5" stroke-width="2"/>
+<text x="110" y="442" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#1f2933">4</text>
+<rect x="170" y="393" width="1120" height="84" rx="12" fill="#e8f1f8" stroke="#2867a5" stroke-width="2"/>
+<text x="210" y="426" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="500" fill="#1f2933">Programme closure · 1</text>
+<text x="210" y="455" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52616f">Current experimental lineage closed without INT-C1 authority</text>
+<circle cx="110" cy="536" r="27" fill="#f7f9fb" stroke="#52616f" stroke-width="2"/>
+<text x="110" y="543" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#1f2933">5</text>
+<rect x="170" y="494" width="1120" height="84" rx="12" fill="#f7f9fb" stroke="#52616f" stroke-width="2"/>
+<text x="210" y="527" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="500" fill="#1f2933">Sealed / untested</text>
+<text x="210" y="556" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52616f">INT-C1: 256 closures; zero execution</text>
+<text x="700" y="606" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52616f">Categories are not pooled or treated as a quantitative meta-analysis</text>
+</svg>
+

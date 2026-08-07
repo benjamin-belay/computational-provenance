@@ -1,0 +1,5 @@
+population,role,closures,total_closures,complete_successes,complete_fraction,computation_failures,attack_failures,carrier_off_regressions,wrong_authority_confusions,formal_status
+INT-V1,prospective_public_validation,128,128,128,1.0,0,0,0,0,PROSPECTIVELY_VALIDATED
+INT-Q1,protected_qualification,128,128,127,0.9921875,1,2,0,0,NOT_QUALIFIED
+INT-C1,protected_confirmation,256,256,0,0.0,0,0,0,0,NOT_TESTED_SEALED
+

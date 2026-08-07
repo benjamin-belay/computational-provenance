@@ -1,0 +1,95 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_r0.main_audit.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-R0",
+  "source_commit": "8f4e52afd12dad674fc67b9df15a50168eb28937",
+  "migration": {
+    "method": "ROLE_LABEL_MIGRATION_WITH_INHERITED_MEMBERSHIP_ROOTS",
+    "new_seed": false,
+    "new_allocation": false,
+    "redraw": false,
+    "manual_swaps": 0,
+    "old_roots_recomputed_inside_controller": true,
+    "role_by_role_membership_preserved": true,
+    "full_migration_binding_root": "d611f30705ab64a321b8e37132b8349ccf67e7adc6c93b9478fd12d57852789d"
+  },
+  "roles": {
+    "RNG2_DEVELOPMENT": {
+      "closures": 256,
+      "exposure": "PUBLICLY_RELEASED",
+      "prior_execution": "ONE_AGG_D0_DIAGNOSTIC_FIXTURE",
+      "new_release": false
+    },
+    "RNG2_CALIBRATION": {
+      "closures": 512,
+      "exposure": "SEALED_UNSEEN",
+      "prior_execution": "NONE",
+      "new_release": false
+    },
+    "RNG2_VALIDATION": {
+      "closures": 512,
+      "exposure": "SEALED_UNSEEN",
+      "prior_execution": "NONE",
+      "new_release": false
+    },
+    "RNG2_PUBLIC_RESERVE": {
+      "closures": 640,
+      "exposure": "SEALED_UNSEEN",
+      "prior_execution": "NONE",
+      "new_release": false
+    }
+  },
+  "controller_reconstruction": {
+    "old_sealed_allocation_authenticated": true,
+    "closures": 1920,
+    "duplicates": 0,
+    "omissions": 0,
+    "historical_CAR_D0_exclusions": 128,
+    "complete_closure_integrity": true,
+    "old_role_roots_reconstructed": 4,
+    "old_balance_inherited": true,
+    "future_identities_examined_inside_controller": 1664,
+    "future_identities_exported": 0,
+    "protected_identities_accessed": 0,
+    "protected_overlap": 0,
+    "controller_attestation_verified_independently": true
+  },
+  "retirement": {
+    "old_AGG_scientific_role_authorities_active": false,
+    "old_AGG_membership_commitments_preserved": true,
+    "closed_AGG_terminal_preserved": "MAIN_CSW_AM_SCB_M1_CAR_AGG_D0_CLOSURE_CONFIRMED",
+    "closed_AGG_lineage_reopened": false
+  },
+  "zero_work": {
+    "new_identity_releases": 0,
+    "model_forwards": 0,
+    "stochastic_outputs": 0,
+    "receipts": 0,
+    "detector_scores": 0,
+    "threshold_derivations": 0,
+    "protected_access": 0
+  },
+  "authorizations": {
+    "RNG2_D0": true,
+    "RNG2_CAL1": false,
+    "RNG2_V1": false,
+    "RNG2_INT_D0": false,
+    "RNG2_INT_V1": false,
+    "RNG2_Q1": false,
+    "RNG2_C1": false,
+    "protected_release": false,
+    "automatic_successor": false
+  },
+  "evidence": {
+    "controller_attestation_sha256": "ebef168d03b91c9e77964eeda82f1aefebf303085ac1f737fdae24fd8999031d",
+    "development_authorization_sha256": "4f5323d204ed9e30e0d5bf84d7c4d3864f23471eb369dfd870d708c86771aa11",
+    "exposure_status_sha256": "bc7d7500273b5e1ebe4681b643a1be3fd8fad0f68b30df82cd8ff9ad7ad2bc57",
+    "retirement_declaration_sha256": "49f1f0f0bfee58594b6a46b3442665142ecb1e7fee394e6d6d8b6ff1190ff9dc",
+    "role_migration_bindings_sha256": "7833e750aa4276e2ea5a6ce60c2a4bb58f8c704ea33539864e2994aa672d1430",
+    "official_result_sha256": "2614c13cfd258f95efb573723b884aab9fa47bc187a794dd6493313c62356dc2",
+    "reference_result_sha256": "f9b2a9a4ff6dfd2afa811820aa3775e81ba6ee0f0fd4f50f189adbb9c693704f",
+    "official_reference_agreement": true
+  },
+  "scientific_claim": "ROLE_CONTRACT_MIGRATION_ONLY_NO_SAMPLER_OR_CHANNEL_RESULT",
+  "next_boundary": "CSW-AM-SCB-M1-RNG2-D0",
+  "main_verdict": "MAIN_CSW_AM_SCB_M1_RNG2_R0_PUBLIC_ROLE_MIGRATION_READY"
+}

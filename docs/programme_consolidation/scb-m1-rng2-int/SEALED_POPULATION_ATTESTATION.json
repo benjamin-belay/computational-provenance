@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "automatic_successor": false,
+    "int_c1_authorized": false
+  },
+  "evidence_counts": {
+    "detector_decisions": 0,
+    "executions": 0,
+    "generated_outputs": 0,
+    "receipt_envelopes": 0
+  },
+  "identity_exposure": {
+    "closure_identities_exported_in_handoff": 0,
+    "status": "SEALED"
+  },
+  "membership": {
+    "closure_count": 256,
+    "merkle_root": "bff3ab2452559b3af2c7279330143ec1a4357cd62015cf42161071fd7bb0c4e6",
+    "oriented_row_count": 512,
+    "role": "CARRIER_SEALED_CONFIRMATION"
+  },
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_handoff.sealed_attestation.v1",
+  "source": {
+    "protected_role_commitments": "artifacts/dev_only/csw-am-scb-m1-rec-s0/s0/PROTECTED_ROLE_COMMITMENTS.json",
+    "protected_role_commitments_sha256": "e7b55e69a33b63bb6c17d41e3ff68fec0e6f2ffde04226e17a8cf66c96b0d476",
+    "resource_status": "artifacts/dev_only/csw-am-scb-m1-rng2-int-final/RESOURCE_STATUS.json",
+    "resource_status_sha256": "33a9807926057c82ad3d50e310d5265c8b442b4daad72e894eef70ec8d681825"
+  }
+}

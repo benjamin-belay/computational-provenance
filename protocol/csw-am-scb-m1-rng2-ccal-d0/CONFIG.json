@@ -1,0 +1,61 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_ccal_d0.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-CCAL-D0",
+  "title": "CLEAN-ROOM CALIBRATION LIFECYCLE PREFLIGHT",
+  "mode": "PUBLIC_LITERAL_WRAPPER_REHEARSAL",
+  "bindings": {
+    "R0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/MAIN_AUDIT.json",
+    "R0_main_audit_sha256": "e806d272e3bef22b64455a9d14077873b7215a7aceb316ed1de3f8f05f833987",
+    "R0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/TERMINAL.json",
+    "R0_terminal_sha256": "38cb3b7c5570430cb9b740f31ddcbd2b214458cfe1be6979af517705eb269fa2",
+    "R0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_R0_SEALED_RESERVE_SPLIT_READY",
+    "role_commitments_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/allocation/ROLE_COMMITMENTS.json",
+    "role_commitments_sha256": "24bd041c0645af31602aafd8dec21e9292705401b45ca86ed235e7192ef4b735",
+    "closed_CAL1_runner_path": "tools/csw_am_scb_m1_rng2_cal1.py",
+    "closed_CAL1_runner_sha256": "1ab1878a751f86967d4cfa1fe4cdaaeaef7b0f92b978a14029436003695f96f9",
+    "closed_CAL1_reference_path": "tools/csw_am_scb_m1_rng2_cal1_reference.py",
+    "closed_CAL1_reference_sha256": "d7c61611f49147fe6e9f48f0357491455aeed6e03930d6b5728ced921057c62b"
+  },
+  "public_development": {
+    "closure_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_CLOSURES.jsonl",
+    "closure_sha256": "89e84d57ccd115d0489f8a3b1cb78d3e5f5bca5df4a9ae01cb3c66e77d737c18",
+    "row_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_ROWS.jsonl",
+    "row_sha256": "a93b30d690d3e09e4cd4049bada835054f5e72ecdaf402f72392d6b2d2fe45d1",
+    "selection": "SHA256_LOWEST_CLOSURE_ID_UNDER_CCAL_D0_DOMAIN",
+    "closures": 1,
+    "rows": 2,
+    "outputs": 32
+  },
+  "correction": {
+    "only_change": "CANONICAL_ABSOLUTE_PATH_RESOLUTION_BEFORE_SERIALIZATION_OR_OUTPUT_CREATION",
+    "relative_absolute_equivalence_required": true,
+    "scientific_construction_changed": false
+  },
+  "guards": {
+    "reveal_before_raw_commitment": "REJECT",
+    "score_before_key_reveal": "REJECT",
+    "second_raw_commitment": "REJECT",
+    "second_key_reveal": "REJECT",
+    "output_retry": "REJECT"
+  },
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-ccal-d0/CONFIG.json",
+    "tools/csw_am_scb_m1_rng2_ccal.py",
+    "tests/test_csw_am_scb_m1_rng2_ccal_d0.py"
+  ],
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_D0_LITERAL_LIFECYCLE_READY",
+    "path_failed": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_D0_PATH_CANONICALIZATION_FAILED",
+    "guard_failed": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_D0_LIFECYCLE_GUARD_FAILED",
+    "reference_failed": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_D0_REFERENCE_FAILED",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_D0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "separate_clean_calibration_request_after_ready": true,
+    "clean_calibration_release": false,
+    "validation_release": false,
+    "remaining_reserve_release": false,
+    "protected_release": false,
+    "automatic_successor": false
+  }
+}

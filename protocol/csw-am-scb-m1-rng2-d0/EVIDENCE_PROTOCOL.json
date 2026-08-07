@@ -1,0 +1,63 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_d0.evidence_protocol.v1",
+  "deterministic_trace_fields": [
+    "canonical_index",
+    "canonical_preimage_hex",
+    "hmac_sha256",
+    "uint52",
+    "uniform",
+    "uniform_hex",
+    "uniform_bytes_hex",
+    "candidate_order",
+    "pre_logits",
+    "post_logits",
+    "probabilities",
+    "cumulative_probabilities",
+    "selected_index",
+    "selected_token",
+    "final_bin_fallback"
+  ],
+  "reference_contract": {
+    "independent_index_validation": true,
+    "independent_preimage_construction": true,
+    "independent_uint52_extraction": true,
+    "independent_uniform_conversion": true,
+    "independent_inverse_cdf": true,
+    "production_summary_fields_not_trusted": true
+  },
+  "development_subset_requirements": {
+    "all_16_natural_z2_categories": true,
+    "all_8_answers": true,
+    "all_4_templates": true,
+    "all_64_z2_by_template_cells": true,
+    "both_orientations_per_closure": true,
+    "scientific_outcomes_not_selection_inputs": true
+  },
+  "paired_autoregressive_requirements": {
+    "same_uniform_all_49_steps": true,
+    "at_least_one_history_divergence": true,
+    "uniform_equality_after_first_history_divergence": true,
+    "probabilities_may_diverge": true,
+    "tokens_may_diverge": true,
+    "NONE_consumes_scheduled_draw": true,
+    "NONE_in_model_history": true,
+    "NONE_not_in_public_tokens": true,
+    "next_step_draw_unaffected": true
+  },
+  "denominators": [
+    "available_public_closures",
+    "selected_public_closures",
+    "oriented_rows",
+    "paired_outputs",
+    "model_operations",
+    "deterministic_fixtures",
+    "distributional_contexts",
+    "reference_comparisons"
+  ],
+  "future_role_boundary": {
+    "calibration_identities_accessed": 0,
+    "validation_identities_accessed": 0,
+    "reserve_identities_accessed": 0,
+    "protected_identities_accessed": 0
+  }
+}

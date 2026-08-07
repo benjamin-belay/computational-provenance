@@ -1,0 +1,119 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_s0.authority_protocol.v1",
+  "identity": "SCB_M1_VERIFIED_ABSTRACT_Z2_CARRIER_AUTHORITY_V1",
+  "authority_root": {
+    "identity": "K_CARRIER_ROOT",
+    "separate_from_receipt_mac_keys": true,
+    "bytes": 32,
+    "commit_before_role_release": true,
+    "reveal_after_raw_evidence_commit": true
+  },
+  "verified_claim_projection": {
+    "receipt_decision_required": "ACCEPT",
+    "receipt_type_required": "ABSTRACT_Z2",
+    "fields": [
+      "carrier_protocol_version",
+      "state_ontology_id",
+      "model_domain",
+      "checkpoint_sha256",
+      "state_type",
+      "category"
+    ],
+    "fixed_values": {
+      "carrier_protocol_version": "CSW_AM_SCB_M1_CAR_V1",
+      "state_ontology_id": "GATED_ALIAS16_SCB_M1_STATE_ONTOLOGY_V1",
+      "model_domain": "SCB_MODEL_1_STRICT_HARD_BOTTLENECK_V1",
+      "checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+      "state_type": "Z2"
+    },
+    "category_domain": {
+      "minimum": 0,
+      "maximum": 15
+    },
+    "excluded_fields": [
+      "complete_receipt_envelope",
+      "receipt_mac",
+      "exact_receipt_id",
+      "run_id",
+      "context_id",
+      "execution_id",
+      "nonce",
+      "event_sequence",
+      "natural_or_alias_role",
+      "intervention_family",
+      "z3",
+      "answer",
+      "visible_prompt"
+    ]
+  },
+  "canonical_encoding": {
+    "format": "UTF8_CANONICAL_JSON",
+    "object_keys": "LEXICOGRAPHIC",
+    "separators": "COMMA_COLON_NO_WHITESPACE",
+    "floats": "PROHIBITED",
+    "unknown_fields": "REJECT",
+    "duplicate_fields": "REJECT"
+  },
+  "derivation": {
+    "algorithm": "HMAC_SHA256",
+    "domain": "EXP33A|SCB-M1|VERIFIED-ABSTRACT-Z2|STATE-CARRIER-AUTHORITY|V1",
+    "preimage": "UTF8(domain) || 0x00 || canonical(verified_claim_projection)",
+    "output_bytes": 32,
+    "invalid_or_missing_receipt": "NO_AUTHORITY"
+  },
+  "other_authorities": {
+    "PROMPT": {
+      "domain": "EXP33A|SCB-M1|PROMPT-CARRIER-AUTHORITY|V1",
+      "preimage_fields": [
+        "visible_prompt_sha256"
+      ],
+      "natural_alias_invariant": true
+    },
+    "ANSWER": {
+      "domain": "EXP33A|SCB-M1|ANSWER-CARRIER-AUTHORITY|V1",
+      "preimage_fields": [
+        "answer"
+      ],
+      "natural_alias_invariant": true
+    },
+    "GENERIC": {
+      "domain": "EXP33A|SCB-M1|GENERIC-CARRIER-AUTHORITY|V1",
+      "preimage_fields": [
+        "constant_origin_label"
+      ],
+      "natural_alias_invariant": true
+    }
+  },
+  "equivalence_contract": {
+    "same_verified_abstract_z2_different_exact_execution": "SAME_STATE_AUTHORITY",
+    "different_verified_abstract_z2": "DIFFERENT_STATE_AUTHORITY",
+    "same_prompt_natural_alias": "SAME_PROMPT_AUTHORITY",
+    "same_answer_natural_alias": "SAME_ANSWER_AUTHORITY",
+    "generic_natural_alias": "SAME_GENERIC_AUTHORITY",
+    "exact_execution_receipts": "VERIFIED_SEPARATELY",
+    "causal_chain": "VERIFIED_SEPARATELY"
+  },
+  "decision_channels": {
+    "exact_execution_receipt": [
+      "ACCEPT",
+      "REJECT",
+      "ABSTAIN"
+    ],
+    "abstract_state_receipt": [
+      "ACCEPT",
+      "REJECT",
+      "ABSTAIN"
+    ],
+    "causal_chain": [
+      "ACCEPT",
+      "REJECT",
+      "ABSTAIN"
+    ],
+    "statistical_state_carrier": [
+      "ACCEPT",
+      "REJECT",
+      "INDETERMINATE"
+    ]
+  },
+  "conflation_prohibited": true
+}

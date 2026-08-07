@@ -1,0 +1,44 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_cal_s0.denominators.v1",
+  "calibration": {
+    "closures": 512,
+    "oriented_rows": 1024,
+    "generic_sides": 1024,
+    "authority_on_outputs": 8192,
+    "carrier_off_outputs": 8192,
+    "total_outputs": 16384,
+    "model_steps_per_output": 49,
+    "total_model_step_operations": 802816,
+    "eligible_positions_per_output": 24,
+    "total_eligible_positions": 393216,
+    "candidate_authorities": 16,
+    "per_output_authority_scores": 262144,
+    "side_condition_aggregate_vectors": 2048,
+    "aggregate_authority_scores": 32768,
+    "carrier_off_closure_null_statistics": 512,
+    "wrong_confusion_closure_null_statistics": 512
+  },
+  "adequate_support_predicate": {
+    "exact_role_membership": true,
+    "exact_closure_count": 512,
+    "exact_oriented_row_count": 1024,
+    "all_registered_outputs_present": true,
+    "all_outputs_semantically_valid": true,
+    "all_outputs_parse_valid": true,
+    "all_outputs_have_exactly_24_eligible_positions": true,
+    "all_16_candidate_scores_finite_per_output": true,
+    "all_512_carrier_off_null_statistics_finite": true,
+    "all_512_wrong_confusion_statistics_finite": true,
+    "T_exists_as_finite_maximum": true,
+    "M_exists_as_finite_nonnegative_maximum": true,
+    "any_failure_terminal": "SEMANTIC_OR_POSITION_SUPPORT_INVALID"
+  },
+  "full_denominator_rules": {
+    "no_retry": true,
+    "no_replacement": true,
+    "no_filtering": true,
+    "no_reserve_supplementation": true,
+    "no_second_key": true,
+    "no_reduced_denominator": true
+  }
+}

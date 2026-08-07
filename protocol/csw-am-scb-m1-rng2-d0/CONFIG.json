@@ -1,0 +1,82 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_d0.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-D0",
+  "title": "POSITION-INDEXED SAMPLER IMPLEMENTATION",
+  "mode": "PUBLIC_IMPLEMENTATION_READINESS",
+  "bindings": {
+    "RNG2_S0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_S0_PROTOCOL_READY_FOR_ROLE_MIGRATION",
+    "RNG2_R0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_R0_PUBLIC_ROLE_MIGRATION_READY",
+    "sampler_protocol_path": "protocol/csw-am-scb-m1-rng2-s0/SAMPLER_PROTOCOL.json",
+    "sampler_protocol_sha256": "eeba132a26fe6c3a4458009c22971a089803af9f46195dfa921490c7c1933694",
+    "numeric_protocol_path": "protocol/csw-am-scb-m1-rng2-s0/NUMERIC_AND_SCHEDULE_PROTOCOL.json",
+    "numeric_protocol_sha256": "520f2b7dcca846db8d437a1ef42bacaf78614bbf598cf5fc7d3cbaf640a0d071",
+    "validation_protocol_path": "protocol/csw-am-scb-m1-rng2-s0/VALIDATION_PROTOCOL.json",
+    "validation_protocol_sha256": "5dd13f2551959dae2eeae1b164fa5b1d53008176acc3fc0cc4ee4694e14b333b",
+    "R0_development_authorization_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/DEVELOPMENT_AUTHORIZATION.json",
+    "R0_development_authorization_sha256": "4f5323d204ed9e30e0d5bf84d7c4d3864f23471eb369dfd870d708c86771aa11",
+    "R0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/MAIN_AUDIT.json",
+    "R0_main_audit_sha256": "f1ff72c71cf17b02a5132e365cef9d745f33840c43d6e9f9b1b3d9c25690f2c7",
+    "R0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-r0/TERMINAL.json",
+    "R0_terminal_sha256": "179a246c84e5658a327c58d26bdc0a6e411504a394519d467f380bcaabc89653"
+  },
+  "public_development": {
+    "closure_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_CLOSURES.jsonl",
+    "closure_sha256": "89e84d57ccd115d0489f8a3b1cb78d3e5f5bca5df4a9ae01cb3c66e77d737c18",
+    "row_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_ROWS.jsonl",
+    "row_sha256": "a93b30d690d3e09e4cd4049bada835054f5e72ecdaf402f72392d6b2d2fe45d1",
+    "available_closures": 256,
+    "maximum_closures": 256,
+    "selected_closures": 64,
+    "selection_rule": "COVER_EACH_NATURAL_Z2_BY_TEMPLATE_CELL_WITH_SHA256_PRIORITY_THEN_FILL_TO_64_BY_SHA256_PRIORITY",
+    "selection_domain": "CSW_AM_SCB_M1_RNG2_D0_PUBLIC_SELECTION_V1",
+    "selection_inputs": [
+      "closure_id",
+      "registered_natural_z2",
+      "template_id"
+    ],
+    "outcome_dependent_selection": false
+  },
+  "surface_channel": {
+    "source_path": "tools/csw_a0_stochastic_channel.py",
+    "source_sha256": "df467bb4d91353637fa6f5fff0ce785d65191218587e5525868a46e1788cffd5",
+    "checkpoint_path": "artifacts/dev_only/csw-a0/training/seed1/CHECKPOINT.pt",
+    "checkpoint_sha256": "333cd0017ac815391d8e517691fbb310cc917c2dc6de1c30a8f81d4c60254ede",
+    "frozen_channel_path": "artifacts/dev_only/csw-a0-q1/FROZEN_CHANNEL.json",
+    "frozen_channel_sha256": "e002323784ca9b327fb37814f4db2751ef2a6c5e19fe30bf7d792ec044884e67",
+    "bias": 2.0,
+    "eligible_positions": 24,
+    "alternatives_per_position": 8,
+    "generic_scores_are_descriptive": true,
+    "A0_Q1_claims_inherited": false
+  },
+  "execution": {
+    "paired_outputs_per_closure": 1,
+    "output_index": 0,
+    "model_steps_per_output": 49,
+    "natural_alias_outputs": 128,
+    "operation_rows": 6272,
+    "surface_model_initializations": 1,
+    "SCB_model_forwards": 0,
+    "receipt_issuances": 0,
+    "detector_aggregation": 0,
+    "retries": 0,
+    "replacement_closures": 0
+  },
+  "terminals": {
+    "valid": "MAIN_CSW_AM_SCB_M1_RNG2_D0_IMPLEMENTATION_READY",
+    "binding_failed": "MAIN_CSW_AM_SCB_M1_RNG2_D0_BINDING_FAILED",
+    "sampler_failed": "MAIN_CSW_AM_SCB_M1_RNG2_D0_SAMPLER_FAILED",
+    "distribution_failed": "MAIN_CSW_AM_SCB_M1_RNG2_D0_DISTRIBUTION_FAILED",
+    "pairing_failed": "MAIN_CSW_AM_SCB_M1_RNG2_D0_PAIRING_FAILED",
+    "reference_failed": "MAIN_CSW_AM_SCB_M1_RNG2_D0_REFERENCE_FAILED",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_D0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "RNG2_CAL1_release": false,
+    "RNG2_VALIDATION_release": false,
+    "RNG2_PUBLIC_RESERVE_release": false,
+    "protected_release": false,
+    "separate_CAL1_request_after_valid_D0": true,
+    "automatic_successor": false
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_agg_d0.evidence_schema.v1",
+  "threshold_independent_output_fields": [
+    "output_id",
+    "closure_id",
+    "side",
+    "condition",
+    "draw",
+    "authority_category",
+    "eligible_positions",
+    "green_count",
+    "normalized_evidence",
+    "parse_status",
+    "semantic_status"
+  ],
+  "threshold_independent_side_fields": [
+    "closure_id",
+    "side",
+    "sixteen_aggregate_scores",
+    "authenticated_authority",
+    "authenticated_rank",
+    "strongest_wrong_authority",
+    "strongest_wrong_score",
+    "raw_top_two_margin",
+    "absolute_threshold_decision",
+    "margin_decision"
+  ],
+  "literal_preflight_evidence": [
+    "fixture_closure_id",
+    "natural_consumed_z2",
+    "alias_consumed_z2",
+    "receipt_decisions",
+    "semantic_payload_sha256",
+    "paired_stream_seed_sha256",
+    "model_step",
+    "natural_base_uniform",
+    "alias_base_uniform",
+    "uniform_equal",
+    "natural_selected_token",
+    "alias_selected_token"
+  ],
+  "failure_retention": {
+    "missing_output": "RETAIN",
+    "malformed_output": "RETAIN",
+    "insufficient_positions": "RETAIN",
+    "semantic_failure": "RETAIN",
+    "computation_failure": "RETAIN",
+    "evaluator_disagreement": "RETAIN"
+  },
+  "calibration_fields_prohibited_in_D0": [
+    "empirical_T",
+    "empirical_M",
+    "absolute_pass",
+    "margin_pass",
+    "pair_power_terminal"
+  ]
+}

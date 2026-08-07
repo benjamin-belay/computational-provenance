@@ -1,0 +1,78 @@
+{
+  "artifacts": [
+    {
+      "path": "artifacts/dev_only/csw-am-scb-t1/closure/CLOSURE.json",
+      "role": "three_seed_robustness_valid_negative",
+      "sha256": "b8cb1769277c849d25813d0a53e4881f1789b2bfd782e5fed9a8a74c7317556a"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1/MAIN_AUDIT.json",
+      "role": "selected_model_causal_transport",
+      "sha256": "c27f641b624ee1066a95f150b8047cdf05ed4cb370e3e8a7d67a081d214ac1f4"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rec-c1/MAIN_AUDIT.json",
+      "role": "receipt_confirmation",
+      "sha256": "a92402f6db730ae553d06b48051ab85fe88ef9b2d1a5e40f93c7dd3968419739"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-d0/MAIN_AUDIT.json",
+      "role": "position_indexed_sampler_validation",
+      "sha256": "02b32f289dfb4e408fd73786e08e8a24dc2b398db717292ff9962af6a77e353b"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal1/MAIN_AUDIT.json",
+      "role": "clean_room_threshold_calibration",
+      "sha256": "bb5896baf3b5ad22ef01e14700ce8be497afdd019d14330e3e8d67e7d9e6f1a4"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-v1/MAIN_AUDIT.json",
+      "role": "generic_channel_prospective_validation",
+      "sha256": "80efda03d61ac52d8f24b88edb3e9b897d94441862b61953f3b69bba52996c60"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-v1/MAIN_AUDIT.json",
+      "role": "public_receipt_bound_prospective_validation",
+      "sha256": "12373ba1f3c1307d40b265e4a6a6cee74120e56ee1730578d83434f4ba34bea2"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-q1/MAIN_AUDIT.json",
+      "role": "protected_qualification_audit",
+      "sha256": "c87837e960c61df4977bfd20edcc29614db0c1a2301b051335eef87435d7c1c5"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-q1/CLOSURE_AND_CONSOLIDATION.json",
+      "role": "protected_qualification_interpretation",
+      "sha256": "f7acc5e01cec74349479b71992471e9d02ebdef8348dc3250e783346aaf0ee7a"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-final/MAIN_AUDIT.json",
+      "role": "final_programme_audit",
+      "sha256": "0c42a70880ece66777f192a97a4916678e134bcd47a67d500b55b60c38257928"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-final/TERMINAL.json",
+      "role": "final_programme_terminal",
+      "sha256": "fa7ddca51245c02efd22f5b109e459a7f995cfdb34f9945977927273f47e3f9a"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-final/RESOURCE_STATUS.json",
+      "role": "final_resource_status",
+      "sha256": "33a9807926057c82ad3d50e310d5265c8b442b4daad72e894eef70ec8d681825"
+    },
+    {
+      "path": "artifacts/dev_only/csw-am-scb-m1-rec-s0/s0/PROTECTED_ROLE_COMMITMENTS.json",
+      "role": "protected_role_commitments",
+      "sha256": "e7b55e69a33b63bb6c17d41e3ff68fec0e6f2ffde04226e17a8cf66c96b0d476"
+    }
+  ],
+  "claim_bearing_public_stage": {
+    "frozen_source_commit": "87d9fda75fc175dffedfd2f29395118abf6a7450",
+    "identity": "CSW-AM-SCB-M1-RNG2-INT-V1",
+    "source_manifest": "artifacts/dev_only/csw-am-scb-m1-rng2-int-v1/EXECUTABLE_MANIFEST.json",
+    "terminal": "MAIN_CSW_AM_SCB_M1_RNG2_INT_V1_PUBLIC_INTEGRATION_VALIDATED"
+  },
+  "final_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_INT_FINAL_PROGRAMME_CONSOLIDATED",
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_handoff.public_manifest.v1"
+}
+

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exp33ae"
+version = "0.1.0"
+description = "Development-only Experiment 33a-E engineered causal abstraction"
+requires-python = ">=3.12,<3.13"
+dependencies = ["torch==2.7.1", "numpy==2.2.6"]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.1"]
+
+[project.scripts]
+exp33ae = "exp33ae.cli:main"
+exp33af = "exp33af.cli:main"
+exp33alb0 = "exp33alb0.cli:main"
+exp33ac1v3 = "exp33ac1v3.cli:main"
+exp33ac1mech = "exp33ac1mech.cli:main"
+exp33ac1dev2 = "exp33ac1dev2.cli:main"
+exp33ac1dev3 = "exp33ac1dev3.cli:main"
+exp33aproben0n1 = "exp33aproben0n1.cli:main"
+exp33aprobencons = "exp33aprobencons.cli:main"
+exp33aproben1acleanv2 = "exp33aproben1acleanv2.cli:main"
+exp33aproben1bl3v2 = "exp33aproben1bl3v2.cli:main"
+exp33aproben1bl3v21 = "exp33aproben1bl3v21.cli:main"
+exp33aproben1bl3v22 = "exp33aproben1bl3v22.cli:main"
+exp33aproben1bv22replayr1 = "exp33aproben1bv22replayr1.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"

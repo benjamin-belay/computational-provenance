@@ -1,0 +1,11 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_r0.terminal.v1",
+  "terminal": "MAIN_CSW_AM_SCB_M1_RNG2_R0_PUBLIC_ROLE_MIGRATION_READY",
+  "status": "MEMBERSHIP_PRESERVING_MIGRATION_COMPLETE",
+  "new_allocation_executed": false,
+  "new_identity_releases": 0,
+  "RNG2_D0_authorized": true,
+  "RNG2_CAL1_authorized": false,
+  "protected_release_authorized": false,
+  "next_boundary": "POSITION_INDEXED_SAMPLER_IMPLEMENTATION_ON_EXISTING_PUBLIC_DEVELOPMENT_ROLE"
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_r0.manifest.v1",
+  "source_commit": "8f4e52afd12dad674fc67b9df15a50168eb28937",
+  "files": {
+    "CONTROLLER_ATTESTATION.json": "ebef168d03b91c9e77964eeda82f1aefebf303085ac1f737fdae24fd8999031d",
+    "DEVELOPMENT_AUTHORIZATION.json": "4f5323d204ed9e30e0d5bf84d7c4d3864f23471eb369dfd870d708c86771aa11",
+    "EXPOSURE_STATUS.json": "bc7d7500273b5e1ebe4681b643a1be3fd8fad0f68b30df82cd8ff9ad7ad2bc57",
+    "OFFICIAL_RESULT.json": "2614c13cfd258f95efb573723b884aab9fa47bc187a794dd6493313c62356dc2",
+    "REFERENCE_RESULT.json": "f9b2a9a4ff6dfd2afa811820aa3775e81ba6ee0f0fd4f50f189adbb9c693704f",
+    "RETIREMENT_DECLARATION.json": "49f1f0f0bfee58594b6a46b3442665142ecb1e7fee394e6d6d8b6ff1190ff9dc",
+    "ROLE_MIGRATION_BINDINGS.json": "7833e750aa4276e2ea5a6ce60c2a4bb58f8c704ea33539864e2994aa672d1430"
+  }
+}

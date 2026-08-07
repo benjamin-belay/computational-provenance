@@ -1,0 +1,78 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_agg_r0.allocation_spec.v1",
+  "unit": "COMPLETE_DEPENDENCY_CLOSURE",
+  "primary_joint_cell": [
+    "NATURAL_Z2_MOD8",
+    "NATURAL_ANSWER",
+    "TEMPLATE_ID"
+  ],
+  "reachable_primary_cells": 128,
+  "minimum_per_primary_cell": {
+    "AGG_DEVELOPMENT": 1,
+    "AGG_CALIBRATION": 1,
+    "AGG_VALIDATION": 1,
+    "PUBLIC_RESERVE": 0
+  },
+  "allocation_algorithm": [
+    "VALIDATE_AND_PAIR_ALL_SOURCE_ROWS",
+    "REMOVE_ALL_CLOSED_CAR_D0_CLOSURES",
+    "HASH_ORDER_EACH_PRIMARY_CELL",
+    "ASSIGN_ONE_CLOSURE_PER_PRIMARY_CELL_TO_EACH_NONRESERVE_ROLE",
+    "HASH_ORDER_REMAINING_CLOSURES_WITHIN_EACH_ANSWER",
+    "HASH_ORDER_EXACT_ROLE_SLOTS_WITHIN_EACH_ANSWER",
+    "ZIP_CLOSURES_TO_ROLE_SLOTS",
+    "NO_REDRAW_OR_MANUAL_SWAP"
+  ],
+  "answer_quota_per_role": {
+    "AGG_DEVELOPMENT": 32,
+    "AGG_CALIBRATION": 64,
+    "AGG_VALIDATION": 64,
+    "PUBLIC_RESERVE": 80
+  },
+  "balance_gates": {
+    "exact_answer_quota": true,
+    "maximum_natural_z2_high_bit_fraction_deviation_from_eligible": 0.1,
+    "maximum_template_fraction_deviation_from_eligible": 0.1,
+    "maximum_z2_mod8_fraction_deviation_from_eligible": 0.1,
+    "both_orientations_in_every_closure": true,
+    "no_outcome_or_detector_feature_used": true
+  },
+  "commitment_leaf_fields": [
+    "protocol_identity",
+    "task_identity",
+    "role",
+    "closure_id",
+    "closure_content_sha256",
+    "schema_version"
+  ],
+  "public_outputs": [
+    "SEED_COMMITMENT.json",
+    "ROLE_COMMITMENTS.json",
+    "ALLOCATION_MANIFEST.json",
+    "FULL_ALLOCATION.sealed",
+    "development/DEVELOPMENT_RELEASE.json",
+    "development/DEVELOPMENT_CLOSURES.jsonl",
+    "development/DEVELOPMENT_ROWS.jsonl",
+    "OFFICIAL_RESULT.json",
+    "REFERENCE_RESULT.json",
+    "TERMINAL.json",
+    "MAIN_AUDIT.json"
+  ],
+  "nonpublic_material": [
+    "RAW_ALLOCATION_SEED",
+    "FULL_ALLOCATION_ENCRYPTION_KEY",
+    "CALIBRATION_ROLE_SALT",
+    "VALIDATION_ROLE_SALT",
+    "RESERVE_ROLE_SALT",
+    "NONDEVELOPMENT_CLOSURE_IDENTITIES",
+    "FULL_PLAINTEXT_ALLOCATION"
+  ],
+  "forbidden_selection_inputs": [
+    "MODEL_CORRECTNESS",
+    "DETECTOR_SCORE",
+    "MATCHING_MARGIN",
+    "SEMANTIC_VALIDITY",
+    "CARRIER_OUTCOME",
+    "COMPUTATION_FIDELITY"
+  ]
+}

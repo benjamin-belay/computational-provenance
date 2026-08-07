@@ -1,0 +1,22 @@
+\begin{abstract}
+% claims: C01 C03 C08 C09 C10 C11; sources: S03 S04 S10 S14 S15 S16 S17
+Receipts can attest that trusted infrastructure recorded an internal state, while
+text watermarks can place a detectable statistical signal inside generated
+output. Neither mechanism alone shows that the signal corresponds to a
+causally operative state in the computation that produced the output. We ask
+whether an authenticated internal state can select such a signal when the
+prompt, final answer, surface content, generation settings, and underlying
+random draws are held fixed. We study this question in an engineered arithmetic
+model whose answer must pass through a supervised categorical bottleneck.
+Trusted instrumentation authenticates the bottleneck state, derives a
+state-specific carrier identity, and uses that identity to bias sampling in
+grammar-constrained text. Our decisive comparison pairs a natural execution
+with an intervention that changes the authenticated state and downstream
+computation while preserving the answer. The public receipt-bound integration
+was prospectively validated on 128/128 held-out public closures. Protected
+qualification was not earned: one of 128 closures failed computation fidelity,
+the descriptive result was 127/128, and final protected confirmation was not
+run. This demonstrates bounded feasibility of state-conditioned statistical
+output carriage in one selected engineered system, not output-only
+authentication, whole-reasoning provenance, or protected generalisation.
+\end{abstract}

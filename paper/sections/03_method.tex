@@ -1,0 +1,108 @@
+\section{Technical construction}
+
+\subsection{A mandatory causal state}
+
+% claims: C02 C03; sources: S03 S04
+For $x=(a,b,c,d)\in\{0,\ldots,15\}^4$, the task is
+\begin{equation}
+z_1=(a+b)\bmod16,\quad \ztwo=(z_1+c)\bmod16,\quad
+\zthree=(5\ztwo+d)\bmod16,\quad y=\zthree\bmod8.
+\end{equation}
+Operationally, the model must predict a 16-way hard state \ztwo{}, combine only
+that state with $d$ to predict hard \zthree{}, and use only \zthree{} to predict
+the eight-way answer. The downstream modules receive no true labels, soft
+probabilities, logits, residual input features, prompt features, or shared
+cache. We call \ztwo{} a \emph{causal state} because registered interventions on
+it change the learned downstream computation, not merely because it is
+decodable.
+
+% claims: C03; sources: S03 S04
+The alias intervention sets $\ztwo'=\ztwo+8\bmod16$. Since
+$5\cdot8=40\equiv8\pmod{16}$, it also shifts \zthree{} by eight; because
+$y=\zthree\bmod8$, the final answer is unchanged. By contrast,
+$\ztwo'=\ztwo+1$ changes the registered answer. After either intervention, the
+learned transition still produces \zthree{} rather than receiving it from the
+controller. Same-state, sham, wrong-state, and direct-\zthree{} controls test
+additional failure modes.
+
+% claims: C02 C03 C12; sources: S03 S04 S18
+The study prospectively selected Model 1 at the first checkpoint satisfying its
+frozen gates. The model has 12,648 parameters and supervised 16-way hard
+states. A separate causal confirmation tested 256 matched units, producing 512
+oriented examples across seven registered intervention families. These tests
+establish correct transport for the selected model only. The wider
+three-seed recipe failed its preregistered three-of-three requirement: Models 1
+and 3 passed, while Model 2 failed a frozen subgroup gate.
+
+\subsection{Authenticated evidence}
+
+% claims: C04 C05; sources: S05 S06 S13
+Trusted instrumentation issues \hmac-SHA256 receipts after observing the hard
+state boundaries. An exact receipt binds one consumed state event to its run,
+context, execution, sequence, and intervention. An abstract receipt links that
+event to a reusable category in a frozen ontology and model/checkpoint domain.
+A chain receipt checks the registered order and relations
+$\ztwo\rightarrow\zthree\rightarrow y$. Generation is authorised only after
+the required exact, abstract, and chain evidence passes.
+
+\input{tables/exact_vs_abstract}
+
+% claims: C04 C05; sources: S05 S06
+The trusted computing base contains the checkpoint, state-boundary
+instrumentation, receipt issuer, verifier/controller, and key custody. The
+registered tests cover missing, malformed, crossed, replayed, reordered, and
+wrong-state evidence across contexts and executions. They do not cover a
+malicious issuer holding the master key, an arbitrary controller, key
+compromise, adaptive rewriting, or an untrusted verifier.
+
+\subsection{From state class to statistical carrier}
+
+% claims: C04 C05; sources: S05 S06 S12 S13
+After verification, the controller derives a \emph{carrier identity}---called
+an authority in the implementation---from the ontology, model/checkpoint
+domain, state type, and abstract category. It deliberately excludes receipt
+bytes and exact execution identity. Consequently, two executions in the same
+state class share an authority, while distinct state classes select different
+authorities.
+
+% claims: C01; sources: S01 S10
+The surface realiser emits a fixed four-field object through a finite grammar.
+Of 49 autoregressive steps, 24 admit eight allowed alternatives. At an eligible
+position, the state authority defines a keyed ``green'' set of four
+alternatives, and the realiser adds a fixed logit bias of 2 to those
+alternatives before sampling. This SynthID-style mechanism refers only to
+statistical in-generation carriage; it is not equivalent to a deployed
+SynthID system.
+
+% claims: C06; sources: S07
+To isolate the matched comparison, the sampler uses
+\emph{position-indexed randomness}. Each output position receives a
+deterministic uniform draw indexed by the pair, output, step, and subdraw, but
+not by the state, answer, receipt, or generated history. Token probabilities
+remain autoregressive and therefore history-dependent. The indexed uniforms
+nevertheless let natural and alias executions reuse the same primitive draws
+after their token histories diverge. The implementation name for this sampler
+is \rngtwo{}.
+
+% claims: C07; sources: S08 S09
+For output $i$, let $G_i(A)$ be the number of the 24 eligible positions that
+fall in authority $A$'s green set. The per-output score and eight-output
+aggregate are
+\begin{equation}
+Z_i(A)=\frac{G_i(A)-12}{\sqrt{6}},\qquad
+S_A=\frac{1}{\sqrt{8}}\sum_{i=1}^{8}Z_i(A).
+\end{equation}
+The first expression measures excess green choices relative to the null
+expectation; the second combines eight generated outputs for one execution.
+The intended authority is accepted only if its aggregate exceeds the frozen
+threshold $T=4.04145$, uniquely ranks first among 16 candidates, and has a
+strictly positive margin over the strongest alternative. Calibration fixed
+these rules before validation.
+
+% claims: C09; sources: S10 S12 S13
+Figure~\ref{fig:contrast} is the integrated test of this construction. It does
+not claim that literally every field is fixed: authenticated \ztwo{},
+model-generated \zthree{}, receipt context, authority-conditioned
+probabilities, and the intended signal change downstream. It does control the
+prompt, final answer, printed payload, configuration, output indices, and
+primitive random draws within the frozen pipeline.

@@ -1,0 +1,86 @@
+\section{System overview}
+
+% claims: C01 C04 C05 C13; sources: S01 S02 S05 S06 S13
+Our construction joins four layers that are useful separately but answer different
+questions together.  A \emph{causal computation} produces an internal state that
+the answer must use.  \emph{Receipts} authenticate what trusted instrumentation
+observed.  A verified state class selects a \emph{carrier authority}: a keyed
+identity that changes token probabilities.  Finally, an output-side detector asks
+which authority the generated text statistically supports.  We call the resulting
+regularity a \emph{carrier}.  It is evidence of compatibility with a state class,
+not an independent proof of the execution that produced the text.
+
+\begin{figure}[t]
+  \centering
+  \small
+  \fbox{\shortstack{1. Causal computation\\state affects answer}}
+  $\rightarrow$
+  \fbox{\shortstack{2. Receipts\\authenticate events}}
+  $\rightarrow$
+  \fbox{\shortstack{3. State authority\\biases sampling}}
+  $\rightarrow$
+  \fbox{\shortstack{4. Output verification\\scores authorities}}
+  % claims: C01 C02 C04 C05; sources: S03 S04 S05 S06 S13
+  \caption{The four-layer system. Computation establishes causal use; exact,
+  abstract, and chain receipts establish trusted provenance claims; a
+  state-derived authority controls a statistical signal; and output scoring
+  recovers that signal. No single layer establishes all four properties.}
+  \label{fig:overview}
+\end{figure}
+
+\paragraph{What each receipt means.}
+% claims: C04 C05; sources: S05 S06 S13
+An \emph{exact receipt} identifies one particular internal event in one
+execution.  An \emph{abstract receipt} says that the event belongs to a
+registered state class, so two different executions may share the same abstract
+state while having different exact receipts.  A \emph{causal-chain receipt}
+authenticates the registered order and relation from \ztwo{} through \zthree{} to
+the answer.  These distinctions matter: a different execution can fail exact
+provenance while remaining compatible with the same abstract state and hence
+the same carrier authority.
+
+\paragraph{A running matched example.}
+% claims: C03 C09; sources: S04 S10 S12 S13
+For input $(4,15,1,1)$, the natural execution produces
+$(\ztwo,\zthree,y)=(4,5,5)$.  We then intervene on the internal state to obtain
+an alias execution with $(12,13,5)$.  The internal path changes but the answer
+does not.  The abstract receipt for state 4 selects authority $A$; the receipt
+for state 12 selects authority $B$.  Both executions reuse the same prompt,
+answer, semantic payload, configuration, output indices, and indexed random
+draws.  The carrier is therefore expected to switch from $A$ to $B$ only
+because the authenticated causal state switched.
+
+\begin{figure}[t]
+  \centering
+  \small
+  \begin{tabularx}{0.98\linewidth}{@{}YcY@{}}
+    \toprule
+    \textbf{Natural execution} & \textbf{Held fixed} & \textbf{Alias execution} \\
+    \midrule
+    $\ztwo=4\rightarrow\zthree=5\rightarrow y=5$
+      & prompt; answer; payload; configuration; indexed draws
+      & $\ztwo=12\rightarrow\zthree=13\rightarrow y=5$ \\
+    abstract state 4 $\rightarrow$ authority $A$
+      & same visible task and semantic content
+      & abstract state 12 $\rightarrow$ authority $B$ \\
+    output carries signal $A$
+      & only intended switching source: authenticated \ztwo{}
+      & output carries signal $B$ \\
+    \bottomrule
+  \end{tabularx}
+  % claims: C03 C09; sources: S04 S10 S12 S13
+  \caption{The decisive natural/alias contrast. The visible problem, final
+  answer, semantic payload, generation settings, and position-indexed random
+  draws are paired. The authenticated \ztwo{} state, downstream \zthree{},
+  receipt context, derived authority, and intended carrier signal change.}
+  \label{fig:contrast}
+\end{figure}
+
+\paragraph{Experimental unit.}
+% claims: C08; sources: S10 S11
+A \emph{closure} is one complete matched natural/alias test unit, including its
+two executions, receipts, generated outputs, controls, and frozen verdicts.  It
+passes only if both executions satisfy every registered computation, receipt,
+chain, parsing, carrier, and attack gate.  Outputs, token positions, authority
+scores, and attack checks within a closure are dependent measurements, not
+independent replications.

@@ -1,0 +1,39 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_agg_s0.detector_protocol.v1",
+  "detector_identity": "AGGREGATE_ZSCORE_SUM_MAX16_V1",
+  "outputs_per_side": 8,
+  "per_output_evidence": {
+    "input": "GREEN_TOKEN_COUNT",
+    "eligible_positions": "OBSERVED_VALID_POSITION_COUNT",
+    "normalization": "(GREEN_COUNT - N/2) / SQRT(N/4)",
+    "invalid_or_zero_position_output": "SIDE_FAILURE"
+  },
+  "side_aggregation": {
+    "authority_score": "SUM_8_NORMALIZED_OUTPUT_EVIDENCE / SQRT(8)",
+    "candidate_authorities": 16,
+    "authenticated_authority_must_rank_first_strictly": true
+  },
+  "joint_calibration": {
+    "total_familywise_alpha": 0.01,
+    "absolute_alpha": 0.005,
+    "confusion_alpha": 0.005,
+    "absolute_threshold_T": "STRICT_EMPIRICAL_1_MINUS_ALPHA QUANTILE_OF_CLOSURE_LEVEL_CARRIER_OFF_MAX16",
+    "margin_threshold_M": "MAX_ZERO_AND_STRICT_EMPIRICAL_1_MINUS_ALPHA QUANTILE_OF_CLOSURE_LEVEL_MAX_WRONG_CLAIM_GAP",
+    "quantile_rule": "ORDER_STATISTIC_CEIL((N+1)*(1-ALPHA))",
+    "acceptance": "S_AUTH > T AND S_AUTH > MAX_WRONG AND S_AUTH-MAX_WRONG > M",
+    "calibration_thresholds_fixed_before_validation_release": true
+  },
+  "nulls": {
+    "carrier_off": "ANY_OF_16_AUTHORITIES_ACCEPTS_ON_A_COMPLETE_CARRIER_OFF_CLOSURE",
+    "wrong_authority": "ANY_NONAUTHENTICATED_AUTHORITY_ACCEPTS_ON_A_STATE_EMBEDDED_SIDE",
+    "dependence_handling": "WHOLE_CLOSURE_EMPIRICAL_CALIBRATION_NO_WITHIN_CLOSURE_INDEPENDENCE_ASSUMPTION"
+  },
+  "validation": {
+    "carrier_off_report_levels": ["OUTPUT", "SIDE", "CLOSURE"],
+    "wrong_authority_report_levels": ["SCORE", "OUTPUT", "SIDE", "CLOSURE"],
+    "matching_requirements": ["ABSOLUTE_THRESHOLD", "STRICT_RANK_FIRST", "TOP_TWO_MARGIN"],
+    "no_threshold_revision": true,
+    "no_margin_revision": true,
+    "no_fallback_statistic": true
+  }
+}

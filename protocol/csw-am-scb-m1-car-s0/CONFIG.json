@@ -1,0 +1,97 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_s0.config.v1",
+  "identity": "CSW-AM-SCB-M1-CAR-S0",
+  "title": "RECEIPT-BOUND STATE-CARRIER PROTOCOL",
+  "mode": "STATIC_ZERO_GENERATION_QUALIFICATION",
+  "source_file_paths": [
+    "protocol/csw-am-scb-m1-car-s0/CONFIG.json",
+    "protocol/csw-am-scb-m1-car-s0/AUTHORITY_PROTOCOL.json",
+    "protocol/csw-am-scb-m1-car-s0/REALISER_BOUNDARY.json",
+    "protocol/csw-am-scb-m1-car-s0/EXPERIMENT_DESIGN.json",
+    "tools/csw_am_scb_m1_car_s0.py",
+    "tools/csw_am_scb_m1_car_s0_reference.py",
+    "tests/test_csw_am_scb_m1_car_s0.py"
+  ],
+  "receipt_binding": {
+    "main_audit_commit": "837cc35ffb2fd3bb37e579d1f5887ccabc7f5664",
+    "main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rec-c1/MAIN_AUDIT.json",
+    "main_audit_sha256": "a92402f6db730ae553d06b48051ab85fe88ef9b2d1a5e40f93c7dd3968419739",
+    "main_terminal": "MAIN_CSW_AM_SCB_M1_REC_C1_RECEIPT_PROVENANCE_CONFIRMED",
+    "receipt_protocol_path": "protocol/csw-am-scb-m1-rec-s0/RECEIPT_PROTOCOL.json",
+    "receipt_protocol_sha256": "29c059a2b935831d4d556498f506c192c6b3943b04d626b07f05c881a4a6f693",
+    "state_ontology_id": "GATED_ALIAS16_SCB_M1_STATE_ONTOLOGY_V1",
+    "model_domain": "SCB_MODEL_1_STRICT_HARD_BOTTLENECK_V1",
+    "checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+    "z2_categories": 16
+  },
+  "channel_binding": {
+    "immutable_commit": "458208dcbcd7f44978994e8ecde671b9c480efba",
+    "immutable_tree": "12c850ac1fcdadd565231c0ce4a73f926dd6650d",
+    "builder_handoff_path": "artifacts/dev_only/csw-a0-q1/BUILDER_HANDOFF.json",
+    "builder_terminal": "CSW_A0_CHANNEL_READY_FOR_SELECTED_MODEL_SCIENCE",
+    "frozen_channel_path": "artifacts/dev_only/csw-a0-q1/FROZEN_CHANNEL.json",
+    "frozen_channel_sha256": "e002323784ca9b327fb37814f4db2751ef2a6c5e19fe30bf7d792ec044884e67",
+    "production_path": "tools/csw_a0_stochastic_channel.py",
+    "production_blob": "5e9f73f9aac34964a82a0e3390d0f44693d3eddd",
+    "production_sha256": "df467bb4d91353637fa6f5fff0ce785d65191218587e5525868a46e1788cffd5",
+    "reference_path": "tools/csw_a0_reference.py",
+    "reference_blob": "c620a518411d4c039f4b3cdb413b94b5d3c8bfa7",
+    "reference_sha256": "346f19655825a10c8f5467302b67481d7eb835a03e91556f7edc8d08f0b2720a",
+    "checkpoint_sha256": "333cd0017ac815391d8e517691fbb310cc917c2dc6de1c30a8f81d4c60254ede",
+    "bias": 2.0,
+    "threshold": 20,
+    "eligible_positions": 24,
+    "minimum_eligible_length": 24,
+    "alternatives_per_position": 8,
+    "green_fraction": 0.5,
+    "green_domain": "CSW_A0_SYNTHETIC_AUTHORITY_GREENLIST_V1",
+    "qualified_candidate_multiplicity": 8,
+    "integrated_candidate_multiplicity": 16,
+    "multiplicity_change_requires_integrated_Q1": true,
+    "retuned_parameters": []
+  },
+  "protected_roles": {
+    "CARRIER_EXCLUDED_QUALIFICATION": {
+      "closures": 128,
+      "merkle_root": "b7ce60941fbf3a319ed8b2bb24357ebe87c8f5ecb1bde363d8a61c07f99e88dd"
+    },
+    "CARRIER_SEALED_CONFIRMATION": {
+      "closures": 256,
+      "merkle_root": "bff3ab2452559b3af2c7279330143ec1a4357cd62015cf42161071fd7bb0c4e6"
+    },
+    "SCB_REMAINING_RESERVE": {
+      "closures": 192,
+      "merkle_root": "794f1d596e314b70d5502608a8a92db86a6391075dbab7d40e87249badd0850c"
+    },
+    "full_allocation_sha256": "fd3c64546efdaeef7e54694fc814cc594f3f8d5fe0f5175e707630e0a3b0c84d",
+    "sealed_manifest_sha256": "5a33d5cefc285aa56be27f2d1b6f402ae65653c3e985ecbe938d0abc27deefb4"
+  },
+  "zero_scientific_work": {
+    "protected_closure_releases": 0,
+    "SCB_model_forwards": 0,
+    "surface_model_forwards": 0,
+    "receipt_issuances": 0,
+    "carrier_authorities": 0,
+    "generated_outputs": 0,
+    "detector_decisions": 0,
+    "model_2_operations": 0,
+    "model_3_operations": 0
+  },
+  "terminals": {
+    "valid": "CSW_AM_SCB_M1_CAR_S0_PROTOCOL_READY",
+    "receipt_binding_failed": "CSW_AM_SCB_M1_CAR_S0_RECEIPT_BINDING_FAILED",
+    "channel_binding_failed": "CSW_AM_SCB_M1_CAR_S0_CHANNEL_BINDING_FAILED",
+    "authority_protocol_failed": "CSW_AM_SCB_M1_CAR_S0_AUTHORITY_PROTOCOL_FAILED",
+    "realiser_boundary_failed": "CSW_AM_SCB_M1_CAR_S0_REALISER_BOUNDARY_FAILED",
+    "analysis_plan_failed": "CSW_AM_SCB_M1_CAR_S0_ANALYSIS_PLAN_FAILED",
+    "protected_boundary_failed": "CSW_AM_SCB_M1_CAR_S0_PROTECTED_BOUNDARY_FAILED",
+    "evaluator_mismatch": "CSW_AM_SCB_M1_CAR_S0_EVALUATOR_MISMATCH",
+    "implementation_invalid": "CSW_AM_SCB_M1_CAR_S0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "public_CAR_D0_after_valid_S0": true,
+    "CARRIER_EXCLUDED_QUALIFICATION_release": false,
+    "CARRIER_SEALED_CONFIRMATION_release": false,
+    "automatic_successor": false
+  }
+}

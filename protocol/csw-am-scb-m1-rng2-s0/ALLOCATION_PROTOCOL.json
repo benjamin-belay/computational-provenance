@@ -1,0 +1,61 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_s0.allocation_protocol.v1",
+  "status": "FORMAL_MIGRATION_REQUIRED_BEFORE_ANY_RNG2_GENERATION",
+  "known_public_population": {
+    "total_eligible_closures": 1920,
+    "fresh_unallocated_closures": 0,
+    "released_AGG_DEVELOPMENT_closures": 256,
+    "prior_AGG_D0_fixture_closures_consumed": 1,
+    "sealed_AGG_CALIBRATION_closures": 512,
+    "sealed_AGG_VALIDATION_closures": 512,
+    "sealed_PUBLIC_RESERVE_closures": 640
+  },
+  "prospective_rng2_roles": [
+    {
+      "role": "RNG2_DEVELOPMENT",
+      "closures": 256,
+      "source": "FORMER_RELEASED_AGG_DEVELOPMENT",
+      "claim_role": "PUBLIC_SOFTWARE_AND_GENERIC_CHANNEL_DEVELOPMENT"
+    },
+    {
+      "role": "RNG2_CALIBRATION",
+      "closures": 512,
+      "source": "FORMER_SEALED_AGG_CALIBRATION",
+      "claim_role": "ONE_SHOT_GENERIC_THRESHOLD_CALIBRATION"
+    },
+    {
+      "role": "RNG2_VALIDATION",
+      "closures": 512,
+      "source": "FORMER_SEALED_AGG_VALIDATION",
+      "claim_role": "ONE_SHOT_DISJOINT_GENERIC_PUBLIC_VALIDATION"
+    },
+    {
+      "role": "RNG2_PUBLIC_RESERVE",
+      "closures": 640,
+      "source": "FORMER_SEALED_PUBLIC_RESERVE",
+      "claim_role": "UNRELEASED"
+    }
+  ],
+  "required_RNG2_R0_actions": [
+    "RETIRE_OLD_AGG_ROLE_AUTHORITY_WITHOUT_REVEALING_SEALED_IDENTITIES",
+    "BIND_NEW_PROTOCOL_AND_ROLE_NAMES_TO_COMPLETE_CLOSURES",
+    "COMMIT_NEW_ROLE_ROOTS_BEFORE_RELEASE",
+    "PROVE_COUNTS_AND_CLOSURE_ISOLATION",
+    "RELEASE_ONLY_RNG2_DEVELOPMENT",
+    "KEEP_CALIBRATION_VALIDATION_AND_RESERVE_IDENTITIES_INACCESSIBLE"
+  ],
+  "prohibitions": [
+    "NO_SILENT_ROLE_MIGRATION",
+    "NO_USE_OF_AGG_CALIBRATION_AUTHORITY",
+    "NO_USE_OF_AGG_VALIDATION_AUTHORITY",
+    "NO_RESERVE_RELEASE",
+    "NO_PROTECTED_ROLE_ACCESS",
+    "NO_RNG2_OUTPUT_BEFORE_RNG2_R0_READY"
+  ],
+  "protected_roles": {
+    "qualification_closures": 128,
+    "confirmation_closures": 256,
+    "remain_sealed": true,
+    "migration_authorized_in_S0": false
+  }
+}

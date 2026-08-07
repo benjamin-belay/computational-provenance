@@ -1,0 +1,315 @@
+{
+  "schema": "exp33a.csw_am_scb_m1.main_audit.v1",
+  "identity": "CSW-AM-SCB-M1",
+  "audit_date": "2026-08-02",
+  "main_verdict": "MAIN_CSW_AM_SCB_M1_CAUSAL_TRANSPORT_CONFIRMED",
+  "builder_terminal_upheld": "CSW_AM_SCB_M1_C1_CAUSAL_TRANSPORT_CONFIRMED",
+  "audit_completed": true,
+  "audit_mode": "READ_ONLY_POST_HOC_WITH_ONE_ADMINISTRATIVE_AUDIT_ARTIFACT",
+  "immutable_chain": {
+    "T1_closure_dependency": {
+      "commit": "b1a958aebfeb887e12cbd191b6ba59f10da97a1b",
+      "tree": "3627080f5c3d79f35b31d88e009cfce6e5c7bc08",
+      "main_terminal": "MAIN_CSW_AM_SCB_T1_MODEL_HETEROGENEITY_CONFIRMED",
+      "three_seed_result": "VALID_HETEROGENEITY_2_OF_3",
+      "preserved_byte_identically": true,
+      "superseded": false
+    },
+    "source_freeze": {
+      "commit": "827784f478d9a0ba9cb0172c96b064bbcec72df1",
+      "tree": "071805428dd2984e7d6893e23df4a32a6a084a26"
+    },
+    "zero_intervention_S0": {
+      "commit": "97433e0dc95233f357cb2817abfe1e647298ea65",
+      "tree": "8b77174f14b4392913d285d983a90cbb2a2f4fda"
+    },
+    "D0_authorization": {
+      "commit": "1c2d268759f186b5127f09ae5c8187f9851be00b",
+      "tree": "89ecc2ddd626cc11af3347295bf2f1bf247bfb88"
+    },
+    "D0_public_evidence": {
+      "commit": "8a20a26786a6d42361e3e011e0a02c9a64b5c068",
+      "tree": "70637ca50e02096c5a49715bb98475daa8fbbfdd"
+    },
+    "C1_authorization": {
+      "commit": "ec57d3c03ba7d1c6c81440455997976a17abb4fb",
+      "tree": "7c647d97d159bc9bdcf81c5d92cfd323c1c586c9"
+    },
+    "C1_sealed_evidence": {
+      "commit": "bac6103af255694452ddd3fb79207498ae275ddf",
+      "tree": "6d9c6804da0fb6a07709b6b3467b6ccb77344acb"
+    },
+    "strict_direct_parent_chain": true,
+    "operative_source_changes_after_freeze": 0,
+    "git_object_integrity": "PASS"
+  },
+  "package_identities": {
+    "package_subtree": "cc22d6ffdf453551cb5d80d2e82331b6172aa972",
+    "protocol_subtree": "2d4efe0e66822fc80936a285bf1d6c0f50c4b6c0",
+    "production_source_blob": "e506d697ed197b23e90155233c2361bc8a7b625f",
+    "reference_source_blob": "d00259c27fb97df5acc274085765a32449d29c41",
+    "test_source_blob": "433da638b99b88e55792c97f9f90ab33364aafe3",
+    "config_sha256": "5e84ba2fede66fc91416dd2fab5abb0315ce33b2e04d0d5a1c850f76507bf290",
+    "checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+    "checkpoint_model": "MODEL_1",
+    "checkpoint_step": 3000,
+    "checkpoint_parameters": 12648
+  },
+  "prospective_selection": {
+    "Model_1_designated_before_M1_execution": true,
+    "Model_1_T1_qualification_result": "PASS",
+    "checkpoint_step_frozen": 3000,
+    "checkpoint_identity_reconstructed": true,
+    "T1_denominator_models": 3,
+    "T1_models_passing": 2,
+    "T1_models_failing": 1,
+    "T1_result_preserved": true
+  },
+  "architecture_audit": {
+    "architecture": "CAUSAL_STRICT_BOTTLENECK",
+    "hard_z2_categories": 16,
+    "hard_z3_categories": 16,
+    "natural_path": "visible_inputs_to_argmax_hard_z2_to_learned_transition_to_argmax_hard_z3_to_answer",
+    "z2_intervention_path": "validated_one_hot_target_z2_to_learned_z3_transition_to_hard_z3_to_answer",
+    "direct_z3_control_path": "validated_one_hot_target_z3_to_answer",
+    "z2_target_exactly_consumed": true,
+    "z3_target_exactly_consumed_for_direct_control": true,
+    "z3_after_z2_intervention_model_generated": true,
+    "answer_consumes_only_hard_z3": true,
+    "registered_skip_or_soft_bypass_found": false,
+    "malformed_or_non_one_hot_hard_state_fails_closed": true
+  },
+  "target_rule_reconstruction": {
+    "S0_manifest_rows": 1280,
+    "S0_manifest_unique_rows": 1280,
+    "S0_manifest_algebraically_valid_rows": 1280,
+    "ALIAS_Z2": {
+      "offset_mod_16": 8,
+      "answer_relation": "UNCHANGED",
+      "S0_rows_valid": 256
+    },
+    "NON_ALIAS_Z2": {
+      "offset_mod_16": 1,
+      "answer_relation": "CHANGED",
+      "S0_rows_valid": 256
+    },
+    "WRONG_Z2": {
+      "offset_mod_16": 3,
+      "answer_relation": "CHANGED",
+      "S0_rows_valid": 256
+    },
+    "SAME_Z2": {
+      "offset_mod_16": 0,
+      "answer_relation": "UNCHANGED",
+      "S0_rows_valid": 256
+    },
+    "DIRECT_Z3": {
+      "offset_mod_16": 1,
+      "answer_relation": "CHANGED",
+      "S0_rows_valid": 256
+    }
+  },
+  "S0_reconstruction": {
+    "terminal": "CSW_AM_SCB_M1_S0_PROTOCOL_READY",
+    "model_loads": 0,
+    "model_forwards": 0,
+    "interventions": 0,
+    "protected_identities_released": 0,
+    "receipts": 0,
+    "carrier_operations": 0,
+    "D0_authorized": true,
+    "C1_authorized": false
+  },
+  "D0_reconstruction": {
+    "terminal": "CSW_AM_SCB_M1_D0_PUBLIC_INTERVENTION_READY",
+    "public_closures": 2048,
+    "oriented_examples": 4096,
+    "cases": 28672,
+    "families": 7,
+    "cases_per_family": 4096,
+    "natural_z2_correct": 4071,
+    "natural_z2_denominator": 4096,
+    "natural_z3_correct": 4071,
+    "natural_z3_denominator": 4096,
+    "natural_answer_correct": 4087,
+    "natural_answer_denominator": 4096,
+    "natural_joint_correct": 4071,
+    "natural_joint_denominator": 4096,
+    "minimum_powered_natural_subgroup_accuracy": 0.9762845849802372,
+    "each_intervention_family_target_consumption": "4096/4096",
+    "each_intervention_family_generated_mapping": "4096/4096",
+    "each_intervention_family_conditional_transport": "4071/4071",
+    "each_intervention_family_complete_joint": "4071/4096",
+    "sham_trace_identity": "4096/4096",
+    "same_state_trace_identity": "4071/4071",
+    "all_registered_gates_passed": true,
+    "protected_closures_released": 0,
+    "protected_role_overlap": 0,
+    "input_rows_sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767",
+    "cases_sha256": "4e515e8d85fc8b188c9afe0ad0cf686f0915347829c5ec00465bd5c402be4494",
+    "metrics_sha256": "3e69199447b1c2f18ef920bac04f404d1faef183a91b9877c7909938826b1f17"
+  },
+  "C1_release_and_binding": {
+    "authorization_preceded_release": true,
+    "authorized_role": "SCB_SELECTED_MODEL_CONFIRMATION",
+    "authorized_closures": 256,
+    "released_closures": 256,
+    "released_oriented_rows": 512,
+    "expected_oriented_rows": 512,
+    "exact_ordered_reconstruction_from_sealed_allocation": true,
+    "role_merkle_root": "15b22a070571ca68a0922974b7179d988fd777af8944d29b0028f96f8aead30e",
+    "role_merkle_root_reconstructed": true,
+    "sealed_allocation_hash_bound": true,
+    "sealed_manifest_hash_bound": true,
+    "overlap_with_other_protected_roles": 0,
+    "Model_2_transfer_closures_released": 0,
+    "Model_3_transfer_closures_released": 0,
+    "reserve_closures_released": 0,
+    "qualification_role_reused": false,
+    "retained_scientific_evidence_commits": 1,
+    "retained_alternate_or_replacement_C1_outputs": 0,
+    "bounded_one_shot_finding": "The immutable chain contains one prospective C1 authorization followed by one complete C1 evidence commit. No retry, redraw, replacement, alternate role release, or overwritten output is present in committed scope."
+  },
+  "C1_reconstruction": {
+    "terminal": "CSW_AM_SCB_M1_C1_CAUSAL_TRANSPORT_CONFIRMED",
+    "closures": 256,
+    "oriented_examples": 512,
+    "cases": 3584,
+    "families": 7,
+    "cases_per_family": 512,
+    "natural_z2_correct": 512,
+    "natural_z2_denominator": 512,
+    "natural_z3_correct": 512,
+    "natural_z3_denominator": 512,
+    "natural_answer_correct": 512,
+    "natural_answer_denominator": 512,
+    "natural_joint_correct": 512,
+    "natural_joint_denominator": 512,
+    "minimum_powered_natural_subgroup_accuracy": 1.0,
+    "exact_target_consumption": {
+      "ALIAS_Z2": "512/512",
+      "NON_ALIAS_Z2": "512/512",
+      "WRONG_Z2": "512/512",
+      "SAME_Z2": "512/512",
+      "SHAM": "512/512",
+      "DIRECT_Z3": "512/512"
+    },
+    "model_generated_or_direct_control_mapping": {
+      "ALIAS_Z2": "512/512",
+      "NON_ALIAS_Z2": "512/512",
+      "WRONG_Z2": "512/512",
+      "SAME_Z2": "512/512",
+      "SHAM": "512/512",
+      "DIRECT_Z3": "512/512"
+    },
+    "conditional_transport": {
+      "ALIAS_Z2": "512/512",
+      "NON_ALIAS_Z2": "512/512",
+      "WRONG_Z2": "512/512",
+      "SAME_Z2": "512/512",
+      "SHAM": "512/512",
+      "DIRECT_Z3": "512/512"
+    },
+    "complete_joint_success_each_non_natural_family": "512/512",
+    "answer_preservation": {
+      "ALIAS_Z2": "512/512",
+      "SAME_Z2": "512/512",
+      "SHAM": "512/512"
+    },
+    "answer_change": {
+      "NON_ALIAS_Z2": "512/512",
+      "WRONG_Z2": "512/512",
+      "DIRECT_Z3": "512/512"
+    },
+    "sham_trace_identity": "512/512",
+    "same_state_trace_identity": "512/512",
+    "all_powered_subgroup_and_joint_gates_passed": true,
+    "all_11_terminal_predicates_passed": true,
+    "input_rows_sha256": "87d8fc50b87627f18db9a4131ac361f12bf20875f2e02f7641fa32e6b7a6bb43",
+    "cases_sha256": "825ee73d7d72f5265a1ed54badfe9d7afe35bac760d347a3e3388dcc8600ebc6",
+    "metrics_sha256": "dffb900db9ce58672c295ba0924ab110d1ed8ca79e4fd9188307e395aadecb70"
+  },
+  "evaluator_and_reconstruction_audit": {
+    "production_reference_shared_experiment_specific_imports": 0,
+    "reference_rebuilds_task_truth_targets_predicates_subgroups_metrics_and_terminal": true,
+    "reference_trusts_stored_summary_booleans": false,
+    "D0_case_rows_reconstructed": 28672,
+    "C1_case_rows_reconstructed": 3584,
+    "total_case_rows_reconstructed": 32256,
+    "D0_metric_and_terminal_mismatches": 0,
+    "C1_metric_and_terminal_mismatches": 0,
+    "reference_execution_limitation": "The reference adjudicator independently reconstructs from retained primitive input/case rows; it does not independently rerun the frozen neural forward computation.",
+    "focused_tests": {
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "xfailed": 0
+    }
+  },
+  "zero_and_exclusion_accounting": {
+    "Model_2_transfer_releases": 0,
+    "Model_3_transfer_releases": 0,
+    "reserve_releases": 0,
+    "qualification_role_reuse": 0,
+    "receipts_created": 0,
+    "carrier_operations": 0,
+    "T2_generalization_execution": 0,
+    "automatic_successor_work": 0
+  },
+  "claim_adjudication": {
+    "strongest_safe_claim": "For the prospectively designated frozen Model 1 checkpoint, the engineered mandatory hard-bottleneck architecture passed the registered public-development gates and then, on one separately authorized 256-closure/512-row selected-model confirmation role, exactly consumed registered z2 or z3 interventions and exhibited the registered answer-preserving, answer-changing, sham, same-state, subgroup, and joint causal-transport behavior across all 3,584 retained cases.",
+    "formally_supported": [
+      "bounded selected-Model-1 causal transport through the frozen mandatory hard z2-to-z3-to-answer bottleneck",
+      "exact registered intervention-target consumption",
+      "model-generated z3 and downstream answer behavior after z2 intervention",
+      "registered alias answer preservation and non-alias/wrong-state answer change",
+      "sham and same-state identity controls",
+      "the prior T1 three-seed heterogeneity result remains 2/3 and unchanged"
+    ],
+    "unsupported": [
+      "Model-2 or Model-3 causal transport",
+      "cross-model mechanism transfer or population generalization",
+      "receipt security, exact or abstract provenance, or cryptographic authority crossing",
+      "carrier feasibility, output-only provenance, self-authentication, or report binding",
+      "whole-computation provenance or hidden-reasoning detection",
+      "an emergent or unrestricted natural-language mechanism",
+      "autonomous learned-model watermarking",
+      "frontier-model relevance"
+    ],
+    "central_limitations": [
+      "The architecture is deliberately engineered and structurally forces the registered hard bottleneck; this is a bounded proof-of-concept, not evidence that an unconstrained model naturally uses the same mechanism.",
+      "Only prospectively designated Model 1 was intervened on; the preserved T1 lineage remains heterogeneous at 2/3.",
+      "The reference evaluator is adjudicatively independent but does not provide an independent second neural execution.",
+      "The immutable package proves one retained authorized C1 execution within committed scope; it does not provide an external operating-system-level invocation ledger."
+    ]
+  },
+  "receipt_design_adjudication": {
+    "scientifically_justified_for_separate_design_review": true,
+    "reason": "The confirmed exact target consumption and downstream causal transport supply concrete execution-event and registered-state objects that a future receipt protocol could prospectively bind.",
+    "receipt_design_or_execution_authorized": false,
+    "requirements_for_any_future_authorization": [
+      "a separately reviewed prospective protocol",
+      "explicit separation of exact execution-event receipts from abstract registered-state receipts",
+      "fresh authority and raw-before-reveal lifecycle rules",
+      "hostile crossing, replay, mutation, missing-authority, and no-bypass tests",
+      "no use of this causal result as proof that the future receipt system is secure"
+    ]
+  },
+  "authorization_status": {
+    "receipt_work_authorized": false,
+    "T2_authorized": false,
+    "Model_2_transfer_authorized": false,
+    "Model_3_transfer_authorized": false,
+    "automatic_successor_authorized": false
+  },
+  "audit_writes": {
+    "scientific_source_modified": false,
+    "scientific_evidence_modified": false,
+    "repository_files_written": [
+      "artifacts/dev_only/csw-am-scb-m1/MAIN_AUDIT.json"
+    ],
+    "commit_created": false
+  }
+}

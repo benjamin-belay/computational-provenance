@@ -1,0 +1,20 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_v1.skeleton.v1",
+  "source_calibration": "CSW-AM-SCB-M1-RNG2-CCAL1",
+  "T": "UNRESOLVED_UNTIL_VALID_CCAL1",
+  "M": "UNRESOLVED_UNTIL_VALID_CCAL1",
+  "score": "(GREEN_COUNT-12)/SQRT(6)",
+  "aggregation": "SUM_OF_8_NORMALIZED_OUTPUT_SCORES/SQRT(8)",
+  "candidate_authorities": 16,
+  "side_acceptance": [
+    "AUTHENTICATED_SCORE_STRICTLY_GREATER_THAN_T",
+    "AUTHENTICATED_AUTHORITY_UNIQUELY_RANKS_FIRST",
+    "AUTHENTICATED_SCORE_MINUS_STRONGEST_WRONG_STRICTLY_GREATER_THAN_M"
+  ],
+  "margin_sign": "AUTHENTICATED_SCORE_MINUS_STRONGEST_WRONG_SCORE",
+  "ties": "REJECT",
+  "validation_role": "RNG2_VALIDATION",
+  "validation_closures": 512,
+  "validation_membership_root": "cf121cb23d0d2fc85aaa01c2ec30cb9617efe4e748789dd2a6726d7c18ef11e1",
+  "validation_release_authorized": false
+}

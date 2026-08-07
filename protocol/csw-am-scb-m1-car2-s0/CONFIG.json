@@ -1,0 +1,112 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car2_s0.config.v1",
+  "identity": "CSW-AM-SCB-M1-CAR2-S0",
+  "title": "BOUNDED EIGHT-OUTPUT CARRIER-CAPACITY STATIC FEASIBILITY",
+  "mode": "STATIC_PROTOCOL_AND_FEASIBILITY_ONLY",
+  "source_paths": [
+    "protocol/csw-am-scb-m1-car2-s0/CONFIG.json",
+    "protocol/csw-am-scb-m1-car2-s0/PURE_MULTIPLICITY_PROTOCOL.json",
+    "tools/csw_am_scb_m1_car2_s0.py",
+    "tools/csw_am_scb_m1_car2_s0_reference.py",
+    "tests/test_csw_am_scb_m1_car2_s0.py"
+  ],
+  "lineage": {
+    "CAR_D0_closure_commit": "b73d1ea237d146a43f3c7dff4691799aee6c0729",
+    "CAR_D0_closure_path": "artifacts/dev_only/csw-am-scb-m1-car-d0-closure/CLOSURE.json",
+    "CAR_D0_closure_sha256": "60f23decb62f14020571da3488219bd1e55386a8e9a1734c63fca8f7dc756012",
+    "CAR_D0_closure_terminal": "MAIN_CSW_AM_SCB_M1_CAR_D0_CLOSURE_CONFIRMED",
+    "CAR_D0_diagnostics_path": "artifacts/dev_only/csw-am-scb-m1-car-d0-closure/PUBLIC_FAILURE_DIAGNOSTICS.json",
+    "CAR_D0_diagnostics_sha256": "f83d0c531f1eac37398dd1204f0f78d17da70e033d356be7c0c50a70a0981d69",
+    "CAR_D0_output_summaries_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/production/OUTPUT_SUMMARIES.jsonl",
+    "CAR_D0_output_summaries_sha256": "e50cdb7c7ee7029775afc914cacf19b1bf2fab0e28e38a457963ab9e4c423136",
+    "preserved_D0_scientific_terminal": "CSW_AM_SCB_M1_CAR_D0_PUBLIC_OPERATING_POINT_FAILED"
+  },
+  "static_inputs": {
+    "D0_population_use": "DIAGNOSTIC_AND_POWER_PLANNING_ONLY",
+    "D0_rows_in_future_success_denominator": 0,
+    "new_model_generations": 0,
+    "new_detector_scores": 0,
+    "protected_releases": 0
+  },
+  "candidate": {
+    "identity": "PURE_MULTIPLICITY_8X",
+    "state_outputs_per_side": 8,
+    "matching_outputs_required": 6,
+    "wrong_authority_accepts_allowed_per_side": 0,
+    "criterion_derivation": "PROPORTIONAL_EXTENSION_OF_3_OF_4_TO_6_OF_8",
+    "capacity_axes_changed": [
+      "STATE_OUTPUT_MULTIPLICITY"
+    ],
+    "statistical_adjudicator_changed": false
+  },
+  "unchanged_operating_point": {
+    "eligible_positions": 24,
+    "bias": 2.0,
+    "detector_threshold": 20,
+    "alternative_set_size": 8,
+    "green_fraction": 0.5,
+    "candidate_state_authorities": 16,
+    "history_conditioned_sampling": true,
+    "semantic_parser": "A0_Q1_FROZEN",
+    "authority_derivation": "CAR_S0_FROZEN",
+    "receipt_and_chain_protocol": "REC_C1_CONFIRMED",
+    "carrier_off_outputs_per_side": 4,
+    "prompt_outputs_per_side": 1,
+    "answer_outputs_per_side": 1,
+    "generic_outputs_per_side": 1
+  },
+  "prospective_per_closure_denominators": {
+    "sides": 2,
+    "state_outputs": 16,
+    "carrier_off_outputs": 8,
+    "prompt_outputs": 2,
+    "answer_outputs": 2,
+    "generic_outputs": 2,
+    "total_outputs": 30,
+    "all16_state_authority_scores": 480,
+    "own_family_control_scores": 6,
+    "detector_decisions": 486,
+    "wrong_state_scores_on_state_outputs": 240,
+    "paired_state_nonces": 8
+  },
+  "feasibility_gate": {
+    "projected_pair_success_minimum": 0.75,
+    "must_include_unchanged_zero_wrong_constraint": true,
+    "matching_only_projection_cannot_authorize": true,
+    "natural_alias_side_dependence_is_descriptive_only": true,
+    "within_side_dependence_must_be_reported": true
+  },
+  "future_empirical_gates_if_authorized": {
+    "computation_fidelity_failure_counts_as_integrated_failure": true,
+    "all_closures_remain_in_denominator": true,
+    "conditional_channel_analysis_supplementary_only": true,
+    "closure_pair_success_minimum": 0.75,
+    "wrong_state_output_side_and_closure_levels_required": true,
+    "carrier_off_output_side_and_closure_levels_required": true,
+    "semantic_and_baseline_gates_unchanged": true,
+    "production_reference_exact_agreement": true
+  },
+  "conditional_public_allocation": {
+    "materialized_in_S0": false,
+    "development_closures": 128,
+    "validation_closures": 128,
+    "complete_dependency_closures": true,
+    "joint_balance": "(Z2_MOD8,ANSWER,TEMPLATE)",
+    "D0_population_excluded": true,
+    "development_validation_disjoint": true,
+    "validation_withheld_until_development_freeze": true
+  },
+  "terminals": {
+    "pure_multiplicity_ready": "MAIN_CSW_AM_SCB_M1_CAR2_S0_PURE_MULTIPLICITY_PROTOCOL_READY",
+    "pure_multiplicity_insufficient": "MAIN_CSW_AM_SCB_M1_CAR2_S0_PURE_MULTIPLICITY_INSUFFICIENT",
+    "implementation_invalid": "MAIN_CSW_AM_SCB_M1_CAR2_S0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "CAR2_D0": false,
+    "CAR2_V1": false,
+    "CAR2_Q1": false,
+    "CAR2_C1": false,
+    "aggregate_detector_redesign": false,
+    "automatic_successor": false
+  }
+}

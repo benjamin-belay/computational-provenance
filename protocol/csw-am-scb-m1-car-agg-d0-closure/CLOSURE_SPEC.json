@@ -1,0 +1,42 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_agg_d0_closure.spec.v1",
+  "identity": "CSW-AM-SCB-M1-CAR-AGG-D0-CLOSURE",
+  "predecessor": {
+    "identity": "CSW-AM-SCB-M1-CAR-AGG-D0",
+    "evidence_commit": "312591546a8c76f5403cd6b35c757e6a76710c08",
+    "evidence_tree": "d81021867f85fa38bf9d611503f09a9ede48ecdb",
+    "scientific_terminal": "MAIN_CSW_AM_SCB_M1_CAR_AGG_D0_SYNCHRONIZED_RANDOMNESS_INCOHERENT",
+    "status": "FROZEN_SAMPLER_AND_PAIRED_RANDOMNESS_CONTRACT_INCOHERENT"
+  },
+  "source_bindings": {
+    "artifacts/dev_only/csw-am-scb-m1-car-agg-d0/EXECUTABLE_MANIFEST.json": "b65db4b573e3f849b56cb13db3ce78b86dcfebfb2827fade1d99842beefa88f0",
+    "artifacts/dev_only/csw-am-scb-m1-car-agg-d0/LITERAL_PREFLIGHT.json": "eb482ee4ea39e35292df957a31513e243440162c3099ef9ba3fc2e7b072875d6",
+    "artifacts/dev_only/csw-am-scb-m1-car-agg-d0/MAIN_AUDIT.json": "6e52e0d66f1188fd12e10b26189d5d15a4de02090b68e4d24936b242c9065d08",
+    "artifacts/dev_only/csw-am-scb-m1-car-agg-d0/OFFICIAL_RESULT.json": "4357d68643329497a1f59858252bdf871d5d06136886fea8bad21a037069331c",
+    "artifacts/dev_only/csw-am-scb-m1-car-agg-d0/PRIMITIVE_DRAW_COMPARISONS.jsonl": "0b87bf287941b04e3573faf3340ad96ab5d94c35aa48991fdbf1a7f158af50df",
+    "artifacts/dev_only/csw-am-scb-m1-car-agg-d0/REFERENCE_RESULT.json": "329e8a5be881cf5811e26b588a5ac65a32d4e41ecc1ce4fa4cecede207354723",
+    "artifacts/dev_only/csw-am-scb-m1-car-agg-d0/TERMINAL.json": "bb9cd0a178734d2291352c683c94e599693494672065952db5f645bb5db85932"
+  },
+  "expected_accounting": {
+    "development_fixture_closures": 1,
+    "complete_development_closures": 0,
+    "calibration_closures": 0,
+    "validation_closures": 0,
+    "reserve_closures": 0,
+    "protected_closures": 0,
+    "primitive_draw_comparisons": 49,
+    "first_selected_token_divergence_step": 3,
+    "first_primitive_draw_divergence_step": 4
+  },
+  "closure_rules": {
+    "preserve_predecessor_terminal": true,
+    "no_calibration_release": true,
+    "no_validation_release": true,
+    "no_reserve_release": true,
+    "no_protected_release": true,
+    "no_automatic_successor": true,
+    "no_performance_inference": true,
+    "thresholds_remain_uninstantiated": true
+  },
+  "closure_terminal": "MAIN_CSW_AM_SCB_M1_CAR_AGG_D0_CLOSURE_CONFIRMED"
+}

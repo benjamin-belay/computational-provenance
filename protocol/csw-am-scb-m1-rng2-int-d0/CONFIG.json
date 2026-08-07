@@ -1,0 +1,82 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_d0.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-INT-D0",
+  "title": "PUBLIC RECEIPT-BOUND INTEGRATION IMPLEMENTATION",
+  "mode": "PUBLIC_IMPLEMENTATION_AND_LITERAL_LIFECYCLE_REHEARSAL",
+  "bindings": {
+    "S0_main_path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-s0/MAIN_AUDIT.json",
+    "S0_main_sha256": "eda15322ce4bb5302f38191d83c79548eac58b992264e4807be9c856223bd1f0",
+    "S0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-s0/TERMINAL.json",
+    "S0_terminal_sha256": "6e42e4eda8ae856489ca4e8edf581251a5ff248144674c06be1b7a4be1404b2e",
+    "S0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_INT_S0_PROTOCOL_READY",
+    "S0_config_path": "protocol/csw-am-scb-m1-rng2-int-s0/CONFIG.json",
+    "S0_config_sha256": "e77ff0f62f23a311b782a0d881bdb6ea89f57f01bc7ed4f3c1742dda0e082c47",
+    "receipt_protocol_path": "protocol/csw-am-scb-m1-rec-s0/RECEIPT_PROTOCOL.json",
+    "receipt_protocol_sha256": "29c059a2b935831d4d556498f506c192c6b3943b04d626b07f05c881a4a6f693",
+    "receipt_production_path": "tools/csw_am_scb_m1_rec_d0.py",
+    "receipt_production_sha256": "3527fb5349c01c1421e6b46a7d761ef5a8a5a2b4405d1d0c92686795a0400a07",
+    "receipt_reference_path": "tools/csw_am_scb_m1_rec_d0_reference.py",
+    "receipt_reference_sha256": "c4ad69b355c87f9b69dac34d4a74dd8db635e261ec7f7feaf86104410f164316",
+    "rng2_production_path": "tools/csw_am_scb_m1_rng2_cal1.py",
+    "rng2_production_sha256": "1ab1878a751f86967d4cfa1fe4cdaaeaef7b0f92b978a14029436003695f96f9",
+    "rng2_reference_path": "tools/csw_am_scb_m1_rng2_cal1_reference.py",
+    "rng2_reference_sha256": "d7c61611f49147fe6e9f48f0357491455aeed6e03930d6b5728ced921057c62b",
+    "public_rows_path": "artifacts/dev_only/csw-am-scb-m1-car-agg-r0/development/DEVELOPMENT_ROWS.jsonl",
+    "public_rows_sha256": "a93b30d690d3e09e4cd4049bada835054f5e72ecdaf402f72392d6b2d2fe45d1"
+  },
+  "keys": {
+    "receipt_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-int-d0/RECEIPT_KEY.bin",
+    "sampler_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-int-d0/SAMPLER_KEY.bin",
+    "receipt_commitment_domain": "EXP33A|SCB-M1|RNG2-INT-D0|RECEIPT-KEY|V1",
+    "sampler_commitment_domain": "EXP33A|SCB-M1|RNG2-INT-D0|SAMPLER-KEY|V1"
+  },
+  "fixture": {
+    "selection": "LEXICOGRAPHIC_GREEDY_MARGINAL_COVER_PLUS_SAME_STATE_DUPLICATE",
+    "required_alias_pairs": 8,
+    "required_answers": 8,
+    "required_templates": 4,
+    "required_state_categories_across_natural_and_alias": 16,
+    "expected_closures": 9,
+    "expected_input_rows": 9,
+    "expected_execution_packages": 18,
+    "expected_receipt_envelopes": 90
+  },
+  "carrier": {
+    "T": 4.041451884327381,
+    "M": 0.0,
+    "outputs_per_execution_condition": 8,
+    "conditions": ["STATE", "CARRIER_OFF", "PROMPT", "ANSWER", "GENERIC"],
+    "outputs": 720,
+    "model_steps": 35280,
+    "eligible_positions": 17280,
+    "primitive_authority_scores": 11520,
+    "aggregate_authority_scores": 1440
+  },
+  "attacks": [
+    "SAME_STATE_DIFFERENT_EXACT",
+    "NATURAL_ALIAS_CROSS",
+    "CORRECT_ABSTRACT_WRONG_EXACT",
+    "WRONG_STATE_RECEIPT",
+    "REPLAY_WRONG_CONTEXT",
+    "MISSING_RECEIPT",
+    "MALFORMED_ABSTRACT_RECEIPT",
+    "INVALID_CHAIN"
+  ],
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-int-d0/CONFIG.json",
+    "tools/csw_am_scb_m1_rng2_int_d0.py",
+    "tools/csw_am_scb_m1_rng2_int_d0_reference.py",
+    "tests/test_csw_am_scb_m1_rng2_int_d0.py"
+  ],
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_RNG2_INT_D0_IMPLEMENTATION_READY",
+    "invalid": "MAIN_CSW_AM_SCB_M1_RNG2_INT_D0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "public_development_only": true,
+    "INT_V1_release": false,
+    "protected_release": false,
+    "scientific_provenance_claim": false,
+    "automatic_successor": false
+  }
+}

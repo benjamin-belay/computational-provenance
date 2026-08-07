@@ -1,0 +1,68 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_s0.realiser_boundary.v1",
+  "identity": "SCB_M1_FIXED_PAYLOAD_AUTHORITY_ONLY_REALISER_V1",
+  "functional_contract": "surface_output = Realiser(fixed_semantic_payload, carrier_authority, sampling_nonce, frozen_generation_configuration)",
+  "allowed_inputs": [
+    "fixed_semantic_payload",
+    "carrier_authority",
+    "sampling_nonce",
+    "frozen_generation_configuration"
+  ],
+  "prohibited_inputs": [
+    "raw_z2",
+    "raw_z3",
+    "intervention_role",
+    "receipt_envelope",
+    "exact_execution_id",
+    "natural_or_alias_label",
+    "SCB_hidden_activation",
+    "SCB_logits",
+    "SCB_prompt_tensor",
+    "state_dependent_lexical_plan",
+    "continuous_copy_of_bottleneck_logits"
+  ],
+  "surface_semantic_payload": {
+    "schema": "exp33a.csw_a0.semantic_object.v1",
+    "namespace": "A0_SURFACE_FIELDS_NOT_SCB_CAUSAL_STATES",
+    "z1_rule": "BIG_ENDIAN_UINT64(SHA256(UTF8('SURFACE_Z1_V1') || 0x00 || visible_prompt_bytes)[0:8]) MOD 8",
+    "z2_rule": "BIG_ENDIAN_UINT64(SHA256(UTF8('SURFACE_Z2_V1') || 0x00 || visible_prompt_bytes)[0:8]) MOD 8",
+    "z3_rule": "registered_final_answer_in_0_to_7",
+    "answer_rule": "registered_final_answer_in_0_to_7",
+    "natural_alias_payload_bytes": "BYTE_IDENTICAL",
+    "visible_internal_state_semantics": false
+  },
+  "paired_sampling": {
+    "draws_per_side": 4,
+    "draw_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "nonce_rule": "SHA256(UTF8('SCB_M1_CAR_PAIRED_NONCE_V1') || 0x00 || closure_id || 0x00 || UINT32_BE(draw_index))",
+    "natural_alias_nonce_bytes": "BYTE_IDENTICAL_FOR_MATCHED_DRAW_INDEX",
+    "result_dependent_regeneration": "PROHIBITED",
+    "retry_count": 0
+  },
+  "runtime_trace_requirements": [
+    "hash_of_fixed_semantic_payload_bytes",
+    "authority_family",
+    "authority_digest",
+    "sampling_nonce_digest",
+    "frozen_channel_config_digest",
+    "output_digest",
+    "eligible_position_count",
+    "semantic_parser_result"
+  ],
+  "required_invariants": {
+    "natural_alias_visible_prompt_bytes_equal": true,
+    "natural_alias_final_answer_equal": true,
+    "natural_alias_payload_bytes_equal": true,
+    "matched_sampling_nonce_bytes_equal": true,
+    "state_authority_differs_for_alias_offset_8": true,
+    "prompt_authority_bytes_equal": true,
+    "answer_authority_bytes_equal": true,
+    "generic_authority_bytes_equal": true,
+    "only_state_authority_may_switch": true
+  }
+}

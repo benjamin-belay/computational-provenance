@@ -1,0 +1,18 @@
+{
+  "frozen_evidence_modified": false,
+  "outputs": {
+    "figure-1-causal-computation.svg": "91c01cba99973f3ea6f27ae82cfa81c5476937f6507de0c62e48d51b1eed0512",
+    "figure-2-receipt-gated-carriage.svg": "2655ba7b29e5aee6e771e043f240069908785f0c8e6ae2ceb4df93d67b8bf7d1",
+    "figure-3-matched-contrast.svg": "c7b2d5409802121f1d26fbcf142a4ca644dbd7acb94ed5a261be13ff2adbdd82",
+    "figure-4-evidence-hierarchy.svg": "03b0dbed1d56df9ebd064f45b423facad57dd3d40625af787a2a2d51d3adc44a",
+    "table-3-public-protected-outcomes.svg": "9ebfb4f5d64a36e2f353029812ae84b0671060b00e48a5acef38de7d6167525f"
+  },
+  "presentation_only": true,
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_publication_figures.v1",
+  "scientific_evidence_added": false,
+  "sources": {
+    "../chronology.csv": "2ca8708a8fcea2dbfaed4078734f97f31fc22b84b40b29cb46a76b628ab497df",
+    "../paper/PAPER_DRAFT.md": "34d35c7569785892b414f960424609ac102a7a2b4f2ed6da82e1cd0ab9670c9e",
+    "../results_summary.csv": "a5b51ac83187017eabd31877c9b47ff9d9c927d269bc4564ea5bd9431ccec997"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_s0.integration_protocol.v1",
+  "identity": "RNG2_RECEIPT_BOUND_ABSTRACT_Z2_INTEGRATION_V1",
+  "claim_bearing_generation_order": [
+    "VERIFY_EXACT_Z2_RECEIPT",
+    "VERIFY_ABSTRACT_Z2_RECEIPT",
+    "VERIFY_CAUSAL_CHAIN",
+    "EXTRACT_AUTHENTICATED_STATE_CLASS_FIELDS",
+    "DERIVE_RNG2_AUTHORITY",
+    "AUTHORIZE_STATE_BOUND_GENERATION",
+    "GENERATE_WITH_FROZEN_RNG2",
+    "SCORE_WITH_FROZEN_RNG2"
+  ],
+  "authority_preimage": {
+    "included_fields": [
+      "protocol_version",
+      "RNG2_authority_domain",
+      "state_ontology_id",
+      "model_domain",
+      "checkpoint_sha256",
+      "state_type",
+      "category"
+    ],
+    "excluded_fields": [
+      "receipt_MAC_bytes",
+      "exact_receipt_id",
+      "exact_execution_id",
+      "nonce",
+      "natural_alias_role",
+      "prompt",
+      "answer",
+      "generated_history"
+    ],
+    "same_state_different_execution_same_authority": true,
+    "different_state_different_authority": true
+  },
+  "generation_gating": {
+    "missing_required_receipt": "NO_AUTHORITY_DERIVED_AND_ABSTAIN",
+    "present_invalid_receipt": "NO_AUTHORITY_DERIVED_AND_REJECT",
+    "valid_abstract_receipt_invalid_chain": "NO_CLAIM_BEARING_GENERATION_AND_REJECT",
+    "carrier_score_cannot_override_receipt_or_chain": true
+  },
+  "decisive_pair_invariant": {
+    "identical": [
+      "prompt_bytes",
+      "answer_bytes",
+      "semantic_payload_bytes",
+      "output_indices",
+      "position_indexed_draw_schedule",
+      "generation_configuration"
+    ],
+    "only_permitted_difference": "AUTHENTICATED_ABSTRACT_Z2_TO_DERIVED_STATE_AUTHORITY"
+  },
+  "unchanged_channel": {
+    "T": 4.041451884327381,
+    "M": 0.0,
+    "outputs_per_side": 8,
+    "authorities": 16,
+    "steps": 49,
+    "normalization": "(GREEN_COUNT-12)/SQRT(6)",
+    "aggregation": "SUM_OF_8_NORMALIZED_OUTPUT_SCORES/SQRT(8)",
+    "acceptance": "S_AUTH>T_AND_UNIQUE_RANK_FIRST_AND_S_AUTH_MINUS_MAX_WRONG>M",
+    "fallback": false
+  },
+  "required_controls": [
+    "SAME_STATE_DIFFERENT_EXACT_EXECUTION",
+    "NATURAL_ALIAS_CROSSED_RECEIPT",
+    "CORRECT_ABSTRACT_WRONG_EXACT",
+    "WRONG_STATE_RECEIPT",
+    "REPLAY_WRONG_CONTEXT_RUN_NONCE_OR_CHECKPOINT",
+    "MISSING_RECEIPT",
+    "MALFORMED_RECEIPT",
+    "CARRIER_OFF",
+    "PROMPT_AUTHORITY_FIXED",
+    "ANSWER_AUTHORITY_FIXED",
+    "GENERIC_AUTHORITY_FIXED"
+  ],
+  "INT_V1_gates": [
+    "NATURAL_COMPUTATION_FIDELITY",
+    "ALIAS_COMPUTATION_FIDELITY",
+    "EXACT_RECEIPT_VALIDITY",
+    "ABSTRACT_RECEIPT_VALIDITY",
+    "CAUSAL_CHAIN_VALIDITY",
+    "SEMANTIC_VALIDITY",
+    "MATCHING_SCORE_GT_T",
+    "MATCHING_UNIQUE_RANK_FIRST",
+    "MATCHING_MARGIN_GT_M",
+    "COMPLETE_PAIR_SUCCESS_AT_LEAST_75_PERCENT",
+    "ZERO_WRONG_STATE_OR_CROSSED_RECEIPT_CONTROL_FAILURES",
+    "MISSING_EVIDENCE_ABSTAINS",
+    "NONSTATE_AUTHORITIES_DO_NOT_SWITCH",
+    "ZERO_CARRIER_OFF_REGRESSION_EVENTS",
+    "PRODUCTION_REFERENCE_EXACT_AGREEMENT",
+    "COMPLETE_128_CLOSURE_DENOMINATOR"
+  ],
+  "no_gate_compensation": true
+}

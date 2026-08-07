@@ -1,0 +1,96 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_car_agg_s0.config.v1",
+  "identity": "CSW-AM-SCB-M1-CAR-AGG-S0",
+  "title": "SIDE-LEVEL AGGREGATE STATE-CARRIER STATIC PROTOCOL",
+  "mode": "STATIC_DETECTOR_NULL_POWER_AND_ALLOCATION_PROTOCOL",
+  "source_paths": [
+    "protocol/csw-am-scb-m1-car-agg-s0/CONFIG.json",
+    "protocol/csw-am-scb-m1-car-agg-s0/DETECTOR_PROTOCOL.json",
+    "protocol/csw-am-scb-m1-car-agg-s0/PUBLIC_ALLOCATION_PROTOCOL.json",
+    "tools/csw_am_scb_m1_car_agg_s0.py",
+    "tools/csw_am_scb_m1_car_agg_s0_reference.py",
+    "tests/test_csw_am_scb_m1_car_agg_s0.py"
+  ],
+  "lineage": {
+    "CAR2_S0_audit_commit": "aaa1d53676dc9b78b2400810d1c25201016b4548",
+    "CAR2_S0_audit_path": "artifacts/dev_only/csw-am-scb-m1-car2-s0/MAIN_AUDIT.json",
+    "CAR2_S0_audit_sha256": "a55fe2a4727ab8edac76d5e50c2c0d902332c25331a1c9e544f90a1ac2ed379e",
+    "CAR2_S0_terminal": "MAIN_CSW_AM_SCB_M1_CAR2_S0_PURE_MULTIPLICITY_INSUFFICIENT",
+    "D0_detector_rows_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/production/DETECTOR_ROWS.jsonl",
+    "D0_detector_rows_sha256": "993dd349539ad207fed82a296c4ca7a2925be0170d366573a81c230aae636561",
+    "D0_output_summaries_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/production/OUTPUT_SUMMARIES.jsonl",
+    "D0_output_summaries_sha256": "e50cdb7c7ee7029775afc914cacf19b1bf2fab0e28e38a457963ab9e4c423136",
+    "D0_public_manifest_path": "artifacts/dev_only/csw-am-scb-m1-car-d0/raw/PUBLIC_ROWS.jsonl",
+    "D0_public_manifest_sha256": "51e3a7463185ea5a8e3051f84721b83578468d5a4c59064b761d444b0e878aba"
+  },
+  "static_work": {
+    "new_model_generations": 0,
+    "new_detector_scores": 0,
+    "protected_releases": 0,
+    "D0_use": "BLOCK_BOOTSTRAP_POWER_PLANNING_ONLY"
+  },
+  "feasibility": {
+    "projected_pair_power_minimum": 0.8,
+    "carrier_off_alpha": 0.005,
+    "wrong_confusion_alpha": 0.005,
+    "combined_familywise_alpha_max": 0.01,
+    "calibration_unit": "COMPLETE_CLOSURE",
+    "validation_unit": "COMPLETE_CLOSURE",
+    "dependence_independence_assumption_required": false,
+    "fallback_detector_allowed": false
+  },
+  "future_counts": {
+    "state_outputs_per_side": 8,
+    "state_outputs_per_closure": 16,
+    "carrier_off_outputs_per_side": 4,
+    "baseline_outputs_per_side": 3,
+    "outputs_per_closure": 30,
+    "state_authority_scores_per_closure": 480,
+    "own_baseline_scores_per_closure": 6,
+    "detector_decisions_per_closure": 486,
+    "side_decisions_per_closure": 2,
+    "pair_decisions_per_closure": 1
+  },
+  "public_roles": {
+    "source_path": "artifacts/dev_only/csw-am-t1-d2/authoritative/correction-1/public-allocation/D2_FRESH_EVALUATION_ROWS.jsonl",
+    "source_sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767",
+    "source_closures": 2048,
+    "closed_D0_closures": 128,
+    "AGG_DEVELOPMENT_closures": 256,
+    "AGG_CALIBRATION_closures": 512,
+    "AGG_VALIDATION_closures": 512,
+    "remaining_public_reserve_closures": 640,
+    "reachable_joint_cells": 128,
+    "minimum_each_role_per_joint_cell": 1,
+    "identities_materialized_in_S0": false
+  },
+  "validation_error_gate": {
+    "closures": 512,
+    "maximum_familywise_false_accept_events": 1,
+    "one_sided_confidence": 0.95,
+    "maximum_allowed_upper_bound": 0.01,
+    "computed_upper_bound_for_one_event": 0.009231554007099546
+  },
+  "full_denominator": {
+    "computation_fidelity_failure_is_integrated_failure": true,
+    "semantic_failure_is_integrated_failure": true,
+    "missing_or_malformed_output_is_integrated_failure": true,
+    "conditional_channel_analysis_is_supplementary": true,
+    "closure_pair_success_minimum": 0.75
+  },
+  "terminals": {
+    "ready": "MAIN_CSW_AM_SCB_M1_CAR_AGG_S0_PROTOCOL_READY",
+    "null_unsupported": "MAIN_CSW_AM_SCB_M1_CAR_AGG_S0_NULL_CONTROL_UNSUPPORTED",
+    "power_insufficient": "MAIN_CSW_AM_SCB_M1_CAR_AGG_S0_POWER_INSUFFICIENT",
+    "capacity_insufficient": "MAIN_CSW_AM_SCB_M1_CAR_AGG_S0_PUBLIC_CAPACITY_INSUFFICIENT",
+    "invalid": "MAIN_CSW_AM_SCB_M1_CAR_AGG_S0_IMPLEMENTATION_INVALID"
+  },
+  "authorizations": {
+    "AGG_D0_after_ready": true,
+    "AGG_V1": false,
+    "AGG_Q1": false,
+    "AGG_C1": false,
+    "protected_release": false,
+    "automatic_successor": false
+  }
+}

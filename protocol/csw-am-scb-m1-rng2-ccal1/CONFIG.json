@@ -1,0 +1,102 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_ccal1.config.v1",
+  "identity": "CSW-AM-SCB-M1-RNG2-CCAL1",
+  "title": "ONE-SHOT CLEAN-ROOM GENERIC CHANNEL CALIBRATION",
+  "mode": "FINAL_ONE_SHOT_SEALED_CALIBRATION",
+  "bindings": {
+    "R0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/MAIN_AUDIT.json",
+    "R0_main_audit_sha256": "e806d272e3bef22b64455a9d14077873b7215a7aceb316ed1de3f8f05f833987",
+    "R0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/TERMINAL.json",
+    "R0_terminal_sha256": "38cb3b7c5570430cb9b740f31ddcbd2b214458cfe1be6979af517705eb269fa2",
+    "R0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_R0_SEALED_RESERVE_SPLIT_READY",
+    "sealed_allocation_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/allocation/FULL_ALLOCATION.sealed",
+    "sealed_allocation_sha256": "3f6bc644e272ea43fb10c32af9e46c7cba0d0cd595ed9a00c49ef72f85477890",
+    "role_commitments_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-r0/allocation/ROLE_COMMITMENTS.json",
+    "role_commitments_sha256": "24bd041c0645af31602aafd8dec21e9292705401b45ca86ed235e7192ef4b735",
+    "D0_main_audit_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-d0/MAIN_AUDIT.json",
+    "D0_main_audit_sha256": "b5e8be4bb5a4229a006b4949516d35151cff247d51a2e19d5d7ca91949f11113",
+    "D0_terminal_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-d0/TERMINAL.json",
+    "D0_terminal_sha256": "0f883636080c355d0854a3f7a754c0d51fb00570cbb7e0d790f6386fed142c20",
+    "D0_terminal": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL_D0_LITERAL_LIFECYCLE_READY",
+    "D0_executable_manifest_path": "artifacts/dev_only/csw-am-scb-m1-rng2-ccal-d0/EXECUTABLE_MANIFEST.json",
+    "D0_executable_manifest_sha256": "290a92e0d028623c54868a1fa7b8d336ddd880e0ccc36aa72985c108ef80f972",
+    "corrected_wrapper_path": "tools/csw_am_scb_m1_rng2_ccal.py",
+    "corrected_wrapper_sha256": "a4af74da54e9a6fdd046ccd7fb3eb5b87a02046d29b6ab1939dc60d693e8504b",
+    "calibration_protocol_path": "protocol/csw-am-scb-m1-rng2-cal-s0/CALIBRATION_PROTOCOL.json",
+    "calibration_protocol_sha256": "a0d2023c1989211d89bd0311eeadbe2103d015b8a351dd11a1a21a10c8868908",
+    "denominators_path": "protocol/csw-am-scb-m1-rng2-cal-s0/DENOMINATORS_AND_SUPPORT.json",
+    "denominators_sha256": "39c02a2bdafbcd783522712225cc342f641150453c485e1e3cd6c23fa7cbd20d",
+    "error_control_path": "protocol/csw-am-scb-m1-rng2-cal-s0/ERROR_CONTROL_PROOF.json",
+    "error_control_sha256": "2e00d53f8e64d13a98a5675f8fb80e3b61f6bec4ba67154bef2f598a544730e6",
+    "chronology_path": "protocol/csw-am-scb-m1-rng2-cal-s0/CHRONOLOGY_AND_EVIDENCE.json",
+    "chronology_sha256": "bfab58f742c60a7033ce04a9e67b61a4769c099adad7d1d1cee5f4566d1c7aa6"
+  },
+  "controller": {
+    "allocation_secret_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-ccal-r0/CONTROLLER_SECRET.json",
+    "sampler_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-m1-rng2-ccal1/CALIBRATION_SAMPLER_KEY.json",
+    "sealed_aad": "EXP33A|SCB-M1|RNG2-CCAL-R0|SEALED-ALLOCATION|V1",
+    "key_commitment_domain": "EXP33A|SCB-M1|RNG2-CCAL1|SAMPLER-KEY-COMMITMENT|V1"
+  },
+  "source_population": {
+    "path": "artifacts/dev_only/csw-am-t1-d2/authoritative/correction-1/public-allocation/D2_FRESH_EVALUATION_ROWS.jsonl",
+    "sha256": "3e0a13ec88515fee12b56c9a830f136c2c0d77d529ce5985a74bed1b16e6c767"
+  },
+  "surface_channel": {
+    "source_path": "tools/csw_a0_stochastic_channel.py",
+    "source_sha256": "df467bb4d91353637fa6f5fff0ce785d65191218587e5525868a46e1788cffd5",
+    "checkpoint_path": "artifacts/dev_only/csw-a0/training/seed1/CHECKPOINT.pt",
+    "checkpoint_sha256": "333cd0017ac815391d8e517691fbb310cc917c2dc6de1c30a8f81d4c60254ede",
+    "bias": 2.0,
+    "eligible_positions": 24,
+    "model_steps": 49
+  },
+  "role": {
+    "name": "RNG2_CLEAN_CALIBRATION",
+    "closures": 512,
+    "oriented_rows": 1024,
+    "merkle_root": "e1db99104d850de111eb5e24bb41cfcb1bb21c40451d2b573932e4d586b49704",
+    "exposure": "SEALED_UNSEEN",
+    "release_count": 1
+  },
+  "denominators": {
+    "closures": 512,
+    "oriented_rows": 1024,
+    "sides": 1024,
+    "authority_on_outputs": 8192,
+    "carrier_off_outputs": 8192,
+    "outputs": 16384,
+    "model_steps": 802816,
+    "eligible_positions": 393216,
+    "primitive_authority_scores": 262144,
+    "aggregate_authority_scores": 32768,
+    "carrier_off_closure_statistics": 512,
+    "wrong_confusion_closure_statistics": 512
+  },
+  "source_paths": [
+    "protocol/csw-am-scb-m1-rng2-ccal1/CONFIG.json",
+    "protocol/csw-am-scb-m1-rng2-ccal1/V1_SKELETON.json",
+    "tools/csw_am_scb_m1_rng2_ccal1_controller.py",
+    "tools/csw_am_scb_m1_rng2_ccal1.py",
+    "tests/test_csw_am_scb_m1_rng2_ccal1.py"
+  ],
+  "terminals": {
+    "valid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_THRESHOLDS_INSTANTIATED",
+    "source_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_SOURCE_OR_SCHEMA_DIGEST_MISMATCH",
+    "role_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_ROLE_OR_MERKLE_INVALID",
+    "denominator_incomplete": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_DENOMINATOR_INCOMPLETE",
+    "raw_commitment_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_RAW_COMMITMENT_INVALID",
+    "chronology_invalid": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_CHRONOLOGY_INVALID",
+    "reference_disagreement": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_REFERENCE_RECONSTRUCTION_DISAGREEMENT",
+    "statistic_undefined": "MAIN_CSW_AM_SCB_M1_RNG2_CCAL1_THRESHOLD_STATISTIC_UNDEFINED"
+  },
+  "authorizations": {
+    "clean_calibration_release_once": true,
+    "validation_release": false,
+    "remaining_reserve_release": false,
+    "protected_release": false,
+    "replacement_closures": false,
+    "second_sampler_key": false,
+    "second_clean_calibration": false,
+    "automatic_successor": false
+  }
+}

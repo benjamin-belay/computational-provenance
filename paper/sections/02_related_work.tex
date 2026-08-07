@@ -1,0 +1,13 @@
+\section{Related work}
+
+\paragraph{Statistical and message-carrying watermarks.}
+% claims: C01 C13
+Language-model watermarks bias sampling toward keyed token sets or use alternative sampling rules so generated text can later be detected \citep{kirchenbauer2023watermark,dathathri2024scalable}. Distortion-free constructions study distribution preservation and undetectability \citep{kuditipudi2024robust,christ2024undetectable}. Separately, multi-bit systems establish carriage of externally supplied metadata \citep{wang2024codable,jiang2025stealthink}. Our question is whether the supplied category is first grounded in a verified, causally operative state under an answer-matched intervention. We do not claim new capacity, robustness, or imperceptibility.
+
+\paragraph{Activation-linked marking and causal abstraction.}
+% claims: C01 C02 C03
+ReasonMark conditions watermarking on reasoning semantics, while SLAM causally steers residual directions to write a preselected structural mark \citep{liu2026reasonmark,harelcanada2026slam}. SAEMark selects messages using sparse-autoencoder features, and BiCoT implants model-ownership evidence in reasoning-relevant geometry \citep{yu2025saemark,lu2026bicot}. These use internal information to guide or carry a mark; here, trusted instrumentation authenticates a per-execution state category before authority derivation. Causal abstraction and interchange interventions test neural variables through counterfactual substitution \citep{geiger2021causal,geiger2022inducing}. Our bottleneck is supervised and mandatory, so the result validates engineered transport rather than discovering a natural representation.
+
+\paragraph{Attestation and content provenance.}
+% claims: C04 C05 C13
+Verifiable-inference systems target execution integrity or model identity, using proofs, trusted hardware, or detached hidden-state evidence \citep{ghodsi2017safetynets,tramer2019slalom,sun2025svip}. C2PA and AEX bind trusted assertions to assets or API lineages \citep{c2pa2025,guan2026aex}. These mechanisms offer stronger cryptographic evidence than our statistical carrier. Our \hmac{} receipts likewise report what trusted instrumentation asserted; they neither resist a malicious issuer with the key nor provide public nonrepudiation. We evaluate a deliberately assembled conjunction: answer-matched state substitution, separate exact and abstract receipts, verification-gated authority derivation, and statistical output carriage. No literature-exhaustive priority claim is required for that contribution.

@@ -1,0 +1,105 @@
+{
+  "environment_binding": {
+    "container_digest": null,
+    "container_status": "NO_CONTAINER_IMAGE_REGISTERED",
+    "environment_record": "docs/programme_consolidation/scb-m1-rng2-int/ENVIRONMENT.md",
+    "pyproject_sha256": "b4c61e9b13a0a34c1103a116803382d4af6d0e680e5f8cb2a61f460ab0bd3e70",
+    "requirements_lock_sha256": "da1ab4395faca16df69cb04e39c8eb32911af26712357213c0758e0ffa947a53"
+  },
+  "evidence_boundary": {
+    "new_model_runs": false,
+    "protected_confirmation_access": false,
+    "protected_q1_rerun": false,
+    "reporting_only_corrections_permitted_after_review": true
+  },
+  "permitted_commands": [
+    {
+      "class": "LEVEL_1_READ_ONLY_AUDIT",
+      "command": ".venv/bin/python docs/programme_consolidation/scb-m1-rng2-int/verify_handoff.py --repository ."
+    },
+    {
+      "class": "LEVEL_2_RETAINED_EVIDENCE_RECONSTRUCTION",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python tools/csw_am_scb_m1_rng2_int_v1_reference.py --stage artifacts/dev_only/csw-am-scb-m1-rng2-int-v1 --output /tmp/csw-rng2-int-v1-review"
+    },
+    {
+      "class": "DETERMINISTIC_CONTRACT_TESTS",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/test_csw_am_scb_m1_rng2_int_handoff.py tests/test_csw_am_scb_m1_rng2_int_v1.py tests/test_csw_am_scb_m1_rng2_v1.py tests/test_csw_am_scb_m1_rng2_d0.py"
+    }
+  ],
+  "review_object": {
+    "commit": "15e25785eee560cf0242ff781dedb4ea4fc0e809",
+    "handoff_subtree": "71515f43fcd4ca3596facf0d46dcc5e0ba8b1349",
+    "repository_tree": "8ed73508491b1fe875a5a62405f83aa7deb23f5c"
+  },
+  "reviewed_files": [
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/README.md",
+      "sha256": "f5f86a92281a6e7d1c14fd85fdf5fa01715e7f84c27b3788e5ad53392f950875"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/PROGRAMME_RESULT.md",
+      "sha256": "ccbd5b186cd3d71f775485011334bc09f0104e620795c1fd59d7d1512d50f570"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/CLAIMS_MATRIX.md",
+      "sha256": "2bfc8647507040bbd1e96728d6c0afb38f59b09f826a410561a41b52a67254ba"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/EXPERIMENT_CHRONOLOGY.md",
+      "sha256": "8fb62a1c6b3c2b8d8102b0ca4fb61f7b327a278884dac5584c331d25d3342d5d"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/REPRODUCIBILITY.md",
+      "sha256": "ba7264d02585ab6b6d68da0cc74f707eeb0fa320fb87c12756f605151e3cbe77"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/ENVIRONMENT.md",
+      "sha256": "b0db3c74ab5f063c7e7c8b103605525e37856065972ba2130aae88995e0a3728"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/LIMITATIONS_AND_NON_CLAIMS.md",
+      "sha256": "972276ec7b72756bac28834c811872f5620052994e1a8f71f875e378069c4f89"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/INDEPENDENT_REVIEW_TEMPLATE.md",
+      "sha256": "36aa0ad632def42e3c3c296434cec470392c164aa7eeda3a39bcc6e2715ed703"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/PUBLIC_ARTIFACT_MANIFEST.json",
+      "sha256": "22e4e3cf4744dfea09d1bd81f16d3f1c346d7491df8b014f0a922186f7f962e3"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/SEALED_POPULATION_ATTESTATION.json",
+      "sha256": "a0a2a2573c5bdca475891e6e16128e50726c397918e67067e48bff242823d7fd"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/HANDOFF.json",
+      "sha256": "c2e452fe731bda58bd3f685bdc24cad53438c43f7b3a2a4dc041165769b8e819"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/results_summary.csv",
+      "sha256": "a5b51ac83187017eabd31877c9b47ff9d9c927d269bc4564ea5bd9431ccec997"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/chronology.csv",
+      "sha256": "2ca8708a8fcea2dbfaed4078734f97f31fc22b84b40b29cb46a76b628ab497df"
+    },
+    {
+      "path": "docs/programme_consolidation/scb-m1-rng2-int/verify_handoff.py",
+      "sha256": "684bfccc8b912937322dd68b4ae2a9193af82dfc2fad7a1e42d56e00417ccbce"
+    }
+  ],
+  "review_requirements": {
+    "classifications": [
+      "CRITICAL",
+      "MAJOR",
+      "MINOR",
+      "ACCEPTED"
+    ],
+    "findings_not_certification": true,
+    "meaningful_independence_disclosure": true,
+    "point_by_point_claim_assessment": true
+  },
+  "schema": "exp33a.csw_am_scb_m1_rng2_int_review_manifest.v1"
+}
+

@@ -1,0 +1,73 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rng2_cal_s0.calibration_protocol.v1",
+  "detector_identity": "RNG2_AGGREGATE_ZSCORE_SUM_MAX16_CONFORMAL_MAX_V1",
+  "conditions_per_closure": {
+    "generic_sides": 2,
+    "side_categories": "THE_TWO_REGISTERED_NATURAL_Z2_CATEGORIES_IN_THE_COMPLETE_ALIAS_CLOSURE",
+    "semantic_payload": "BYTE_IDENTICAL_ACROSS_THE_TWO_SIDES",
+    "paired_position_indexed_uniforms": true,
+    "authority_on_outputs_per_side": 8,
+    "carrier_off_outputs_per_side": 8,
+    "outputs_per_side": 16,
+    "outputs_per_closure": 32
+  },
+  "per_output_evidence": {
+    "input": "GREEN_TOKEN_COUNT_FOR_CANDIDATE_AUTHORITY",
+    "required_eligible_positions": 24,
+    "null_green_fraction": 0.5,
+    "normalization": "(GREEN_COUNT - 12) / SQRT(6)",
+    "candidate_authorities": 16,
+    "candidate_order": "INTEGER_STATE_CATEGORY_0_THROUGH_15",
+    "malformed_output": "CALIBRATION_SUPPORT_INVALID",
+    "semantic_failure": "CALIBRATION_SUPPORT_INVALID",
+    "eligible_position_count_not_24": "CALIBRATION_SUPPORT_INVALID",
+    "missing_registered_output": "CALIBRATION_SUPPORT_INVALID"
+  },
+  "side_aggregation": {
+    "outputs": 8,
+    "formula": "S(C,S,CONDITION,K) = SUM_I Z(C,S,CONDITION,I,K) / SQRT(8)",
+    "fixed_output_indices": "0_THROUGH_7",
+    "result_dependent_retry": false,
+    "output_replacement": false
+  },
+  "closure_level_null_statistics": {
+    "carrier_off": {
+      "symbol": "N_C",
+      "formula": "MAX_OVER_2_SIDES_AND_16_AUTHORITIES S(C,S,OFF,K)",
+      "values_per_closure_before_max": 32
+    },
+    "wrong_authority_confusion": {
+      "candidate_gap": "D(C,S,K)=S(C,S,ON,K)-MAX_J_NOT_EQUAL_K S(C,S,ON,J)",
+      "symbol": "C_C",
+      "formula": "MAX_OVER_2_SIDES_AND_K_NOT_EQUAL_EMBEDDED_AUTHORITY D(C,S,K)",
+      "wrong_candidates_per_side": 15,
+      "values_per_closure_before_max": 30
+    }
+  },
+  "threshold_derivation": {
+    "calibration_closures": 512,
+    "absolute_threshold_T": "MAX_C N_C",
+    "margin_threshold_M": "MAX(0, MAX_C C_C)",
+    "acceptance_inequalities_are_strict": true,
+    "validation_side_acceptance": [
+      "S_AUTHENTICATED > T",
+      "S_AUTHENTICATED > MAX_WRONG",
+      "S_AUTHENTICATED - MAX_WRONG > M"
+    ],
+    "matching_scores_do_not_select_threshold_rule": true,
+    "alternative_order_statistic": false,
+    "alternative_margin_rule": false,
+    "threshold_revision_after_calibration": false
+  },
+  "finite_sample_guarantee": {
+    "assumption": "EXCHANGEABILITY_OF_COMPLETE_CALIBRATION_AND_FUTURE_CLOSURE_UNITS",
+    "carrier_off_event": "N_NEW > MAX_OF_512_CALIBRATION_N",
+    "wrong_confusion_event": "C_NEW > MAX_OF_512_CALIBRATION_C_AND_M_NONNEGATIVE",
+    "each_probability_upper_bound": "1/513",
+    "combined_union_bound": "2/513",
+    "combined_numeric": 0.003898635477582846,
+    "registered_familywise_budget": 0.01,
+    "ties": "STRICT_EXCEEDANCE_IS_CONSERVATIVE",
+    "within_closure_dependence": "ABSORBED_BY_CLOSURE_LEVEL_MAXIMA"
+  }
+}
