@@ -1,0 +1,24 @@
+{
+  "schema": "computational_provenance.release_manifest.v1",
+  "research_source_commit": "b30c640465c4ce895a58ced2752561906c1325a6",
+  "scope": "final 128/128 feed-forward and engineered-transformer results only",
+  "files": {
+    "checkpoints/feedforward.pt": "65bff5fb385da5c94b5763bfcfea91025d5cc46b8113a2600f98a0fad77a559c",
+    "checkpoints/transformer.pt": "40ca3e886b0f0c4a8b24f2b8ab7286f2a69fff5d612460ae0d1d869490391881",
+    "data/feedforward/protected.jsonl": "b854bca941498db9133b5439809d6de0cf83a1189ba098bb924c0e004a71379e",
+    "data/feedforward/public.jsonl": "b6783c90705211608a11eb5f5371b7475c99227d61567ab36bbe98cb93a7a022",
+    "data/training/feedforward.jsonl.gz": "ef12b5c0746a53cea8f84b9f5f8511f8ea31692736d6a26bf0fec6946a6a3f42",
+    "data/training/transformer.jsonl.gz": "5bd876e76f9cec4c58870d3bcb6de53fc07d943f406beeb25645bc4bf37cfa0c",
+    "data/transformer/protected.jsonl": "534b54c78deea0ca4a4e3099b77497ce0f90a7ad67e6ce1bcdca5df11ff24ced",
+    "data/transformer/public.jsonl": "b6783c90705211608a11eb5f5371b7475c99227d61567ab36bbe98cb93a7a022",
+    "evidence/feedforward/protected/MAIN_AUDIT.json": "45fd104ddfdbebc1ce2fb40af49ac184ca4c9d92b6e0ad22839f1dbce0e77b8e",
+    "evidence/feedforward/protected/TERMINAL.json": "89a00a362cdc2e0add472e574873360fdc572afec2e40b333f0aceaf1c6274d0",
+    "evidence/feedforward/public/MAIN_AUDIT.json": "68f0f3f14e4d8061969886a5c2f0a77f08f84dcbdc791c28fd46df65acbbc096",
+    "evidence/feedforward/public/TERMINAL.json": "6f66818cd5e95a18466ba920730747b0de85ba31dcdc24e21b4f49e96872fc89",
+    "evidence/transformer/protected/ADJUDICATION_REPAIR.json": "3a40a302c5f4754714fa4946c8c1dfec2bbabae41d7c688b80b9614a15312f1d",
+    "evidence/transformer/protected/MAIN_AUDIT.json": "58348dc36ee3eef117dbc0afd9818156b0f30a2834fe2354898b7e1b6ca3214b",
+    "evidence/transformer/protected/TERMINAL.json": "8cd264d587a9f8bf9a3709a16a34367f039777e3d71ebd80c0fd7146b8d7feea",
+    "evidence/transformer/public/MAIN_AUDIT.json": "c6206297a4774fac918c96a8e8abd2e5c4b887c78d69e47fce3da638c7b0cdc6",
+    "evidence/transformer/public/TERMINAL.json": "ba675047ba9a6af91c5df482b9453bf3d8241165ee2cf5a4faea0b35f03089b7"
+  }
+}

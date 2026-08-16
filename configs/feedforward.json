@@ -1,0 +1,15 @@
+{
+  "architecture": "strict hard categorical z2/z3 feed-forward bottleneck",
+  "parameter_count": 12648,
+  "seed": 1062101,
+  "training_rows": 40960,
+  "steps": 5000,
+  "batch_size": 256,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "minimum_learning_rate": 0.00005,
+  "warmup_steps": 750,
+  "cosine_horizon_steps": 10000,
+  "weight_decay": 0.0001,
+  "loss_weights": {"z2": 1.0, "z3": 1.0, "answer": 1.0}
+}

@@ -1,0 +1,11 @@
+{
+  "authority_count": 16,
+  "outputs_per_execution": 8,
+  "eligible_positions_per_output": 24,
+  "position_indexed_draws_per_output": 49,
+  "green_fraction": 0.5,
+  "logit_bias": 2.0,
+  "threshold_T": 4.041451884327381,
+  "margin_M": 0.0,
+  "receipt_authentication": "HMAC-SHA256"
+}
