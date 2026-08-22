@@ -1,0 +1,181 @@
+{
+  "abstract_compatibility": "VALIDATE_EACH_RECEIPT_AND_EXACT_LINKAGE_THEN_COMPARE_ONTOLOGY_DOMAIN_CHECKPOINT_STATE_TYPE_AND_CATEGORY",
+  "attack_families": [
+    "same_state_different_exact_execution",
+    "different_state_different_execution",
+    "crossed_exact_z2_and_z3",
+    "natural_z2_with_alias_z3",
+    "alias_z2_with_natural_z3",
+    "wrong_event_order",
+    "wrong_transition_identity",
+    "wrong_answer_digest",
+    "wrong_run",
+    "wrong_context",
+    "wrong_nonce",
+    "replay_into_other_closure",
+    "model_or_checkpoint_substitution",
+    "one_field_mutation",
+    "receipt_truncation",
+    "unknown_field",
+    "malformed_category",
+    "wrong_protocol_purpose",
+    "missing_exact",
+    "missing_abstract",
+    "missing_chain"
+  ],
+  "canonical_encoding": {
+    "allowed_scalars": [
+      "null",
+      "boolean",
+      "signed_64_bit_integer",
+      "unicode_string"
+    ],
+    "duplicate_fields": "REJECT",
+    "floats": "PROHIBITED",
+    "format": "UTF8_CANONICAL_JSON",
+    "noncanonical_input_bytes": "REJECT",
+    "object_keys": "LEXICOGRAPHIC",
+    "separators": "COMMA_COLON_NO_WHITESPACE",
+    "unknown_fields": "REJECT"
+  },
+  "chain_claim": "AUTHENTICATED_IDENTITY_ORDERING_LINKAGE_AND_REGISTERED_TRANSITION_CONSISTENCY_NOT_NEW_CAUSAL_DISCOVERY",
+  "decision_channels": [
+    "exact_z2_event",
+    "abstract_z2_state",
+    "exact_z3_event",
+    "abstract_z3_state",
+    "chain_consistency"
+  ],
+  "decision_semantics": {
+    "present_but_wrong_or_malformed": "REJECT",
+    "required_evidence_unavailable": "ABSTAIN",
+    "valid_and_applicable": "ACCEPT"
+  },
+  "decisions": [
+    "ACCEPT",
+    "REJECT",
+    "ABSTAIN"
+  ],
+  "event_order": {
+    "ANSWER_EMITTED": 30,
+    "Z2_CONSUMED": 10,
+    "Z3_CONSUMED": 20,
+    "chain_requires_same_run_context_execution_nonce": true,
+    "strictly_increasing": true,
+    "z3_parent": "EXACT_Z2_RECEIPT_ID"
+  },
+  "future_carrier_binding": {
+    "authority_source_if_later_authorized": "ABSTRACT_Z2_STATE_CLASS",
+    "authorized_in_S0": false,
+    "chain_verified_separately": true,
+    "exact_execution_verified_separately": true
+  },
+  "identity": "SCB_M1_EXACT_ABSTRACT_CHAIN_RECEIPTS_V1",
+  "receipt_types": {
+    "ABSTRACT_Z2": {
+      "domain": "ABSTRACT_Z2_STATE_V1",
+      "required_fields": [
+        "schema",
+        "protocol_id",
+        "state_ontology_id",
+        "model_domain",
+        "checkpoint_sha256",
+        "state_type",
+        "category",
+        "exact_receipt_id"
+      ]
+    },
+    "ABSTRACT_Z3": {
+      "domain": "ABSTRACT_Z3_STATE_V1",
+      "required_fields": [
+        "schema",
+        "protocol_id",
+        "state_ontology_id",
+        "model_domain",
+        "checkpoint_sha256",
+        "state_type",
+        "category",
+        "exact_receipt_id"
+      ]
+    },
+    "CHAIN": {
+      "domain": "CAUSAL_CHAIN_CONSISTENCY_V1",
+      "required_fields": [
+        "schema",
+        "protocol_id",
+        "run_id",
+        "context_id",
+        "execution_id",
+        "nonce",
+        "exact_z2_receipt_id",
+        "abstract_z2_receipt_id",
+        "exact_z3_receipt_id",
+        "abstract_z3_receipt_id",
+        "answer_digest",
+        "transition_module_id",
+        "answer_module_id",
+        "z2_sequence",
+        "z3_sequence",
+        "answer_sequence"
+      ]
+    },
+    "EXACT_Z2": {
+      "domain": "EXACT_Z2_EVENT_V1",
+      "required_fields": [
+        "schema",
+        "protocol_id",
+        "model_id",
+        "checkpoint_sha256",
+        "run_id",
+        "context_id",
+        "execution_id",
+        "nonce",
+        "sequence",
+        "event_type",
+        "role",
+        "predicted_z2",
+        "consumed_z2",
+        "intervention_family",
+        "intervention_target"
+      ]
+    },
+    "EXACT_Z3": {
+      "domain": "EXACT_Z3_EVENT_V1",
+      "required_fields": [
+        "schema",
+        "protocol_id",
+        "model_id",
+        "checkpoint_sha256",
+        "run_id",
+        "context_id",
+        "execution_id",
+        "nonce",
+        "sequence",
+        "event_type",
+        "parent_exact_z2_receipt_id",
+        "consumed_z2",
+        "transition_input_d",
+        "transition_module_id",
+        "generated_z3",
+        "consumed_z3"
+      ]
+    }
+  },
+  "schema": "exp33a.csw_am_scb_m1_rec_s0.receipt_protocol.v1",
+  "state_ontology": {
+    "abstract_compatibility_fields": [
+      "state_ontology_id",
+      "model_domain",
+      "checkpoint_sha256",
+      "state_type",
+      "category"
+    ],
+    "abstract_receipt_remains_linked_to_originating_exact_receipt": true,
+    "checkpoint_sha256": "227e3949ea4cceae1b6283a0b51fdfd20e729494b6dc2c9050a83626f9a6529e",
+    "identity": "GATED_ALIAS16_SCB_M1_STATE_ONTOLOGY_V1",
+    "model_domain": "SCB_MODEL_1_STRICT_HARD_BOTTLENECK_V1",
+    "transition_module_id": "SCB_M1_Z3_MODULE_V1",
+    "z2_categories": 16,
+    "z3_categories": 16
+  }
+}

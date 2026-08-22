@@ -1,0 +1,146 @@
+{
+  "chronology": [
+    "bind the committed Seed-772101 checkpoint",
+    "collect only probe-fit activations at the 20 frozen sites",
+    "fit all frozen probes",
+    "commit probe coefficients and fit-evidence digests",
+    "collect site-selection activations",
+    "evaluate all probes once on the disjoint site-selection split",
+    "apply gates and mechanically select at most one branch and site",
+    "stop L1"
+  ],
+  "claim_boundary": "L1 may establish linear recoverability at a registered token site in one development transformer. It cannot establish causality, replication, or transformer computational provenance.",
+  "data": {
+    "fit_selection_overlap_permitted": false,
+    "intervention_rows_not_accessed": 3072,
+    "probe_fit_rows": 6144,
+    "site_selection_rows": 3072,
+    "split_seed": 742000
+  },
+  "development_model": {
+    "checkpoint_sha256": "0141c3c870399ace0e4fd7e46388fd59499e3d758e4f87f644a8030e20b6fb98",
+    "expected_parameters": 540808,
+    "expected_step": 12000,
+    "model_index": 1,
+    "seed": 772101
+  },
+  "identity": "CSW-AM-TR-V2-L1",
+  "locked_models": {
+    "activation_access_authorized": false,
+    "checkpoint_access_authorized": false,
+    "seeds": [
+      772102,
+      772103
+    ]
+  },
+  "next_stage": {
+    "early": "CSW-AM-TR-V2-C1-S0",
+    "late": "CSW-AM-TR-V2-R1-LATE-S0"
+  },
+  "probe": {
+    "C": 1.0,
+    "coefficient_commitment_before_selection_evaluation": true,
+    "conditional_alias": "eight separately fitted binary probes, one within each quotient value",
+    "family": "LogisticRegression",
+    "feature_scaling": "none",
+    "fit_intercept": true,
+    "max_iter": 3000,
+    "solver": "lbfgs",
+    "targets": [
+      "z2",
+      "quotient",
+      "alias_bit",
+      "z3",
+      "answer"
+    ]
+  },
+  "prohibited": [
+    "training or checkpoint modification",
+    "access to Models 2 or 3",
+    "nonlinear probes",
+    "sites outside the frozen 20",
+    "selection using intervention outcomes",
+    "causal intervention",
+    "intervention-split access",
+    "receipt operations",
+    "RNG2 operations",
+    "protected-data access",
+    "claim of causal state or transformer provenance"
+  ],
+  "representation_gates": {
+    "conditional_alias_macro_accuracy": 0.75,
+    "conditional_alias_minimum_accuracy": 0.65,
+    "full_z2_accuracy": 0.7,
+    "full_z2_macro_f1": 0.7,
+    "full_z2_minimum_class_accuracy": 0.5,
+    "quotient_accuracy": 0.9,
+    "quotient_macro_f1": 0.9,
+    "quotient_minimum_class_accuracy": 0.8
+  },
+  "schema": "exp33a.csw_am_tr_v2_l1.config.v1",
+  "selection": {
+    "causal_results_may_select_site": false,
+    "full_requires": [
+      "quotient_gate",
+      "conditional_alias_gate",
+      "full_z2_gate"
+    ],
+    "full_rule": "among full-qualified sites choose highest held-out full-z2 accuracy; ties choose earliest site_order entry",
+    "late_site_substitution": false,
+    "quotient_rule": "only if no full site qualifies, among quotient-qualified sites choose highest held-out quotient accuracy; ties choose earliest site_order entry"
+  },
+  "sites": {
+    "candidate_count": 20,
+    "causal_eligible_count": 15,
+    "causal_eligible_layers": [
+      0,
+      1,
+      2
+    ],
+    "positions": {
+      "1": "a_token",
+      "2": "b_token",
+      "3": "c_token",
+      "4": "d_token",
+      "5": "template_token"
+    },
+    "post_block_layers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "site_order": [
+      "L0_P1",
+      "L0_P2",
+      "L0_P3",
+      "L0_P4",
+      "L0_P5",
+      "L1_P1",
+      "L1_P2",
+      "L1_P3",
+      "L1_P4",
+      "L1_P5",
+      "L2_P1",
+      "L2_P2",
+      "L2_P3",
+      "L2_P4",
+      "L2_P5",
+      "L3_P1",
+      "L3_P2",
+      "L3_P3",
+      "L3_P4",
+      "L3_P5"
+    ]
+  },
+  "status": "CLAIM_BEARING_DEVELOPMENT_LOCALISATION",
+  "terminals": {
+    "full_early": "TR_V2_L1_FULL_CAUSAL_ELIGIBLE_SITE_SELECTED",
+    "full_late": "TR_V2_L1_FULL_LATE_SITE_SELECTED",
+    "invalid": "TR_V2_L1_IMPLEMENTATION_INVALID",
+    "no_site": "TR_V2_NO_COMPACT_LINEAR_STATE_AT_REGISTERED_TOKEN_SITES",
+    "quotient_early": "TR_V2_L1_QUOTIENT_CAUSAL_ELIGIBLE_SITE_SELECTED",
+    "quotient_late": "TR_V2_L1_QUOTIENT_LATE_SITE_SELECTED"
+  },
+  "title": "Development-model token-site localisation"
+}

@@ -1,0 +1,89 @@
+{
+  "chronology": [
+    "train all three fixed seeds for exactly 12000 steps",
+    "write complete training logs and fixed step-12000 checkpoints",
+    "commit hashes of all training artifacts",
+    "load only the committed checkpoints and evaluate the frozen validation split once",
+    "apply the non-compensatory 3-of-3 competence gate",
+    "stop T1"
+  ],
+  "competence_gates": {
+    "minimum_answer_class_accuracy": 0.9,
+    "minimum_template_accuracy": 0.9,
+    "overall_validation_accuracy": 0.95,
+    "positive_rule": "all three models pass every gate"
+  },
+  "data": {
+    "intervention_rows_not_accessed": 3072,
+    "model_train_rows": 49152,
+    "model_validation_rows": 4096,
+    "probe_fit_rows_not_accessed": 6144,
+    "site_selection_rows_not_accessed": 3072,
+    "split_seed": 742000,
+    "template_support": {
+      "0": 996,
+      "1": 1027,
+      "2": 1052,
+      "3": 1021
+    }
+  },
+  "identity": "CSW-AM-TR-V2-T1",
+  "model": {
+    "aggregation_mode": "sum",
+    "attention_heads": 4,
+    "class": "AnswerOnlyTransformer",
+    "d_model": 128,
+    "implementation_sha256": "7eb8af8581ac3e16d87914f9c9130c9765ac1a5e5d8a2100779c2d81f0001d2a",
+    "layers": 4,
+    "loss": "answer_cross_entropy_only",
+    "mlp_width": 256,
+    "parameter_count": 540808
+  },
+  "next_stage": {
+    "authorization": "only after the positive T1 terminal",
+    "identity": "CSW-AM-TR-V2-L1",
+    "scope": "development-seed linear probing at the 20 sites frozen by S0"
+  },
+  "objective": "Determine whether all three prospectively registered answer-only transformers solve the observable arithmetic task competently before any representation is inspected.",
+  "prohibited": [
+    "z2 or z3 labels in training",
+    "intermediate-state or representation loss",
+    "activation collection",
+    "probe fitting",
+    "causal intervention",
+    "representation-dependent competence decisions",
+    "alternative or per-seed checkpoint selection",
+    "replacement seeds",
+    "receipt operations",
+    "RNG2 operations",
+    "protected-data access"
+  ],
+  "schema": "exp33a.csw_am_tr_v2_t1.config.v1",
+  "status": "CLAIM_BEARING_COMPETENCE_TRAINING",
+  "terminals": {
+    "invalid": "TR_V2_T1_IMPLEMENTATION_INVALID",
+    "negative": "TR_V2_MODEL_COMPETENCE_FAILED",
+    "positive": "TR_V2_T1_THREE_OF_THREE_COMPETENT"
+  },
+  "title": "Fresh answer-only transformer competence",
+  "training": {
+    "batch_size": 512,
+    "checkpoint_selection": "none",
+    "claim_checkpoint_step": 12000,
+    "gradient_clip_norm": 1.0,
+    "learning_rate": 0.0005,
+    "log_interval": 1000,
+    "minimum_learning_rate": 5e-05,
+    "optimizer": "AdamW",
+    "schedule": "linear warmup then cosine decay",
+    "seed_replacement": false,
+    "seeds": [
+      772101,
+      772102,
+      772103
+    ],
+    "steps": 12000,
+    "warmup_steps": 800,
+    "weight_decay": 0.01
+  }
+}

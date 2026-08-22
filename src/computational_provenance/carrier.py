@@ -17,9 +17,14 @@ GROUPS: tuple[tuple[str, ...], ...] = (
     ("indeed", "therefore", "accordingly", "thus", "thereby", "consistently", "exactly", "formally-so"),
 )
 FIELDS = ("z1", "z2", "z3", "answer")
+ORDERS = (("z1", "z2", "z3", "answer"), ("z1", "z3", "z2", "answer"))
+OPTIONALS = {
+    "Additionally-noted", "Separately-recorded", "Explicitly-retained",
+    "Carefully-preserved", "Directly-confirmed", "Formally-listed",
+    "Briefly-restated", "Transparently-given",
+}
 T = 4.041451884327381
 M = 0.0
-BIAS = 2.0
 
 
 def canonical(value: Any) -> bytes:
@@ -41,66 +46,68 @@ def green_set(key: bytes, position: int, history: Sequence[str], candidates: Seq
     return set(ranked[: len(ranked) // 2])
 
 
-def paired_uniform(sampler_key: bytes, closure_id: str, output_index: int, position: int) -> float:
-    payload = {"protocol_version": "RNG2_V1", "sampler_domain": "GENERIC_STOCHASTIC_CHANNEL",
-               "closure_id": closure_id, "output_index": output_index,
-               "eligible_position": position, "subdraw_index": 0}
-    mac = hmac.new(sampler_key, b"EXP33A|SCB-M1|RNG2|POSITION-UNIFORM|V1\x00" + canonical(payload), hashlib.sha256).digest()
-    integer = int.from_bytes(mac[:8], "big") >> 12
-    return (integer + 0.5) / (1 << 52)
+def parse_literal(literal: str) -> dict[str, Any]:
+    """Parse the frozen 49-step generator surface into its 24 scored positions."""
+    tokens, cursor, history = literal.split(), 0, []
+    eligible, values, order = [], {}, []
+    try:
+        for _ in range(4):
+            for group_index, group in enumerate(GROUPS):
+                token = tokens[cursor]
+                if token not in group:
+                    raise ValueError("group")
+                eligible.append({"position": len(eligible), "group_index": group_index,
+                                 "selected": token, "history": list(history)})
+                history.append(token)
+                cursor += 1
+                if group_index == 0:
+                    if tokens[cursor] != "the":
+                        raise ValueError("the")
+                    history.append("the")
+                    cursor += 1
+                if group_index == 4:
+                    field = tokens[cursor]
+                    if field not in FIELDS or field in values:
+                        raise ValueError("field")
+                    order.append(field)
+                    history.append(field)
+                    cursor += 1
+                    if tokens[cursor] != "is":
+                        raise ValueError("is")
+                    history.append("is")
+                    cursor += 1
+                    value = tokens[cursor]
+                    if value not in tuple(str(index) for index in range(8)):
+                        raise ValueError("value")
+                    values[field] = int(value)
+                    history.append(value)
+                    cursor += 1
+            if tokens[cursor] != ".":
+                raise ValueError("period")
+            history.append(".")
+            cursor += 1
+            if cursor < len(tokens) and tokens[cursor] in OPTIONALS:
+                history.append(tokens[cursor])
+                cursor += 1
+        valid = cursor == len(tokens) and tuple(order) in ORDERS and set(values) == set(FIELDS)
+        valid = valid and values["answer"] == values["z3"] and len(eligible) == 24
+        return {"valid": valid, "values": {field: values[field] for field in FIELDS}, "eligible": eligible}
+    except (IndexError, KeyError, ValueError):
+        return {"valid": False, "eligible": eligible}
 
 
-def surface_payload(prompt: str, answer: int) -> dict[str, int]:
-    def slot(domain: bytes) -> int:
-        return int.from_bytes(hashlib.sha256(domain + b"\x00" + prompt.encode()).digest()[:8], "big") % 8
-    return {"z1": slot(b"SURFACE_Z1_V1"), "z2": slot(b"SURFACE_Z2_V1"), "z3": answer, "answer": answer}
-
-
-def _pick(candidates: Sequence[str], preferred: set[str], uniform: float) -> str:
-    weights = [math.exp(BIAS if token in preferred else 0.0) for token in candidates]
-    total = math.fsum(weights)
-    running = 0.0
-    for token, weight in zip(candidates, weights):
-        running += weight / total
-        if uniform <= running:
-            return token
-    return candidates[-1]
-
-
-def generate(payload: dict[str, int], category: int | None, sampler_key: bytes,
-             closure_id: str, output_index: int) -> dict[str, Any]:
-    history: list[str] = []
-    eligible: list[dict[str, Any]] = []
-    key = None if category is None else authority_key(category)
-    position = 0
-    for field in FIELDS:
-        chosen = []
-        for group_index, candidates in enumerate(GROUPS):
-            preferred = set() if key is None else green_set(key, position, history, candidates)
-            token = _pick(candidates, preferred, paired_uniform(sampler_key, closure_id, output_index, position))
-            eligible.append({"position": position, "group_index": group_index,
-                             "history": list(history), "selected": token})
-            history.append(token)
-            chosen.append(token)
-            position += 1
-        history.extend(["the", field, "is", str(payload[field]), "."])
-    return {"text": " ".join(history), "eligible": eligible, "draws": 24,
-            "semantic_payload": payload, "embedded_category": category}
-
-
-def score(output: dict[str, Any]) -> list[float]:
+def score_literal(literal: str) -> tuple[dict[str, Any], list[int], list[float]]:
+    """Independently derive all 16 carrier scores from literal generated text."""
+    parsed = parse_literal(literal)
+    if not parsed["valid"]:
+        raise ValueError("invalid frozen generator output")
     counts = [0] * 16
-    for item in output["eligible"]:
+    for item in parsed["eligible"]:
         candidates = GROUPS[item["group_index"]]
         for category in range(16):
             preferred = green_set(authority_key(category), item["position"], item["history"], candidates)
             counts[category] += int(item["selected"] in preferred)
-    return [(count - 12.0) / math.sqrt(6.0) for count in counts]
-
-
-def aggregate(outputs: Sequence[dict[str, Any]]) -> list[float]:
-    vectors = [score(output) for output in outputs]
-    return [math.fsum(vector[category] for vector in vectors) / math.sqrt(len(vectors)) for category in range(16)]
+    return parsed, counts, [(count - 12.0) / math.sqrt(6.0) for count in counts]
 
 
 def detected(scores: Sequence[float], category: int) -> bool:

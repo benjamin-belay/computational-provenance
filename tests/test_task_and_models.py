@@ -3,9 +3,19 @@ from pathlib import Path
 import torch
 
 from computational_provenance.feedforward import CausalStrictBottleneck
-from computational_provenance.pipeline import ROOT, load_model
 from computational_provenance.task import alias_state, task
-from computational_provenance.transformer import architecture_record
+from computational_provenance.transformer import EngineeredCausalTransformer, architecture_record
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_model(architecture: str):
+    path = ROOT / "checkpoints" / f"{architecture}.pt"
+    payload = torch.load(path, map_location="cpu", weights_only=False)
+    model = CausalStrictBottleneck() if architecture == "feedforward" else EngineeredCausalTransformer()
+    model.load_state_dict(payload["state_dict"], strict=True)
+    return model.eval(), __import__("hashlib").sha256(path.read_bytes()).hexdigest()
 
 
 def test_registered_alias_preserves_answer() -> None:

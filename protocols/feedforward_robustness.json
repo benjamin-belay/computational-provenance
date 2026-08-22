@@ -1,0 +1,156 @@
+{
+  "boundaries": {
+    "claim_if_b1_passes": "FRESH_FIVE_SEED_REGISTERED_CAUSAL_TRANSPORT_ROBUSTNESS",
+    "does_not_establish": "END_TO_END_PROVENANCE_ROBUSTNESS_ACROSS_FIVE_MODELS",
+    "historical_model_rerun": false,
+    "output_generation": false,
+    "protected_population_access": false,
+    "receipts": false,
+    "rng2": false
+  },
+  "chronology": {
+    "b0_interventions": 0,
+    "b0_model_forwards": 0,
+    "b1_single_complete_execution": true,
+    "no_case_replacement": true,
+    "no_checkpoint_change": true,
+    "no_metric_inspection_before_complete_case_commitment": true,
+    "no_per_seed_tuning": true,
+    "no_seed_replacement": true,
+    "phase_c_locked": true,
+    "production_and_independent_reconstruction_required": true
+  },
+  "decision_rule": {
+    "cross_model_compensation": false,
+    "each_model_must_pass_every_gate": true,
+    "five_of_five_required": true,
+    "phase_c_may_be_separately_authorized_only_after_positive_b1_commit": true,
+    "unit": "MODEL"
+  },
+  "denominator": {
+    "cases_per_family_across_models": 20480,
+    "cases_per_model": 28672,
+    "families_per_row": 7,
+    "logical_rows_per_model": 4096,
+    "model_results": 5,
+    "models": 5,
+    "models_required_to_pass": 5,
+    "total_cases": 143360
+  },
+  "families": [
+    "NATURAL",
+    "ALIAS_Z2",
+    "NON_ALIAS_Z2",
+    "WRONG_Z2",
+    "SAME_Z2",
+    "SHAM",
+    "DIRECT_Z3"
+  ],
+  "gates": {
+    "complete_case_denominator_required": true,
+    "complete_denominator_joint_success": 0.98,
+    "conditional_transport_accuracy": 0.99,
+    "generated_mapping_accuracy": 0.99,
+    "minimum_powered_subgroup_accuracy": 0.95,
+    "minimum_powered_subgroup_denominator": 16,
+    "natural_answer_accuracy": 0.97,
+    "natural_z2_accuracy": 0.99,
+    "natural_z3_accuracy": 0.99,
+    "same_state_trace_identity": 1.0,
+    "sham_trace_identity": 1.0,
+    "target_consumption_accuracy": 1.0
+  },
+  "identity": "CSW-AM-SCB-R2-B0",
+  "lineage": {
+    "a1_model_results_sha256": "2c140d35e827ef89357e4ea0810ba93dcef382789ddbd4026f7112812aedd70a",
+    "a1_official_result_sha256": "840109718cc0a0c44386034684272160d01af654df02f585276d9b215007eca6",
+    "a1_result_commit": "1063a01d4140240b871da6e1f8d21a5e0529a245",
+    "a1_terminal_sha256": "4c5ec72e37b06760e91ab01f001c98d8d554063b5fafc55f6f19b271c2dea6cb",
+    "a1_training_commit": "fa5d7819844b1cbcf6debb20abfc347b3d9281a9",
+    "a1_training_manifest_sha256": "13f47786c126d6daf14cb566926d3b0fda37e62b93cfb24319f4661a8cc4c431",
+    "required_a1_terminal": "MAIN_CSW_AM_SCB_R2_A1_FIVE_OF_FIVE_COMPUTATION_ROBUSTNESS_CONFIRMED",
+    "s0_commit": "8d2dc0ca9335a0fe0b682ab86fda71b6fa3672c2",
+    "s0_protocol_sha256": "f5d597094684f78e2e80f4f26a17037a3ae00f3fb3efdea4d48577aaf8f188fe"
+  },
+  "models": [
+    {
+      "checkpoint_sha256": "3ed971883663525977e026b257b5f6968c3aceef686665f99b0943a3d0a63e05",
+      "checkpoint_step": 5000,
+      "model_id": "R2_MODEL_1",
+      "seed": 952101
+    },
+    {
+      "checkpoint_sha256": "fd608630a4b8c312bced1a0f480726807e5e5bfccba5da56f5eb8a625f7915dd",
+      "checkpoint_step": 5000,
+      "model_id": "R2_MODEL_2",
+      "seed": 952102
+    },
+    {
+      "checkpoint_sha256": "1c0a81cfef4c9bc2a5fce930aebe6a2fd2f0e038ed8327a690959ab26cfcae81",
+      "checkpoint_step": 5000,
+      "model_id": "R2_MODEL_3",
+      "seed": 952103
+    },
+    {
+      "checkpoint_sha256": "8da0e469c56b36e198c4e86fd64e410b77e83ffb451406bb437ff1ecbc8c042f",
+      "checkpoint_step": 5000,
+      "model_id": "R2_MODEL_4",
+      "seed": 952104
+    },
+    {
+      "checkpoint_sha256": "2953587ba63da1bfbd96f62482d95e7a79d7bae1749cd2434cca9c2655b275af",
+      "checkpoint_step": 5000,
+      "model_id": "R2_MODEL_5",
+      "seed": 952105
+    }
+  ],
+  "population": {
+    "classification": "REGISTERED_NON_PROTECTED_HELDOUT_ALREADY_USED_FOR_PHASE_A",
+    "logical_rows": 4096,
+    "row_exclusion_after_results": false,
+    "row_replacement": false,
+    "same_rows_for_all_models": true,
+    "sha256": "f2ffd11cc41143d5a7f2e0e2abcac6f1ea4b1a619f7c39f98da9699cd6a13f13"
+  },
+  "schema": "exp33a.csw_am_scb_r2_b0.protocol.v1",
+  "target_rules": {
+    "ALIAS_Z2": {
+      "answer_relation": "UNCHANGED",
+      "offset_mod_16": 8,
+      "source": "REGISTERED_NATURAL_Z2"
+    },
+    "DIRECT_Z3": {
+      "answer_relation": "CHANGED",
+      "offset_mod_16": 1,
+      "source": "REGISTERED_NATURAL_Z3"
+    },
+    "NATURAL": {
+      "intervention": "NONE"
+    },
+    "NON_ALIAS_Z2": {
+      "answer_relation": "CHANGED",
+      "offset_mod_16": 1,
+      "source": "REGISTERED_NATURAL_Z2"
+    },
+    "SAME_Z2": {
+      "answer_relation": "UNCHANGED",
+      "offset_mod_16": 0,
+      "source": "REGISTERED_NATURAL_Z2"
+    },
+    "SHAM": {
+      "offset_mod_16": 0,
+      "source": "MODEL_SELECTED_NATURAL_Z2",
+      "trace_relation": "IDENTICAL"
+    },
+    "WRONG_Z2": {
+      "answer_relation": "CHANGED",
+      "offset_mod_16": 3,
+      "source": "REGISTERED_NATURAL_Z2"
+    }
+  },
+  "terminals": {
+    "invalid": "MAIN_CSW_AM_SCB_R2_B0_IMPLEMENTATION_OR_EVIDENCE_INVALID",
+    "ready": "MAIN_CSW_AM_SCB_R2_B0_CAUSAL_ROBUSTNESS_PROTOCOL_READY"
+  },
+  "title": "FIVE-SEED REGISTERED CAUSAL-TRANSPORT ROBUSTNESS PROTOCOL"
+}

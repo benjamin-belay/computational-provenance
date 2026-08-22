@@ -1,0 +1,123 @@
+{
+  "attack_expectations": {
+    "CORRECT_ABSTRACT_WRONG_EXACT": {
+      "exact_execution_provenance": "REJECT"
+    },
+    "INVALID_CHAIN": {
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "MALFORMED_ABSTRACT_RECEIPT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "MISSING_RECEIPT": {
+      "abstract_state_provenance": "ABSTAIN",
+      "causal_output_provenance": "ABSTAIN",
+      "exact_execution_provenance": "ABSTAIN"
+    },
+    "NATURAL_ALIAS_CROSS": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "REPLAY_WRONG_CONTEXT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "SAME_STATE_DIFFERENT_EXACT": {
+      "exact_execution_provenance": "REJECT"
+    },
+    "WRONG_STATE_RECEIPT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    }
+  },
+  "attacks": [
+    "SAME_STATE_DIFFERENT_EXACT",
+    "NATURAL_ALIAS_CROSS",
+    "CORRECT_ABSTRACT_WRONG_EXACT",
+    "WRONG_STATE_RECEIPT",
+    "REPLAY_WRONG_CONTEXT",
+    "MISSING_RECEIPT",
+    "MALFORMED_ABSTRACT_RECEIPT",
+    "INVALID_CHAIN"
+  ],
+  "boundaries": {
+    "alternative_checkpoint": false,
+    "attack_revision": false,
+    "automatic_successor": false,
+    "exhaustive_domain_evaluation": false,
+    "output_regeneration": false,
+    "receipt_rule_revision": false,
+    "replacement_closures": false,
+    "second_key_pair": false,
+    "threshold_revision": false
+  },
+  "carrier": {
+    "M": 0.0,
+    "T": 4.041451884327381,
+    "candidate_authorities": 16,
+    "conditions": [
+      "STATE",
+      "CARRIER_OFF",
+      "PROMPT",
+      "ANSWER",
+      "GENERIC"
+    ],
+    "eligible_positions_per_output": 24,
+    "model_steps_per_output": 49,
+    "outputs_per_execution_condition": 8
+  },
+  "denominators": {
+    "aggregate_authority_scores": 20480,
+    "attack_families": 8,
+    "attack_packages": 1024,
+    "closure_decisions": 128,
+    "closures": 128,
+    "eligible_positions": 245760,
+    "execution_packages": 256,
+    "generation_authorizations": 1280,
+    "model_steps": 501760,
+    "outputs": 10240,
+    "primitive_authority_scores": 163840,
+    "receipt_envelopes": 1280,
+    "registered_execution_rows": 128
+  },
+  "gates": {
+    "maximum_attack_failures": 0,
+    "maximum_carrier_off_regression_events": 0,
+    "maximum_wrong_confusion_events": 0,
+    "minimum_complete_closure_fraction": 0.75,
+    "minimum_complete_closure_successes": 96,
+    "perfect_replication_required_complete_closure_successes": 128,
+    "production_reference_exact_agreement": true
+  },
+  "identity": "CSW-AM-SCB-R3-Q1",
+  "model": {
+    "checkpoint_step": 5000,
+    "model_id": "R3_MODEL_1",
+    "parameter_count": 12648,
+    "seed": 1062101
+  },
+  "role": {
+    "closures": 128,
+    "registered_orientation": "LOWER_C_ORIENTATION",
+    "release_count": 1,
+    "released_role": "R3_Q1_PROTECTED_EVALUATION",
+    "sealed_role": "R3_FRESH_MODEL_PROTECTED_REPLICATION"
+  },
+  "schema": "exp33a.csw_am_scb_r3_q1.config.v1",
+  "terminals": {
+    "invalid": "MAIN_CSW_AM_SCB_R3_Q1_IMPLEMENTATION_OR_EVIDENCE_INVALID",
+    "negative": "MAIN_CSW_AM_SCB_R3_Q1_VALID_PROTECTED_SCIENTIFIC_NEGATIVE",
+    "perfect": "MAIN_CSW_AM_SCB_R3_Q1_PROTECTED_128_OF_128_REPLICATED",
+    "positive": "MAIN_CSW_AM_SCB_R3_Q1_VALID_PROTECTED_SCIENTIFIC_POSITIVE",
+    "raw": "MAIN_CSW_AM_SCB_R3_Q1_RAW_EVIDENCE_COMMITTED",
+    "s0": "MAIN_CSW_AM_SCB_R3_Q1_AUTHORIZED"
+  },
+  "title": "ONE-SHOT SEALED PROTECTED END-TO-END EVALUATION"
+}

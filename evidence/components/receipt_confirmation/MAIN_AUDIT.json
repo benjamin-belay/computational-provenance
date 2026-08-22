@@ -1,0 +1,143 @@
+{
+  "schema": "exp33a.csw_am_scb_m1_rec_c1.main_audit.v1",
+  "identity": "CSW-AM-SCB-M1-REC-C1",
+  "audit_date": "2026-08-02",
+  "main_verdict": "MAIN_CSW_AM_SCB_M1_REC_C1_RECEIPT_PROVENANCE_CONFIRMED",
+  "builder_terminal_upheld": "CSW_AM_SCB_M1_REC_C1_RECEIPT_PROVENANCE_CONFIRMED",
+  "audit_completed": true,
+  "immutable_lifecycle": {
+    "D0_source_commit": "0d3a840fcdfae089b5846f8ef4146b0eb74123ff",
+    "D0_main_audit_commit": "6cb588b3ab0b051b4d3bb59c12839609433f0929",
+    "Q1_main_audit_commit": "dd0c168477047a17882f237748d11b92c7c31c69",
+    "C1_source_freeze_commit": "784fe7fb8c2f31448bcaf8380776539979994b92",
+    "C1_authorization_commit": "0e445420cc36a23317ad1a53e7479912585bdd82",
+    "C1_key_commitment_commit": "97c2c9d6eb32b656b6444bc8646539d9b9f520dd",
+    "C1_raw_evidence_commit": "5774b49153a7a16e63cb8f72c1f319170d7c2a4d",
+    "C1_key_reveal_commit": "5f3949550e5641e52e3f41f9670d960def2ce7a1",
+    "C1_evaluation_commit": "9910bb84a718aa36d915d2fe5523bc7a85ca87bd",
+    "source_changes_after_authorization": 0,
+    "source_changes_after_key_commitment": 0,
+    "raw_evidence_committed_before_key_reveal": true,
+    "evaluation_after_key_reveal": true,
+    "retries": 0,
+    "replacement_closures": 0,
+    "second_key": false
+  },
+  "implementation_binding": {
+    "D0_production_blob": "f5c1397bc2d3ed3632a6f25fd3518897c397a6e0",
+    "D0_production_sha256": "3527fb5349c01c1421e6b46a7d761ef5a8a5a2b4405d1d0c92686795a0400a07",
+    "D0_reference_blob": "76128df274e33d15cf6f33df90e1666b62fd8153",
+    "D0_reference_sha256": "c4ad69b355c87f9b69dac34d4a74dd8db635e261ec7f7feaf86104410f164316",
+    "D0_attack_manifest_sha256": "f066dad1be2b0cfad5298484d1fb9e1cb34beb06a14414ad404d200e9717610e",
+    "receipt_issuer_unchanged": true,
+    "canonicalisation_unchanged": true,
+    "domain_separation_unchanged": true,
+    "attack_transformations_unchanged": true,
+    "production_decision_logic_unchanged": true,
+    "reference_decision_logic_unchanged": true,
+    "new_attack_families": 0,
+    "C1_wrapper_scope": "ROLE_RELEASE_FRESH_RUN_INPUTS_FULL_CARTESIAN_ASSIGNMENT_C1_DENOMINATOR_ADJUDICATION_AND_CLAIM_BOUNDARY"
+  },
+  "artifact_bindings": {
+    "authorization_sha256": "542222b3413bae64861febcb8a81309802e53d3160ef26a752221ce6a8c9fec7",
+    "key_commitment_sha256": "90c903fb1c2d20a9e152ee2c69f82aee0062367852f484cc5ebf315257a379f8",
+    "raw_manifest_sha256": "b351bc90abbe126ced65625555e02f650465245cafce11db6c177875efc28a2a",
+    "key_reveal_sha256": "3e9c3d506dfaa3185bb5d4c0abc6b7f8d4effafbe18579d7e641c68678d38329",
+    "metrics_sha256": "1105b26e9342a5bfbfed1a4fcab508d11d568398ccbfdc00931473e4ed8172d6",
+    "terminal_sha256": "dc032be4fb8021bd05aeca3661bd2787b6d28614582b8194c341f6081b6d7f82",
+    "evaluation_binding_sha256": "6f7ed3b8914d626d6fe9bda7f6fbc79e0a9e9f6376af4c3d6e4925490ece2c9d"
+  },
+  "population_reconstruction": {
+    "role": "REC_SEALED_CONFIRMATION",
+    "committed_merkle_root": "dd95b4543ac91085d3ff729f336475cc87bf9bf1c12ea1043f1946bbaaf769fe",
+    "released_merkle_root_matches": true,
+    "closures": 128,
+    "unique_closures": 128,
+    "oriented_rows": 256,
+    "natural_execution_packages": 256,
+    "alias_execution_packages": 256,
+    "execution_packages": 512,
+    "receipt_envelopes": 2560,
+    "omitted_rows": 0,
+    "duplicate_rows": 0,
+    "role_substitutions": 0,
+    "other_role_releases": 0
+  },
+  "genuine_package_results": {
+    "packages_passing_all_authenticity_and_semantic_gates": "512/512",
+    "exact_z2_accept": "512/512",
+    "abstract_z2_accept": "512/512",
+    "exact_z3_accept": "512/512",
+    "abstract_z3_accept": "512/512",
+    "chain_authenticator_accept": "512/512",
+    "registered_transition_consistency_accept": "512/512",
+    "registered_answer_consistency_accept": "512/512",
+    "chain_consistency_accept": "512/512",
+    "genuine_structured_decisions": 4096
+  },
+  "attack_results": {
+    "frozen_attack_families": 18,
+    "base_execution_packages": 512,
+    "assignment": "FULL_CARTESIAN",
+    "concrete_attack_inputs": 9216,
+    "expected_structured_verdicts_matched": "9216/9216",
+    "attack_structured_decisions": 77824,
+    "total_genuine_and_attack_structured_decisions": 81920,
+    "same_state_different_execution_exact_reject_abstract_accept": true,
+    "different_state_different_execution_exact_and_abstract_reject": true,
+    "crossed_exact_event_with_compatible_abstract_state_rejects_chain": true,
+    "missing_evidence_abstains": true,
+    "present_invalid_evidence_rejects": true,
+    "exact_and_abstract_compatibility_remain_separate": true,
+    "summary_mutation_used": false,
+    "coverage_limitation": "C1 confirms the exact frozen D0 18-family suite. It does not add separately isolated wrong-checkpoint or wrong-transition-input families after D0 freeze."
+  },
+  "independent_evaluation": {
+    "production_result_digest": "a618cb35ac1b1bf84ff0e06dc8428a512516b456dbf9e86379e4b9f7f5c24d41",
+    "reference_result_digest": "a618cb35ac1b1bf84ff0e06dc8428a512516b456dbf9e86379e4b9f7f5c24d41",
+    "canonical_full_verdict_agreement": true,
+    "reference_execution_rows": 512,
+    "reference_attack_rows": 9216,
+    "reference_expected_matches": 9216,
+    "reference_imports_production_D0_logic": false,
+    "passed": true
+  },
+  "protected_resource_status": {
+    "REC_EXCLUDED_QUALIFICATION": "CONSUMED_BY_Q1",
+    "REC_SEALED_CONFIRMATION": "CONSUMED_BY_C1",
+    "CARRIER_EXCLUDED_QUALIFICATION_releases": 0,
+    "CARRIER_SEALED_CONFIRMATION_releases": 0,
+    "SCB_REMAINING_RESERVE_releases": 0,
+    "model_2_operations": 0,
+    "model_3_operations": 0,
+    "carrier_operations": 0
+  },
+  "claim_adjudication": {
+    "established": "In the prospectively selected engineered Model 1, exact receipts authenticated the precise consumed hard-z2 and hard-z3 events, abstract receipts authenticated their registered categorical state classes independently of exact execution identity within the frozen compatibility domain, and an independently reconstructed receipt chain authenticated the registered z2-to-z3-to-answer computation across natural and answer-preserving alias executions.",
+    "also_established": [
+      "all five domain-separated receipt envelopes authenticated on every genuine confirmation execution",
+      "exact and abstract compatibility produced the frozen distinct decisions",
+      "registered transition and answer relations reconstructed independently of the chain authenticator",
+      "the frozen crossing, replay, mutation, context, ontology, domain, chronology, parent, answer and absence conditions produced every preregistered structured verdict"
+    ],
+    "not_established": [
+      "state carriage in generated output",
+      "answer-independent output-side state discrimination",
+      "integrated statistical power or false-positive performance",
+      "cross-model receipt or carrier transfer",
+      "three-seed robustness",
+      "unconstrained or distributed-activation provenance"
+    ],
+    "Q1_and_C1_reported_separately": true,
+    "T1_three_seed_heterogeneity_preserved": true,
+    "selected_model_engineered_bottleneck_limitation_preserved": true
+  },
+  "authorization_status": {
+    "receipt_to_carrier_integration_protocol_authorization": true,
+    "carrier_qualification_role_release": false,
+    "carrier_confirmation_role_release": false,
+    "model_2_transfer": false,
+    "model_3_transfer": false,
+    "automatic_successor": false
+  }
+}
