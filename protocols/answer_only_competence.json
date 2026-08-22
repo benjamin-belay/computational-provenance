@@ -1,59 +1,4 @@
 {
-  "schema": "exp33a.csw_am_tr_v2_t1.config.v1",
-  "identity": "CSW-AM-TR-V2-T1",
-  "status": "CLAIM_BEARING_COMPETENCE_TRAINING",
-  "title": "Fresh answer-only transformer competence",
-  "predecessor": {
-    "identity": "CSW-AM-TR-V2-S0",
-    "terminal": "TR_V2_STATIC_PROTOCOL_FROZEN",
-    "config_path": "protocol/csw-am-tr-v2-s0/CONFIG.json",
-    "config_sha256": "8e5e17da8587ae5ec18d54218d03f4e496ca594ff8e451291cb9cc1784447135",
-    "validation_path": "artifacts/dev_only/csw-am-tr-v2-s0/S0_VALIDATION.json",
-    "validation_sha256": "f577f43e56b5dab0167e99d56dfafb5986c001b14ba4e74d0d6896dbeb4c4fc2"
-  },
-  "objective": "Determine whether all three prospectively registered answer-only transformers solve the observable arithmetic task competently before any representation is inspected.",
-  "model": {
-    "implementation_path": "tools/csw_am_ls_f0.py",
-    "implementation_sha256": "7eb8af8581ac3e16d87914f9c9130c9765ac1a5e5d8a2100779c2d81f0001d2a",
-    "class": "AnswerOnlyTransformer",
-    "aggregation_mode": "sum",
-    "parameter_count": 540808,
-    "layers": 4,
-    "d_model": 128,
-    "attention_heads": 4,
-    "mlp_width": 256,
-    "loss": "answer_cross_entropy_only"
-  },
-  "training": {
-    "seeds": [772101, 772102, 772103],
-    "steps": 12000,
-    "claim_checkpoint_step": 12000,
-    "batch_size": 512,
-    "optimizer": "AdamW",
-    "learning_rate": 0.0005,
-    "minimum_learning_rate": 0.00005,
-    "warmup_steps": 800,
-    "schedule": "linear warmup then cosine decay",
-    "weight_decay": 0.01,
-    "gradient_clip_norm": 1.0,
-    "log_interval": 1000,
-    "checkpoint_selection": "none",
-    "seed_replacement": false
-  },
-  "data": {
-    "split_seed": 742000,
-    "model_train_rows": 49152,
-    "model_validation_rows": 4096,
-    "template_support": {
-      "0": 996,
-      "1": 1027,
-      "2": 1052,
-      "3": 1021
-    },
-    "probe_fit_rows_not_accessed": 6144,
-    "site_selection_rows_not_accessed": 3072,
-    "intervention_rows_not_accessed": 3072
-  },
   "chronology": [
     "train all three fixed seeds for exactly 12000 steps",
     "write complete training logs and fixed step-12000 checkpoints",
@@ -63,21 +8,43 @@
     "stop T1"
   ],
   "competence_gates": {
+    "minimum_answer_class_accuracy": 0.9,
+    "minimum_template_accuracy": 0.9,
     "overall_validation_accuracy": 0.95,
-    "minimum_answer_class_accuracy": 0.90,
-    "minimum_template_accuracy": 0.90,
     "positive_rule": "all three models pass every gate"
   },
-  "terminals": {
-    "positive": "TR_V2_T1_THREE_OF_THREE_COMPETENT",
-    "negative": "TR_V2_MODEL_COMPETENCE_FAILED",
-    "invalid": "TR_V2_T1_IMPLEMENTATION_INVALID"
+  "data": {
+    "intervention_rows_not_accessed": 3072,
+    "model_train_rows": 49152,
+    "model_validation_rows": 4096,
+    "probe_fit_rows_not_accessed": 6144,
+    "site_selection_rows_not_accessed": 3072,
+    "split_seed": 742000,
+    "template_support": {
+      "0": 996,
+      "1": 1027,
+      "2": 1052,
+      "3": 1021
+    }
+  },
+  "identity": "CSW-AM-TR-V2-T1",
+  "model": {
+    "aggregation_mode": "sum",
+    "attention_heads": 4,
+    "class": "AnswerOnlyTransformer",
+    "d_model": 128,
+    "implementation_sha256": "7eb8af8581ac3e16d87914f9c9130c9765ac1a5e5d8a2100779c2d81f0001d2a",
+    "layers": 4,
+    "loss": "answer_cross_entropy_only",
+    "mlp_width": 256,
+    "parameter_count": 540808
   },
   "next_stage": {
-    "identity": "CSW-AM-TR-V2-L1",
     "authorization": "only after the positive T1 terminal",
+    "identity": "CSW-AM-TR-V2-L1",
     "scope": "development-seed linear probing at the 20 sites frozen by S0"
   },
+  "objective": "Determine whether all three prospectively registered answer-only transformers solve the observable arithmetic task competently before any representation is inspected.",
   "prohibited": [
     "z2 or z3 labels in training",
     "intermediate-state or representation loss",
@@ -90,5 +57,33 @@
     "receipt operations",
     "RNG2 operations",
     "protected-data access"
-  ]
+  ],
+  "schema": "exp33a.csw_am_tr_v2_t1.config.v1",
+  "status": "CLAIM_BEARING_COMPETENCE_TRAINING",
+  "terminals": {
+    "invalid": "TR_V2_T1_IMPLEMENTATION_INVALID",
+    "negative": "TR_V2_MODEL_COMPETENCE_FAILED",
+    "positive": "TR_V2_T1_THREE_OF_THREE_COMPETENT"
+  },
+  "title": "Fresh answer-only transformer competence",
+  "training": {
+    "batch_size": 512,
+    "checkpoint_selection": "none",
+    "claim_checkpoint_step": 12000,
+    "gradient_clip_norm": 1.0,
+    "learning_rate": 0.0005,
+    "log_interval": 1000,
+    "minimum_learning_rate": 5e-05,
+    "optimizer": "AdamW",
+    "schedule": "linear warmup then cosine decay",
+    "seed_replacement": false,
+    "seeds": [
+      772101,
+      772102,
+      772103
+    ],
+    "steps": 12000,
+    "warmup_steps": 800,
+    "weight_decay": 0.01
+  }
 }

@@ -227,3 +227,70 @@ def reproduce_localisation() -> dict[str, Any]:
 
 def reproduce_answer_only() -> dict[str, Any]:
     return {"competence": reproduce_competence(), "localisation": reproduce_localisation()}
+
+
+def train_answer_only(seed: int, *, steps: int = 12000) -> tuple[AnswerOnlyTransformer, dict[str, Any]]:
+    """Run the registered answer-only recipe for one of the three paper seeds."""
+    if seed not in (772101, 772102, 772103):
+        raise ValueError("unregistered answer-only seed")
+    import math
+    from .training import configure
+    configure(seed)
+    model = AnswerOnlyTransformer()
+    optimizer = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-2)
+    rows = _splits()["model_train"]
+    values = torch.as_tensor(rows)
+    templates = torch.as_tensor(_templates(rows))
+    answers = torch.as_tensor(_facts(rows)["answer"])
+    trace = []
+    model.train()
+    for step in range(1, steps + 1):
+        generator = torch.Generator().manual_seed(seed * 100_000 + step)
+        index = torch.randint(len(rows), (512,), generator=generator)
+        warmup = min(1.0, step / 800)
+        progress = max(0.0, (step - 800) / (12000 - 800))
+        rate = warmup * (5e-5 + 0.5 * (5e-4 - 5e-5) * (1 + math.cos(math.pi * progress)))
+        for group in optimizer.param_groups:
+            group["lr"] = rate
+        optimizer.zero_grad(set_to_none=True)
+        loss = nn.functional.cross_entropy(model(values[index], template=templates[index]), answers[index])
+        loss.backward()
+        nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+        optimizer.step()
+        if step == 1 or step % 500 == 0 or step == steps:
+            trace.append({"step": step, "learning_rate": rate, "loss": float(loss.detach())})
+    return model.eval(), {"seed": seed, "steps": steps, "training_rows": len(rows), "batch_size": 512,
+                          "learning_rate": 5e-4, "minimum_learning_rate": 5e-5,
+                          "warmup_steps": 800, "weight_decay": 1e-2, "trace": trace}
+
+
+def fit_localisation_probes(output: Path) -> dict[str, Any]:
+    """Fit all 260 registered probes from the released development checkpoint."""
+    from sklearn.linear_model import LogisticRegression
+    protocol = json.loads((ROOT / "protocols/answer_only_localisation.json").read_text())
+    rows = _splits()["probe_fit"]
+    labels = _facts(rows)
+    activations = _collect(_load(1), rows)
+    arrays: dict[str, np.ndarray] = {}
+    for site in protocol["sites"]["site_order"]:
+        values = activations[site]
+        for target in protocol["probe"]["targets"]:
+            probe = LogisticRegression(C=1.0, max_iter=3000, solver="lbfgs", fit_intercept=True)
+            probe.fit(values, labels[target])
+            prefix = f"{site}__{target}"
+            arrays[prefix + "__coef"] = probe.coef_
+            arrays[prefix + "__intercept"] = probe.intercept_
+            arrays[prefix + "__classes"] = probe.classes_
+            arrays[prefix + "__n_iter"] = probe.n_iter_
+        for quotient in range(8):
+            mask = labels["quotient"] == quotient
+            probe = LogisticRegression(C=1.0, max_iter=3000, solver="lbfgs", fit_intercept=True)
+            probe.fit(values[mask], labels["alias_bit"][mask])
+            prefix = f"{site}__conditional_alias_{quotient}"
+            arrays[prefix + "__coef"] = probe.coef_
+            arrays[prefix + "__intercept"] = probe.intercept_
+            arrays[prefix + "__classes"] = probe.classes_
+            arrays[prefix + "__n_iter"] = probe.n_iter_
+    output.parent.mkdir(parents=True, exist_ok=True)
+    np.savez(output, **arrays)
+    return {"fit_rows": len(rows), "sites": 20, "probes": 260, "output": str(output)}

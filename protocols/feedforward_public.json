@@ -1,64 +1,40 @@
 {
-  "schema": "exp33a.csw_am_scb_r3_p2.config.v1",
-  "identity": "CSW-AM-SCB-R3-P2",
-  "title": "ONE-SHOT PUBLIC RECEIPT-BOUND RNG2 QUALIFICATION",
-  "source_paths": [
-    "protocol/csw-am-scb-r3-p2/CONFIG.json",
-    "protocol/csw-am-scb-r3-p2/RECEIPT_PROTOCOL.json",
-    "tools/csw_am_scb_r3_p2.py",
-    "tools/csw_am_scb_r3_p2_reference.py",
-    "tests/test_csw_am_scb_r3_p2.py"
-  ],
-  "bindings": {
-    "p1_terminal_path": "artifacts/dev_only/csw-am-scb-r3-p1/causal/TERMINAL.json",
-    "p1_terminal_sha256": "cbbf21cf3a6dbe70c821e72ab1ca8cb36659c1f663e24ee992a6c71128bd0801",
-    "p1_terminal": "MAIN_CSW_AM_SCB_R3_P1_PUBLIC_COMPUTATION_AND_CAUSAL_QUALIFIED",
-    "p1_official_path": "artifacts/dev_only/csw-am-scb-r3-p1/causal/OFFICIAL_RESULT.json",
-    "p1_official_sha256": "e8aa0838b4691d52ba8015c054349ace39719410da77766e7389785b6593aafd",
-    "checkpoint_path": "artifacts/dev_only/csw-am-scb-r3-t1/training/claim_checkpoint/R3_MODEL_1_STEP_5000.pt",
-    "checkpoint_sha256": "65bff5fb385da5c94b5763bfcfea91025d5cc46b8113a2600f98a0fad77a559c",
-    "public_rows_path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-v1/release/REGISTERED_EXECUTION_ROWS.jsonl",
-    "public_rows_sha256": "b6783c90705211608a11eb5f5371b7475c99227d61567ab36bbe98cb93a7a022",
-    "receipt_protocol_path": "protocol/csw-am-scb-r3-p2/RECEIPT_PROTOCOL.json",
-    "receipt_protocol_sha256": "bb786eee94c080cb8f8f3d978bfa7c5e7151824058d79859766876927f54bfd7",
-    "frozen_integration_path": "tools/csw_am_scb_m1_rng2_int_d0.py",
-    "frozen_integration_sha256": "8649c0a0f7776544b286f26926423c1bfd88a77d59617f253b71f109b6b78709"
-  },
-  "model": {
-    "model_id": "R3_MODEL_1",
-    "seed": 1062101,
-    "checkpoint_step": 5000,
-    "parameter_count": 12648
-  },
-  "keys": {
-    "receipt_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-r3-p2/RECEIPT_KEY.bin",
-    "sampler_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-r3-p2/SAMPLER_KEY.bin",
-    "receipt_commitment_domain": "EXP33A|SCB-R3|P2|RECEIPT-KEY|V1",
-    "sampler_commitment_domain": "EXP33A|SCB-R3|P2|SAMPLER-KEY|V1"
-  },
-  "carrier": {
-    "T": 4.041451884327381,
-    "M": 0.0,
-    "outputs_per_execution_condition": 8,
-    "conditions": ["STATE", "CARRIER_OFF", "PROMPT", "ANSWER", "GENERIC"],
-    "candidate_authorities": 16,
-    "model_steps_per_output": 49,
-    "eligible_positions_per_output": 24
-  },
-  "denominators": {
-    "closures": 128,
-    "registered_execution_rows": 128,
-    "execution_packages": 256,
-    "receipt_envelopes": 1280,
-    "generation_authorizations": 1280,
-    "outputs": 10240,
-    "model_steps": 501760,
-    "eligible_positions": 245760,
-    "primitive_authority_scores": 163840,
-    "aggregate_authority_scores": 20480,
-    "attack_families": 8,
-    "attack_packages": 1024,
-    "closure_decisions": 128
+  "attack_expectations": {
+    "CORRECT_ABSTRACT_WRONG_EXACT": {
+      "exact_execution_provenance": "REJECT"
+    },
+    "INVALID_CHAIN": {
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "MALFORMED_ABSTRACT_RECEIPT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "MISSING_RECEIPT": {
+      "abstract_state_provenance": "ABSTAIN",
+      "causal_output_provenance": "ABSTAIN",
+      "exact_execution_provenance": "ABSTAIN"
+    },
+    "NATURAL_ALIAS_CROSS": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "REPLAY_WRONG_CONTEXT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "SAME_STATE_DIFFERENT_EXACT": {
+      "exact_execution_provenance": "REJECT"
+    },
+    "WRONG_STATE_RECEIPT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    }
   },
   "attacks": [
     "SAME_STATE_DIFFERENT_EXACT",
@@ -70,30 +46,69 @@
     "MALFORMED_ABSTRACT_RECEIPT",
     "INVALID_CHAIN"
   ],
-  "gates": {
-    "minimum_complete_closure_successes": 96,
-    "minimum_complete_closure_fraction": 0.75,
-    "maximum_carrier_off_regression_events": 0,
-    "maximum_wrong_confusion_events": 0,
-    "maximum_attack_failures": 0,
-    "production_reference_exact_agreement": true
-  },
   "boundaries": {
-    "r3_specific_adaptation": false,
-    "threshold_revision": false,
-    "output_count_revision": false,
-    "receipt_rule_revision": false,
     "attack_revision": false,
+    "automatic_successor": false,
+    "exhaustive_domain_evaluation": false,
+    "output_count_revision": false,
     "protected_identity_access": false,
     "protected_release": false,
-    "exhaustive_domain_evaluation": false,
-    "automatic_successor": false
+    "r3_specific_adaptation": false,
+    "receipt_rule_revision": false,
+    "threshold_revision": false
   },
+  "carrier": {
+    "M": 0.0,
+    "T": 4.041451884327381,
+    "candidate_authorities": 16,
+    "conditions": [
+      "STATE",
+      "CARRIER_OFF",
+      "PROMPT",
+      "ANSWER",
+      "GENERIC"
+    ],
+    "eligible_positions_per_output": 24,
+    "model_steps_per_output": 49,
+    "outputs_per_execution_condition": 8
+  },
+  "denominators": {
+    "aggregate_authority_scores": 20480,
+    "attack_families": 8,
+    "attack_packages": 1024,
+    "closure_decisions": 128,
+    "closures": 128,
+    "eligible_positions": 245760,
+    "execution_packages": 256,
+    "generation_authorizations": 1280,
+    "model_steps": 501760,
+    "outputs": 10240,
+    "primitive_authority_scores": 163840,
+    "receipt_envelopes": 1280,
+    "registered_execution_rows": 128
+  },
+  "gates": {
+    "maximum_attack_failures": 0,
+    "maximum_carrier_off_regression_events": 0,
+    "maximum_wrong_confusion_events": 0,
+    "minimum_complete_closure_fraction": 0.75,
+    "minimum_complete_closure_successes": 96,
+    "production_reference_exact_agreement": true
+  },
+  "identity": "CSW-AM-SCB-R3-P2",
+  "model": {
+    "checkpoint_step": 5000,
+    "model_id": "R3_MODEL_1",
+    "parameter_count": 12648,
+    "seed": 1062101
+  },
+  "schema": "exp33a.csw_am_scb_r3_p2.config.v1",
   "terminals": {
-    "s0": "MAIN_CSW_AM_SCB_R3_P2_S0_PUBLIC_INTEGRATION_PROTOCOL_READY",
-    "raw": "MAIN_CSW_AM_SCB_R3_P2_RAW_EVIDENCE_COMMITTED",
-    "positive": "MAIN_CSW_AM_SCB_R3_P2_PUBLIC_INTEGRATION_QUALIFIED",
+    "invalid": "MAIN_CSW_AM_SCB_R3_P2_IMPLEMENTATION_OR_EVIDENCE_INVALID",
     "negative": "MAIN_CSW_AM_SCB_R3_P2_VALID_PUBLIC_INTEGRATION_NEGATIVE",
-    "invalid": "MAIN_CSW_AM_SCB_R3_P2_IMPLEMENTATION_OR_EVIDENCE_INVALID"
-  }
+    "positive": "MAIN_CSW_AM_SCB_R3_P2_PUBLIC_INTEGRATION_QUALIFIED",
+    "raw": "MAIN_CSW_AM_SCB_R3_P2_RAW_EVIDENCE_COMMITTED",
+    "s0": "MAIN_CSW_AM_SCB_R3_P2_S0_PUBLIC_INTEGRATION_PROTOCOL_READY"
+  },
+  "title": "ONE-SHOT PUBLIC RECEIPT-BOUND RNG2 QUALIFICATION"
 }

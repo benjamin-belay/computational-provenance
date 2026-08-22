@@ -1,48 +1,123 @@
 {
-  "schema": "exp33a.csw_am_scb_r3_q1.config.v1",
-  "identity": "CSW-AM-SCB-R3-Q1",
-  "title": "ONE-SHOT SEALED PROTECTED END-TO-END EVALUATION",
-  "source_paths": [
-    "protocol/csw-am-scb-r3-q1/CONFIG.json",
-    "tools/csw_am_scb_r3_q1.py",
-    "tools/csw_am_scb_r3_q1_controller.py",
-    "tools/csw_am_scb_r3_q1_reference.py",
-    "tests/test_csw_am_scb_r3_q1.py"
+  "attack_expectations": {
+    "CORRECT_ABSTRACT_WRONG_EXACT": {
+      "exact_execution_provenance": "REJECT"
+    },
+    "INVALID_CHAIN": {
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "MALFORMED_ABSTRACT_RECEIPT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "MISSING_RECEIPT": {
+      "abstract_state_provenance": "ABSTAIN",
+      "causal_output_provenance": "ABSTAIN",
+      "exact_execution_provenance": "ABSTAIN"
+    },
+    "NATURAL_ALIAS_CROSS": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "REPLAY_WRONG_CONTEXT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    },
+    "SAME_STATE_DIFFERENT_EXACT": {
+      "exact_execution_provenance": "REJECT"
+    },
+    "WRONG_STATE_RECEIPT": {
+      "abstract_state_provenance": "REJECT",
+      "causal_output_provenance": "REJECT",
+      "exact_execution_provenance": "REJECT"
+    }
+  },
+  "attacks": [
+    "SAME_STATE_DIFFERENT_EXACT",
+    "NATURAL_ALIAS_CROSS",
+    "CORRECT_ABSTRACT_WRONG_EXACT",
+    "WRONG_STATE_RECEIPT",
+    "REPLAY_WRONG_CONTEXT",
+    "MISSING_RECEIPT",
+    "MALFORMED_ABSTRACT_RECEIPT",
+    "INVALID_CHAIN"
   ],
-  "bindings": {
-    "a0_terminal_path": "artifacts/dev_only/csw-am-scb-r3-a0/allocation/TERMINAL.json",
-    "a0_terminal_sha256": "42adb6b0b94648541a18efdb2c449551cdb5cea8d030ab7b0344f7925c14c737",
-    "a0_terminal": "MAIN_CSW_AM_SCB_R3_A0_PROTECTED_ROLE_SEALED",
-    "a0_main_path": "artifacts/dev_only/csw-am-scb-r3-a0/allocation/MAIN_AUDIT.json",
-    "a0_main_sha256": "778e040e5cfac05b53cb77a0da790da72111c10df31490311b61b96427c08034",
-    "p2_terminal_path": "artifacts/dev_only/csw-am-scb-r3-p2/TERMINAL.json",
-    "p2_terminal_sha256": "6f66818cd5e95a18466ba920730747b0de85ba31dcdc24e21b4f49e96872fc89",
-    "p2_terminal": "MAIN_CSW_AM_SCB_R3_P2_PUBLIC_INTEGRATION_QUALIFIED",
-    "p2_main_path": "artifacts/dev_only/csw-am-scb-r3-p2/MAIN_AUDIT.json",
-    "p2_main_sha256": "68f0f3f14e4d8061969886a5c2f0a77f08f84dcbdc791c28fd46df65acbbc096",
-    "checkpoint_path": "artifacts/dev_only/csw-am-scb-r3-t1/training/claim_checkpoint/R3_MODEL_1_STEP_5000.pt",
-    "checkpoint_sha256": "65bff5fb385da5c94b5763bfcfea91025d5cc46b8113a2600f98a0fad77a559c",
-    "receipt_protocol_path": "protocol/csw-am-scb-r3-p2/RECEIPT_PROTOCOL.json",
-    "receipt_protocol_sha256": "bb786eee94c080cb8f8f3d978bfa7c5e7151824058d79859766876927f54bfd7",
-    "p2_production_path": "tools/csw_am_scb_r3_p2.py",
-    "p2_production_sha256": "a2cc463d7d32281f06846126abe550f238c472dd4f9216aa27a3e8d0496b7797",
-    "p2_reference_path": "tools/csw_am_scb_r3_p2_reference.py",
-    "p2_reference_sha256": "1e57dae5021f3956b15c1878cd6b8525fed3f429d43e118b739f7938186dd443"
+  "boundaries": {
+    "alternative_checkpoint": false,
+    "attack_revision": false,
+    "automatic_successor": false,
+    "exhaustive_domain_evaluation": false,
+    "output_regeneration": false,
+    "receipt_rule_revision": false,
+    "replacement_closures": false,
+    "second_key_pair": false,
+    "threshold_revision": false
   },
-  "controller": {
-    "sealed_closures_path": "/Users/benjamin/Documents/Research/AI Safety and Alignment/.csw-am-scb-r3-a0-controller/authoritative/PROTECTED_CLOSURES.jsonl",
-    "sealed_closures_sha256": "f2dcb60d4615b7d469e43c575fd95da5dc5284466443f1d6431440ba78bc857d",
-    "sealed_manifest_path": "/Users/benjamin/Documents/Research/AI Safety and Alignment/.csw-am-scb-r3-a0-controller/authoritative/SEALED_MANIFEST.json",
-    "sealed_manifest_sha256": "298e4092c116486184857a178b91227bf0fb8b2ec057af7be92d7486b364fd93",
-    "set_digest": "8eeecf72859062eb549692217fcde228a0112dbebb819d3c8d3cac1ada286329"
+  "carrier": {
+    "M": 0.0,
+    "T": 4.041451884327381,
+    "candidate_authorities": 16,
+    "conditions": [
+      "STATE",
+      "CARRIER_OFF",
+      "PROMPT",
+      "ANSWER",
+      "GENERIC"
+    ],
+    "eligible_positions_per_output": 24,
+    "model_steps_per_output": 49,
+    "outputs_per_execution_condition": 8
   },
-  "keys": {"receipt_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-r3-q1/RECEIPT_KEY.bin", "sampler_key_path": "/Users/benjamin/Documents/Research/.csw-sealed-controllers/csw-am-scb-r3-q1/SAMPLER_KEY.bin", "receipt_commitment_domain": "EXP33A|SCB-R3|Q1|RECEIPT-KEY|V1", "sampler_commitment_domain": "EXP33A|SCB-R3|Q1|SAMPLER-KEY|V1"},
-  "model": {"model_id": "R3_MODEL_1", "seed": 1062101, "checkpoint_step": 5000, "parameter_count": 12648},
-  "role": {"sealed_role": "R3_FRESH_MODEL_PROTECTED_REPLICATION", "released_role": "R3_Q1_PROTECTED_EVALUATION", "closures": 128, "registered_orientation": "LOWER_C_ORIENTATION", "release_count": 1},
-  "carrier": {"T": 4.041451884327381, "M": 0.0, "outputs_per_execution_condition": 8, "conditions": ["STATE", "CARRIER_OFF", "PROMPT", "ANSWER", "GENERIC"], "candidate_authorities": 16, "model_steps_per_output": 49, "eligible_positions_per_output": 24},
-  "denominators": {"closures": 128, "registered_execution_rows": 128, "execution_packages": 256, "receipt_envelopes": 1280, "generation_authorizations": 1280, "outputs": 10240, "model_steps": 501760, "eligible_positions": 245760, "primitive_authority_scores": 163840, "aggregate_authority_scores": 20480, "attack_families": 8, "attack_packages": 1024, "closure_decisions": 128},
-  "attacks": ["SAME_STATE_DIFFERENT_EXACT", "NATURAL_ALIAS_CROSS", "CORRECT_ABSTRACT_WRONG_EXACT", "WRONG_STATE_RECEIPT", "REPLAY_WRONG_CONTEXT", "MISSING_RECEIPT", "MALFORMED_ABSTRACT_RECEIPT", "INVALID_CHAIN"],
-  "gates": {"minimum_complete_closure_successes": 96, "minimum_complete_closure_fraction": 0.75, "perfect_replication_required_complete_closure_successes": 128, "maximum_carrier_off_regression_events": 0, "maximum_wrong_confusion_events": 0, "maximum_attack_failures": 0, "production_reference_exact_agreement": true},
-  "boundaries": {"second_key_pair": false, "replacement_closures": false, "output_regeneration": false, "alternative_checkpoint": false, "threshold_revision": false, "receipt_rule_revision": false, "attack_revision": false, "exhaustive_domain_evaluation": false, "automatic_successor": false},
-  "terminals": {"s0": "MAIN_CSW_AM_SCB_R3_Q1_AUTHORIZED", "raw": "MAIN_CSW_AM_SCB_R3_Q1_RAW_EVIDENCE_COMMITTED", "positive": "MAIN_CSW_AM_SCB_R3_Q1_VALID_PROTECTED_SCIENTIFIC_POSITIVE", "negative": "MAIN_CSW_AM_SCB_R3_Q1_VALID_PROTECTED_SCIENTIFIC_NEGATIVE", "invalid": "MAIN_CSW_AM_SCB_R3_Q1_IMPLEMENTATION_OR_EVIDENCE_INVALID", "perfect": "MAIN_CSW_AM_SCB_R3_Q1_PROTECTED_128_OF_128_REPLICATED"}
+  "denominators": {
+    "aggregate_authority_scores": 20480,
+    "attack_families": 8,
+    "attack_packages": 1024,
+    "closure_decisions": 128,
+    "closures": 128,
+    "eligible_positions": 245760,
+    "execution_packages": 256,
+    "generation_authorizations": 1280,
+    "model_steps": 501760,
+    "outputs": 10240,
+    "primitive_authority_scores": 163840,
+    "receipt_envelopes": 1280,
+    "registered_execution_rows": 128
+  },
+  "gates": {
+    "maximum_attack_failures": 0,
+    "maximum_carrier_off_regression_events": 0,
+    "maximum_wrong_confusion_events": 0,
+    "minimum_complete_closure_fraction": 0.75,
+    "minimum_complete_closure_successes": 96,
+    "perfect_replication_required_complete_closure_successes": 128,
+    "production_reference_exact_agreement": true
+  },
+  "identity": "CSW-AM-SCB-R3-Q1",
+  "model": {
+    "checkpoint_step": 5000,
+    "model_id": "R3_MODEL_1",
+    "parameter_count": 12648,
+    "seed": 1062101
+  },
+  "role": {
+    "closures": 128,
+    "registered_orientation": "LOWER_C_ORIENTATION",
+    "release_count": 1,
+    "released_role": "R3_Q1_PROTECTED_EVALUATION",
+    "sealed_role": "R3_FRESH_MODEL_PROTECTED_REPLICATION"
+  },
+  "schema": "exp33a.csw_am_scb_r3_q1.config.v1",
+  "terminals": {
+    "invalid": "MAIN_CSW_AM_SCB_R3_Q1_IMPLEMENTATION_OR_EVIDENCE_INVALID",
+    "negative": "MAIN_CSW_AM_SCB_R3_Q1_VALID_PROTECTED_SCIENTIFIC_NEGATIVE",
+    "perfect": "MAIN_CSW_AM_SCB_R3_Q1_PROTECTED_128_OF_128_REPLICATED",
+    "positive": "MAIN_CSW_AM_SCB_R3_Q1_VALID_PROTECTED_SCIENTIFIC_POSITIVE",
+    "raw": "MAIN_CSW_AM_SCB_R3_Q1_RAW_EVIDENCE_COMMITTED",
+    "s0": "MAIN_CSW_AM_SCB_R3_Q1_AUTHORIZED"
+  },
+  "title": "ONE-SHOT SEALED PROTECTED END-TO-END EVALUATION"
 }

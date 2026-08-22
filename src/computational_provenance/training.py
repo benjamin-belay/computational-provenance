@@ -57,7 +57,14 @@ def _rate(step: int, *, peak: float, floor: float, warmup: int, horizon: int) ->
     return floor + (peak - floor) * 0.5 * (1 + math.cos(math.pi * progress))
 
 
-def train(architecture: str, rows: list[dict[str, Any]]) -> tuple[torch.nn.Module, dict[str, Any]]:
+TRAINING_PROFILES = {
+    "feedforward": {"designated": [1062101], "robustness": [952101, 952102, 952103, 952104, 952105]},
+    "transformer": {"designated": [783201], "robustness": [783101, 783102, 783103]},
+}
+
+
+def train(architecture: str, rows: list[dict[str, Any]], *, seed: int | None = None,
+          steps: int | None = None) -> tuple[torch.nn.Module, dict[str, Any]]:
     if architecture == "feedforward":
         settings = {"seed": 1062101, "steps": 5000, "batch": 256, "peak": 1e-3,
                     "floor": 5e-5, "warmup": 750, "horizon": 10000, "weight_decay": 1e-4}
@@ -68,6 +75,10 @@ def train(architecture: str, rows: list[dict[str, Any]]) -> tuple[torch.nn.Modul
         model = EngineeredCausalTransformer()
     else:
         raise ValueError("architecture")
+    if seed is not None:
+        settings["seed"] = seed
+    if steps is not None:
+        settings["steps"] = steps
     configure(settings["seed"])
     # Recreate after seeding so parameter initialisation is claim-recipe deterministic.
     model = CausalStrictBottleneck() if architecture == "feedforward" else EngineeredCausalTransformer()

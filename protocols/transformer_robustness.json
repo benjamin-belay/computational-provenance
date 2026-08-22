@@ -1,109 +1,103 @@
 {
-  "schema": "exp33a.csw_am_tr_eng_r1.config.v1",
-  "identity": "CSW-AM-TR-ENG-R1",
-  "title": "THREE-SEED ENGINEERED-TRANSFORMER ROBUSTNESS QUALIFICATION",
-  "objective": "Test whether all three prospectively fixed engineered-transformer seeds learn the frozen hard z2-to-z3-to-answer computation and reproduce the frozen causal intervention behaviour.",
-  "source_paths": [
-    "protocol/csw-am-tr-eng-r1/CONFIG.json",
-    "src/exp33atreng/robustness.py",
-    "tools/csw_am_tr_eng_r1.py",
-    "tools/csw_am_tr_eng_r1_reference.py",
-    "tests/test_csw_am_tr_eng_r1.py"
-  ],
-  "bindings": {
-    "s0_protocol_path": "protocol/csw-am-tr-eng-s0/PROTOCOL.json",
-    "s0_protocol_sha256": "8a0c76008eac71634782ff3aad2e67c9e942aa3a1b5efd55cd9c57dee4a406fe",
-    "s0_terminal_path": "artifacts/dev_only/csw-am-tr-eng-s0/TERMINAL.json",
-    "s0_terminal_sha256": "e436bcd96e7e73118f98e1cf66a8b41bcf932e31f96d413ae6913892236bd13a",
-    "d0_config_path": "protocol/csw-am-tr-eng-d0/CONFIG.json",
-    "d0_config_sha256": "ec234d7cfc099c712ab7827630822a0abf2256bc188486c26f360622ce40bdf8",
-    "d0_terminal_path": "artifacts/dev_only/csw-am-tr-eng-d0/TERMINAL.json",
-    "d0_terminal_sha256": "9219822d45482223cffb713fd34de775179accdf19f3f4eb6b6c02b3c1a397fe",
-    "a0_config_path": "protocol/csw-am-tr-eng-a0/CONFIG.json",
-    "a0_config_sha256": "c1005c3ecec1193e409cfcaefd5fb50ceac12fba4aa4150d5b2ad8b9f9b70d63",
-    "a0_terminal_path": "artifacts/dev_only/csw-am-tr-eng-a0/allocation/TERMINAL.json",
-    "a0_terminal_sha256": "4709cb2b3cf2171645183503a4bbb97b93bc4a8ae2be38250aa058846d83b85f",
-    "training_rows_path": "artifacts/dev_only/csw-am-tr-eng-a0/allocation/TRAINING_ROWS.jsonl",
-    "training_rows_sha256": "fca58a93652d18290689a02b8777a081c87c7b913b26352ff26015b64f0e398b",
-    "public_rows_path": "artifacts/dev_only/csw-am-scb-r2-s0-r1/HOLDOUT_ROWS.jsonl",
-    "public_rows_sha256": "f2ffd11cc41143d5a7f2e0e2abcac6f1ea4b1a619f7c39f98da9699cd6a13f13",
-    "model_source_path": "src/exp33atreng/model.py",
-    "model_source_sha256": "02a6a5fc62f9397fdf99b3097cfdc4921056d23733ccd43580e052fc9a6318d0"
-  },
-  "training": {
-    "models": [
-      {"model_id": "TR_ENG_ROBUSTNESS_MODEL_1", "seed": 783101},
-      {"model_id": "TR_ENG_ROBUSTNESS_MODEL_2", "seed": 783102},
-      {"model_id": "TR_ENG_ROBUSTNESS_MODEL_3", "seed": 783103}
-    ],
-    "rows": 49152,
-    "steps": 12000,
-    "claim_checkpoint_step": 12000,
-    "batch_size": 512,
-    "optimizer": "AdamW",
-    "learning_rate": 0.0005,
-    "minimum_learning_rate": 0.00005,
-    "warmup_steps": 800,
-    "schedule": "linear warmup then cosine decay",
-    "weight_decay": 0.01,
-    "gradient_clip_norm": 1.0,
-    "loss_weights": {"z2": 1.0, "z3": 1.0, "answer": 1.0},
-    "torch_threads": 4,
-    "deterministic_algorithms": true,
-    "checkpoint_selection": "none",
-    "seed_replacement": false
-  },
-  "computation": {
-    "rows": 4096,
-    "evaluate_only_after_training_commit": true,
-    "gates": {
-      "answer_accuracy": 0.97,
-      "z2_accuracy": 0.99,
-      "z3_accuracy": 0.99,
-      "minimum_powered_subgroup_accuracy": 0.95,
-      "minimum_powered_subgroup_denominator": 16,
-      "all_z2_categories_emitted": true,
-      "all_z3_categories_emitted": true,
-      "selected_equals_consumed": true
-    }
+  "boundaries": {
+    "alternative_checkpoints": false,
+    "architecture_or_recipe_changes": false,
+    "detector_scoring": false,
+    "exhaustive_domain_evaluation": false,
+    "protected_identity_access": false,
+    "receipts": false,
+    "replacement_seeds": false,
+    "rng2": false,
+    "text_generation": false
   },
   "causal": {
     "authorized_only_after_all_three_computation_models_pass_and_terminal_is_committed": true,
-    "families": ["NATURAL", "ALIAS_Z2", "NON_ALIAS_Z2", "WRONG_Z2", "SAME_Z2", "SHAM", "DIRECT_Z3"],
     "cases_per_model": 28672,
+    "families": [
+      "NATURAL",
+      "ALIAS_Z2",
+      "NON_ALIAS_Z2",
+      "WRONG_Z2",
+      "SAME_Z2",
+      "SHAM",
+      "DIRECT_Z3"
+    ],
     "gates": {
-      "target_consumption_accuracy": 1.0,
-      "generated_mapping_accuracy": 0.99,
-      "conditional_transport_accuracy": 0.99,
       "complete_denominator_joint_success": 0.98,
+      "conditional_transport_accuracy": 0.99,
+      "generated_mapping_accuracy": 0.99,
+      "same_state_trace_identity": 1.0,
       "sham_trace_identity": 1.0,
-      "same_state_trace_identity": 1.0
+      "target_consumption_accuracy": 1.0
     }
+  },
+  "computation": {
+    "evaluate_only_after_training_commit": true,
+    "gates": {
+      "all_z2_categories_emitted": true,
+      "all_z3_categories_emitted": true,
+      "answer_accuracy": 0.97,
+      "minimum_powered_subgroup_accuracy": 0.95,
+      "minimum_powered_subgroup_denominator": 16,
+      "selected_equals_consumed": true,
+      "z2_accuracy": 0.99,
+      "z3_accuracy": 0.99
+    },
+    "rows": 4096
   },
   "decision": {
     "positive_rule": "all three fixed models pass every computation and causal gate",
+    "protected_release_authorized_in_r1": false,
     "provenance_model_seed": 783201,
-    "provenance_model_training_authorized_in_r1": false,
-    "protected_release_authorized_in_r1": false
+    "provenance_model_training_authorized_in_r1": false
   },
-  "boundaries": {
-    "protected_identity_access": false,
-    "receipts": false,
-    "rng2": false,
-    "text_generation": false,
-    "detector_scoring": false,
-    "exhaustive_domain_evaluation": false,
-    "alternative_checkpoints": false,
-    "replacement_seeds": false,
-    "architecture_or_recipe_changes": false
-  },
+  "identity": "CSW-AM-TR-ENG-R1",
+  "objective": "Test whether all three prospectively fixed engineered-transformer seeds learn the frozen hard z2-to-z3-to-answer computation and reproduce the frozen causal intervention behaviour.",
+  "schema": "exp33a.csw_am_tr_eng_r1.config.v1",
   "terminals": {
-    "preflight_ready": "MAIN_CSW_AM_TR_ENG_R1_PREFLIGHT_READY",
-    "training_complete": "MAIN_CSW_AM_TR_ENG_R1_TRAINING_COMPLETE",
-    "computation_positive": "MAIN_CSW_AM_TR_ENG_R1_COMPUTATION_QUALIFIED",
-    "computation_negative": "MAIN_CSW_AM_TR_ENG_R1_VALID_COMPUTATION_ROBUSTNESS_NEGATIVE",
-    "causal_positive": "MAIN_CSW_AM_TR_ENG_R1_THREE_SEED_ROBUSTNESS_QUALIFIED",
     "causal_negative": "MAIN_CSW_AM_TR_ENG_R1_VALID_CAUSAL_ROBUSTNESS_NEGATIVE",
-    "invalid": "MAIN_CSW_AM_TR_ENG_R1_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+    "causal_positive": "MAIN_CSW_AM_TR_ENG_R1_THREE_SEED_ROBUSTNESS_QUALIFIED",
+    "computation_negative": "MAIN_CSW_AM_TR_ENG_R1_VALID_COMPUTATION_ROBUSTNESS_NEGATIVE",
+    "computation_positive": "MAIN_CSW_AM_TR_ENG_R1_COMPUTATION_QUALIFIED",
+    "invalid": "MAIN_CSW_AM_TR_ENG_R1_IMPLEMENTATION_OR_EVIDENCE_INVALID",
+    "preflight_ready": "MAIN_CSW_AM_TR_ENG_R1_PREFLIGHT_READY",
+    "training_complete": "MAIN_CSW_AM_TR_ENG_R1_TRAINING_COMPLETE"
+  },
+  "title": "THREE-SEED ENGINEERED-TRANSFORMER ROBUSTNESS QUALIFICATION",
+  "training": {
+    "batch_size": 512,
+    "checkpoint_selection": "none",
+    "claim_checkpoint_step": 12000,
+    "deterministic_algorithms": true,
+    "gradient_clip_norm": 1.0,
+    "learning_rate": 0.0005,
+    "loss_weights": {
+      "answer": 1.0,
+      "z2": 1.0,
+      "z3": 1.0
+    },
+    "minimum_learning_rate": 5e-05,
+    "models": [
+      {
+        "model_id": "TR_ENG_ROBUSTNESS_MODEL_1",
+        "seed": 783101
+      },
+      {
+        "model_id": "TR_ENG_ROBUSTNESS_MODEL_2",
+        "seed": 783102
+      },
+      {
+        "model_id": "TR_ENG_ROBUSTNESS_MODEL_3",
+        "seed": 783103
+      }
+    ],
+    "optimizer": "AdamW",
+    "rows": 49152,
+    "schedule": "linear warmup then cosine decay",
+    "seed_replacement": false,
+    "steps": 12000,
+    "torch_threads": 4,
+    "warmup_steps": 800,
+    "weight_decay": 0.01
   }
 }

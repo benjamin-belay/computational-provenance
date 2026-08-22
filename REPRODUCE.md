@@ -2,7 +2,7 @@
 
 ## Environment
 
-The frozen runs used Python 3.12.13, PyTorch 2.7.1, and NumPy 2.2.6. Those package versions are pinned in `pyproject.toml`; CPU evaluation is supported.
+The frozen runs used Python 3.12.13, PyTorch 2.7.1, NumPy 2.2.6, and scikit-learn 1.7.1. Those package versions are pinned in `pyproject.toml`; CPU evaluation is supported.
 
 ```bash
 python3.12 -m venv .venv
@@ -34,7 +34,23 @@ This evaluates all three answer-only checkpoints on the 4,096-row validation spl
 
 The output also reports whether activation arrays match the frozen byte digests. Exact floating-point bytes can differ across operating systems and numerical kernels even when every discrete prediction and paper result agrees. On a matching numerical platform, enforce byte identity with `--require-exact-activations`; cross-platform reproduction uses the registered decisions and metrics.
 
-## Verify the original end-to-end evaluations
+## Recompute the selected-model component experiments
+
+```bash
+python scripts/reproduce_components.py
+```
+
+This reruns the 512-example causal confirmation, validates 512 genuine receipt packages and adjudicates all 9,216 receipt attacks, derives the carrier threshold and margin from 16,384 calibration outputs, and reconstructs the 512-closure generic carrier validation from another 16,384 outputs.
+
+## Recompute the end-to-end evaluations
+
+```bash
+python scripts/reproduce_end_to_end.py
+```
+
+This reconstructs all four public/protected evaluations from raw evidence. To run one evaluation, pass both `--architecture` and `--split`.
+
+## Verify evidence integrity
 
 ```bash
 python scripts/verify_evidence.py
@@ -50,21 +66,15 @@ For feed-forward and transformer, public and protected, this verifies:
 - all production-artifact hashes, independent reference results, and terminal audit hashes;
 - 128/128 complete closures in each of the four evaluations.
 
-This is the exact prospective evidence path. The smaller `scripts/replay.py` remains a readable diagnostic implementation that issues fresh deterministic keys; it is not used to establish the original chronology or output denominator.
-
-## Diagnostic replay and retraining
-
-```bash
-python scripts/replay.py --architecture feedforward --split public --limit 4
-python scripts/replay.py --architecture transformer --split protected --limit 4
-```
-
 Exact fixed training populations and recipes are also included:
 
 ```bash
-python scripts/train.py --architecture feedforward --output replay_output/feedforward
-python scripts/train.py --architecture transformer --output replay_output/transformer
-python scripts/replay.py --architecture feedforward --split public --checkpoint replay_output/feedforward/checkpoint.pt
+python scripts/train.py --architecture feedforward --profile robustness --output reproduced/feedforward-robustness
+python scripts/train.py --architecture feedforward --profile designated --output reproduced/feedforward-designated
+python scripts/train.py --architecture transformer --profile robustness --output reproduced/transformer-robustness
+python scripts/train.py --architecture transformer --profile designated --output reproduced/transformer-designated
+python scripts/train_answer_only.py --output reproduced/answer-only
+python scripts/train_answer_only.py --fit-probes --output reproduced/probe-coefficients.npz
 ```
 
-The transformer recipe has 12,000 CPU steps and may take hours. Repeated training can differ across hardware kernels even with deterministic settings; the paper's claim is therefore bound to the included checkpoints and hashes, while retraining is a recipe replication check.
+The transformer recipes have 12,000 CPU steps and may take hours. Use `--steps 2` for a wiring smoke test; that override does not reproduce a paper checkpoint. Repeated training can differ across hardware kernels even with deterministic settings, so checkpoint hashes are recorded alongside metric-level reproduction.
