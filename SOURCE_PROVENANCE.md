@@ -1,24 +1,26 @@
 # Source provenance
 
-This release was curated from research repository commit:
+This release was curated from the final claim-bearing artifacts present in the research repository at commit:
 
 ```text
-b30c640465c4ce895a58ced2752561906c1325a6
+f414be685c507bc88493622829734d358dab27f4
 ```
 
-The cleanup removes superseded protocol layers and historical 127/128 development results. It does not alter the final checkpoints, evaluation rows, audit summaries, or terminal records.
+Individual prospective protocols retain their own lineage commits and source hashes. `RELEASE_MANIFEST.json` separately binds every released byte.
 
 | Release path | Frozen research source |
 |---|---|
-| `src/computational_provenance/feedforward.py` | architecture extracted from `tools/csw_am_scb_m1.py` |
-| `src/computational_provenance/transformer.py` | byte-for-byte copy of `src/exp33atreng/model.py` |
-| `src/computational_provenance/carrier.py` | readable extraction of `tools/csw_a0_stochastic_channel.py`, `tools/csw_am_scb_m1_rng2_d0.py`, and `tools/csw_am_scb_m1_rng2_cal1.py` |
-| `src/computational_provenance/receipts.py` | readable release implementation of the HMAC receipt and chain semantics |
-| `checkpoints/feedforward.pt` | `artifacts/dev_only/csw-am-scb-r3-t1/training/claim_checkpoint/R3_MODEL_1_STEP_5000.pt` |
-| `checkpoints/transformer.pt` | `artifacts/dev_only/csw-am-tr-eng-t1/training/checkpoint/TR_ENG_PROVENANCE_MODEL_1_STEP_12000.pt` |
-| `data/feedforward/*` | final R3 public/protected registered rows |
-| `data/transformer/*` | final TR-ENG public/protected registered rows |
-| `evidence/feedforward/*` | final R3 P2/Q1 audits and terminals |
-| `evidence/transformer/*` | final TR-ENG P2/Q1 audits and terminals |
+| `src/computational_provenance/feedforward.py` | final strict-bottleneck architecture from `tools/csw_am_scb_m1.py` |
+| `src/computational_provenance/transformer.py` | `src/exp33atreng/model.py` |
+| `src/computational_provenance/robustness.py` | registered FF R2-B0 and TR-ENG-R1 evaluation semantics |
+| `src/computational_provenance/answer_only.py` | `tools/csw_am_ls_f0.py` and `tools/csw_am_tr_v2_l1.py` |
+| `checkpoints/robustness/` | five R2 step-5000 and three TR-ENG-R1 step-12000 claim checkpoints |
+| `checkpoints/answer_only/` | three answer-only step-12000 claim checkpoints |
+| `data/evaluation/robustness.jsonl.gz` | registered 4,096-row held-out population, original SHA-256 `f2ffd11c...` |
+| `evidence/answer_only/` | competence, split, frozen probes, 20-site evaluation, and terminal evidence |
+| `evidence/full/` | raw and adjudicated P2/Q1 evidence for both architectures |
+| `protocols/` | exact final robustness, answer-only, public, protected, and receipt protocols |
 
-The clean replay code is intentionally easier to read than the lifecycle controller used for the one-shot runs. `RELEASE_MANIFEST.json` binds the immutable claim-bearing files. The original evaluation incident record is retained at `evidence/transformer/protected/ADJUDICATION_REPAIR.json`; it describes a post-evidence schema alias and confirms that no model run, output, receipt, key, threshold, or gate changed.
+The older summary directories under `evidence/feedforward/` and `evidence/transformer/` are retained for compatibility with the initial clean release. The complete claim evidence is under `evidence/full/`; neither location contains the superseded 127/128 experiment.
+
+`evidence/transformer/protected/ADJUDICATION_REPAIR.json` is an incident record from the final positive evaluation. It documents a post-evidence schema alias and confirms that no model run, output, receipt, key, threshold, or gate changed.

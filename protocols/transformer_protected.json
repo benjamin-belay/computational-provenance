@@ -1,0 +1,117 @@
+{
+  "schema": "exp33a.csw_am_tr_eng_q1.config.v1",
+  "identity": "CSW-AM-TR-ENG-Q1",
+  "title": "ONE-SHOT SEALED PROTECTED ENGINEERED-TRANSFORMER PROVENANCE EVALUATION",
+  "source_paths": [
+    "protocol/csw-am-tr-eng-q1/CONFIG.json",
+    "tools/csw_am_tr_eng_q1.py",
+    "tools/csw_am_tr_eng_q1_controller.py",
+    "tools/csw_am_tr_eng_q1_reference.py",
+    "tests/test_csw_am_tr_eng_q1.py"
+  ],
+  "bindings": {
+    "a0_terminal_path": "artifacts/dev_only/csw-am-tr-eng-a0/allocation/TERMINAL.json",
+    "a0_terminal_sha256": "4709cb2b3cf2171645183503a4bbb97b93bc4a8ae2be38250aa058846d83b85f",
+    "a0_terminal": "MAIN_CSW_AM_TR_ENG_A0_PROTECTED_ROLE_SEALED",
+    "a0_main_path": "artifacts/dev_only/csw-am-tr-eng-a0/allocation/MAIN_AUDIT.json",
+    "a0_main_sha256": "50804855688985051123d61c31c2c928ca903ef8b6250715e194c9d62bd7384f",
+    "p2_terminal_path": "artifacts/dev_only/csw-am-tr-eng-p2/TERMINAL.json",
+    "p2_terminal_sha256": "ba675047ba9a6af91c5df482b9453bf3d8241165ee2cf5a4faea0b35f03089b7",
+    "p2_terminal": "MAIN_CSW_AM_TR_ENG_P2_PUBLIC_TRANSFORMER_PROVENANCE_QUALIFIED",
+    "p2_main_path": "artifacts/dev_only/csw-am-tr-eng-p2/MAIN_AUDIT.json",
+    "p2_main_sha256": "c6206297a4774fac918c96a8e8abd2e5c4b887c78d69e47fce3da638c7b0cdc6",
+    "p2_official_path": "artifacts/dev_only/csw-am-tr-eng-p2/production/OFFICIAL_RESULT.json",
+    "p2_official_sha256": "f4bd3ce61ec83ab5080fd34d3e257d131e865d0d5770f41ff2d83971465ad56e",
+    "p2_reference_path": "artifacts/dev_only/csw-am-tr-eng-p2/reference/REFERENCE_RESULT.json",
+    "p2_reference_sha256": "ab7902fecfab18de1e83cdfc64dcf172c246a1b7a2554bffa7668058da61ae7f",
+    "checkpoint_path": "artifacts/dev_only/csw-am-tr-eng-t1/training/checkpoint/TR_ENG_PROVENANCE_MODEL_1_STEP_12000.pt",
+    "checkpoint_sha256": "40ca3e886b0f0c4a8b24f2b8ab7286f2a69fff5d612460ae0d1d869490391881",
+    "receipt_protocol_path": "protocol/csw-am-tr-eng-p2/RECEIPT_PROTOCOL.json",
+    "receipt_protocol_sha256": "f4cb5bf184385b7035b3d23f69113fd33732bd4615fa8f096b1c93af49e7d17e",
+    "p2_production_path": "tools/csw_am_tr_eng_p2.py",
+    "p2_production_sha256": "66264bc84c8ec1394dc0bf473d55e6dcc066490bdfd1b73bb856cd701313819c",
+    "p2_reference_runner_path": "tools/csw_am_tr_eng_p2_reference.py",
+    "p2_reference_runner_sha256": "c229569290a612ade8a641689f1a3576060281f04b38e646778aa596f16041be"
+  },
+  "controller": {
+    "sealed_closures_path": "/Users/benjamin/Documents/Research/AI Safety and Alignment/.csw-am-tr-eng-a0-controller/authoritative/PROTECTED_CLOSURES.jsonl",
+    "sealed_closures_sha256": "a6e10a2545d7d3ad90132bc3299450e8f389d9b7827789f5f2c23b8545db888c",
+    "sealed_manifest_path": "/Users/benjamin/Documents/Research/AI Safety and Alignment/.csw-am-tr-eng-a0-controller/authoritative/SEALED_MANIFEST.json",
+    "sealed_manifest_sha256": "2d4f3280a7fd4119f582e4c6bd5f796790da2db00913591cb072676febeea5e5",
+    "set_digest": "b4fe1716b1f228e36c8aaa8372f77e4dd6d507ff0dc819eb9a1b54889337c662"
+  },
+  "keys": {
+    "receipt_key_path": "/Users/benjamin/Documents/Research/AI Safety and Alignment/.csw-sealed-controllers/csw-am-tr-eng-q1/RECEIPT_KEY.bin",
+    "sampler_key_path": "/Users/benjamin/Documents/Research/AI Safety and Alignment/.csw-sealed-controllers/csw-am-tr-eng-q1/SAMPLER_KEY.bin",
+    "receipt_commitment_domain": "EXP33A|TR-ENG|Q1|RECEIPT-KEY|V1",
+    "sampler_commitment_domain": "EXP33A|TR-ENG|Q1|SAMPLER-KEY|V1"
+  },
+  "model": {
+    "model_id": "TR_ENG_PROVENANCE_MODEL_1",
+    "seed": 783201,
+    "checkpoint_step": 12000,
+    "parameter_count": 546088,
+    "architecture_identity": "TWO_STAGE_STRICT_HARD_CATEGORICAL_TRANSFORMER_V1"
+  },
+  "role": {
+    "sealed_role": "TR_ENG_FRESH_MODEL_PROTECTED_REPLICATION",
+    "released_role": "TR_ENG_Q1_PROTECTED_EVALUATION",
+    "closures": 128,
+    "registered_orientation": "LOWER_C_ORIENTATION",
+    "release_count": 1
+  },
+  "carrier": {
+    "T": 4.041451884327381,
+    "M": 0.0,
+    "outputs_per_execution_condition": 8,
+    "conditions": ["STATE", "CARRIER_OFF", "PROMPT", "ANSWER", "GENERIC"],
+    "candidate_authorities": 16,
+    "model_steps_per_output": 49,
+    "eligible_positions_per_output": 24
+  },
+  "denominators": {
+    "closures": 128,
+    "registered_execution_rows": 128,
+    "execution_packages": 256,
+    "receipt_envelopes": 1280,
+    "generation_authorizations": 1280,
+    "outputs": 10240,
+    "model_steps": 501760,
+    "eligible_positions": 245760,
+    "primitive_authority_scores": 163840,
+    "aggregate_authority_scores": 20480,
+    "attack_families": 8,
+    "attack_packages": 1024,
+    "closure_decisions": 128
+  },
+  "attacks": ["SAME_STATE_DIFFERENT_EXACT", "NATURAL_ALIAS_CROSS", "CORRECT_ABSTRACT_WRONG_EXACT", "WRONG_STATE_RECEIPT", "REPLAY_WRONG_CONTEXT", "MISSING_RECEIPT", "MALFORMED_ABSTRACT_RECEIPT", "INVALID_CHAIN"],
+  "gates": {
+    "minimum_complete_closure_successes": 128,
+    "minimum_complete_closure_fraction": 1.0,
+    "perfect_replication_required_complete_closure_successes": 128,
+    "maximum_carrier_off_regression_events": 0,
+    "maximum_wrong_confusion_events": 0,
+    "maximum_attack_failures": 0,
+    "production_reference_exact_agreement": true
+  },
+  "boundaries": {
+    "second_key_pair": false,
+    "replacement_closures": false,
+    "output_regeneration": false,
+    "alternative_checkpoint": false,
+    "threshold_revision": false,
+    "output_count_revision": false,
+    "receipt_rule_revision": false,
+    "attack_revision": false,
+    "exhaustive_domain_evaluation": false,
+    "automatic_successor": false
+  },
+  "terminals": {
+    "s0": "MAIN_CSW_AM_TR_ENG_Q1_AUTHORIZED",
+    "raw": "MAIN_CSW_AM_TR_ENG_Q1_RAW_EVIDENCE_COMMITTED",
+    "positive": "MAIN_CSW_AM_TR_ENG_Q1_PROTECTED_128_OF_128_REPLICATED",
+    "perfect": "MAIN_CSW_AM_TR_ENG_Q1_PROTECTED_128_OF_128_REPLICATED",
+    "negative": "MAIN_CSW_AM_TR_ENG_Q1_VALID_PROTECTED_SCIENTIFIC_NEGATIVE",
+    "invalid": "MAIN_CSW_AM_TR_ENG_Q1_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+  }
+}

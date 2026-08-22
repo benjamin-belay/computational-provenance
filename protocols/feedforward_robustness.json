@@ -1,0 +1,110 @@
+{
+  "schema": "exp33a.csw_am_scb_r2_b0.protocol.v1",
+  "identity": "CSW-AM-SCB-R2-B0",
+  "title": "FIVE-SEED REGISTERED CAUSAL-TRANSPORT ROBUSTNESS PROTOCOL",
+  "source_paths": [
+    "protocol/csw-am-scb-r2-b0/PROTOCOL.json",
+    "tools/csw_am_scb_r2_b0.py",
+    "tools/csw_am_scb_r2_b0_reference.py",
+    "tests/test_csw_am_scb_r2_b0.py"
+  ],
+  "lineage": {
+    "s0_commit": "8d2dc0ca9335a0fe0b682ab86fda71b6fa3672c2",
+    "s0_protocol_path": "protocol/csw-am-scb-r2-s0/PROTOCOL.json",
+    "s0_protocol_sha256": "f5d597094684f78e2e80f4f26a17037a3ae00f3fb3efdea4d48577aaf8f188fe",
+    "a1_result_commit": "1063a01d4140240b871da6e1f8d21a5e0529a245",
+    "a1_terminal_path": "artifacts/dev_only/csw-am-scb-r2-a1/evaluation/TERMINAL.json",
+    "a1_terminal_sha256": "4c5ec72e37b06760e91ab01f001c98d8d554063b5fafc55f6f19b271c2dea6cb",
+    "required_a1_terminal": "MAIN_CSW_AM_SCB_R2_A1_FIVE_OF_FIVE_COMPUTATION_ROBUSTNESS_CONFIRMED",
+    "a1_official_result_path": "artifacts/dev_only/csw-am-scb-r2-a1/evaluation/OFFICIAL_RESULT.json",
+    "a1_official_result_sha256": "840109718cc0a0c44386034684272160d01af654df02f585276d9b215007eca6",
+    "a1_model_results_path": "artifacts/dev_only/csw-am-scb-r2-a1/evaluation/MODEL_RESULTS.jsonl",
+    "a1_model_results_sha256": "2c140d35e827ef89357e4ea0810ba93dcef382789ddbd4026f7112812aedd70a",
+    "a1_training_commit": "fa5d7819844b1cbcf6debb20abfc347b3d9281a9",
+    "a1_training_manifest_path": "artifacts/dev_only/csw-am-scb-r2-a1/training/TRAINING_MANIFEST.json",
+    "a1_training_manifest_sha256": "13f47786c126d6daf14cb566926d3b0fda37e62b93cfb24319f4661a8cc4c431"
+  },
+  "population": {
+    "path": "artifacts/dev_only/csw-am-scb-r2-s0-r1/HOLDOUT_ROWS.jsonl",
+    "sha256": "f2ffd11cc41143d5a7f2e0e2abcac6f1ea4b1a619f7c39f98da9699cd6a13f13",
+    "logical_rows": 4096,
+    "classification": "REGISTERED_NON_PROTECTED_HELDOUT_ALREADY_USED_FOR_PHASE_A",
+    "same_rows_for_all_models": true,
+    "row_replacement": false,
+    "row_exclusion_after_results": false
+  },
+  "models": [
+    {"model_id":"R2_MODEL_1","seed":952101,"checkpoint_step":5000,"checkpoint_path":"artifacts/dev_only/csw-am-scb-r2-a1/training/claim_checkpoints/R2_MODEL_1_STEP_5000.pt","checkpoint_sha256":"3ed971883663525977e026b257b5f6968c3aceef686665f99b0943a3d0a63e05"},
+    {"model_id":"R2_MODEL_2","seed":952102,"checkpoint_step":5000,"checkpoint_path":"artifacts/dev_only/csw-am-scb-r2-a1/training/claim_checkpoints/R2_MODEL_2_STEP_5000.pt","checkpoint_sha256":"fd608630a4b8c312bced1a0f480726807e5e5bfccba5da56f5eb8a625f7915dd"},
+    {"model_id":"R2_MODEL_3","seed":952103,"checkpoint_step":5000,"checkpoint_path":"artifacts/dev_only/csw-am-scb-r2-a1/training/claim_checkpoints/R2_MODEL_3_STEP_5000.pt","checkpoint_sha256":"1c0a81cfef4c9bc2a5fce930aebe6a2fd2f0e038ed8327a690959ab26cfcae81"},
+    {"model_id":"R2_MODEL_4","seed":952104,"checkpoint_step":5000,"checkpoint_path":"artifacts/dev_only/csw-am-scb-r2-a1/training/claim_checkpoints/R2_MODEL_4_STEP_5000.pt","checkpoint_sha256":"8da0e469c56b36e198c4e86fd64e410b77e83ffb451406bb437ff1ecbc8c042f"},
+    {"model_id":"R2_MODEL_5","seed":952105,"checkpoint_step":5000,"checkpoint_path":"artifacts/dev_only/csw-am-scb-r2-a1/training/claim_checkpoints/R2_MODEL_5_STEP_5000.pt","checkpoint_sha256":"2953587ba63da1bfbd96f62482d95e7a79d7bae1749cd2434cca9c2655b275af"}
+  ],
+  "families": ["NATURAL","ALIAS_Z2","NON_ALIAS_Z2","WRONG_Z2","SAME_Z2","SHAM","DIRECT_Z3"],
+  "target_rules": {
+    "NATURAL": {"intervention":"NONE"},
+    "ALIAS_Z2": {"source":"REGISTERED_NATURAL_Z2","offset_mod_16":8,"answer_relation":"UNCHANGED"},
+    "NON_ALIAS_Z2": {"source":"REGISTERED_NATURAL_Z2","offset_mod_16":1,"answer_relation":"CHANGED"},
+    "WRONG_Z2": {"source":"REGISTERED_NATURAL_Z2","offset_mod_16":3,"answer_relation":"CHANGED"},
+    "SAME_Z2": {"source":"REGISTERED_NATURAL_Z2","offset_mod_16":0,"answer_relation":"UNCHANGED"},
+    "SHAM": {"source":"MODEL_SELECTED_NATURAL_Z2","offset_mod_16":0,"trace_relation":"IDENTICAL"},
+    "DIRECT_Z3": {"source":"REGISTERED_NATURAL_Z3","offset_mod_16":1,"answer_relation":"CHANGED"}
+  },
+  "gates": {
+    "natural_answer_accuracy":0.97,
+    "natural_z2_accuracy":0.99,
+    "natural_z3_accuracy":0.99,
+    "minimum_powered_subgroup_accuracy":0.95,
+    "minimum_powered_subgroup_denominator":16,
+    "target_consumption_accuracy":1.0,
+    "generated_mapping_accuracy":0.99,
+    "conditional_transport_accuracy":0.99,
+    "complete_denominator_joint_success":0.98,
+    "sham_trace_identity":1.0,
+    "same_state_trace_identity":1.0,
+    "complete_case_denominator_required":true
+  },
+  "denominator": {
+    "models":5,
+    "logical_rows_per_model":4096,
+    "families_per_row":7,
+    "cases_per_model":28672,
+    "cases_per_family_across_models":20480,
+    "total_cases":143360,
+    "model_results":5,
+    "models_required_to_pass":5
+  },
+  "decision_rule": {
+    "unit":"MODEL",
+    "each_model_must_pass_every_gate":true,
+    "cross_model_compensation":false,
+    "five_of_five_required":true,
+    "phase_c_may_be_separately_authorized_only_after_positive_b1_commit":true
+  },
+  "chronology": {
+    "b0_model_forwards":0,
+    "b0_interventions":0,
+    "b1_single_complete_execution":true,
+    "production_and_independent_reconstruction_required":true,
+    "no_metric_inspection_before_complete_case_commitment":true,
+    "no_per_seed_tuning":true,
+    "no_checkpoint_change":true,
+    "no_seed_replacement":true,
+    "no_case_replacement":true,
+    "phase_c_locked":true
+  },
+  "boundaries": {
+    "protected_population_access":false,
+    "receipts":false,
+    "rng2":false,
+    "output_generation":false,
+    "historical_model_rerun":false,
+    "a1_result_superseded":false,
+    "claim_if_b1_passes":"FRESH_FIVE_SEED_REGISTERED_CAUSAL_TRANSPORT_ROBUSTNESS",
+    "does_not_establish":"END_TO_END_PROVENANCE_ROBUSTNESS_ACROSS_FIVE_MODELS"
+  },
+  "terminals": {
+    "ready":"MAIN_CSW_AM_SCB_R2_B0_CAUSAL_ROBUSTNESS_PROTOCOL_READY",
+    "invalid":"MAIN_CSW_AM_SCB_R2_B0_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+  }
+}

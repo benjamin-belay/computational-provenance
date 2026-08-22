@@ -22,7 +22,7 @@ def main() -> None:
     rows = read_rows(ROOT / "data" / "training" / f"{args.architecture}.jsonl.gz")
     model, record = train(args.architecture, rows)
     args.output.mkdir(parents=True, exist_ok=False)
-    torch.save({"state_dict": model.state_dict(), **record}, args.output / "checkpoint.pt")
+    torch.save({"state_dict": model.state_dict(), "parameter_count": sum(parameter.numel() for parameter in model.parameters()), **record}, args.output / "checkpoint.pt")
     (args.output / "training.json").write_text(json.dumps(record, indent=2, sort_keys=True) + "\n")
     print(json.dumps({key: record[key] for key in ("architecture", "seed", "steps", "training_rows")}, indent=2))
 

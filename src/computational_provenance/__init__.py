@@ -1,4 +1,4 @@
-"""Clean reproduction implementation for receipt-gated causal-state carriage."""
+"""Reproduction implementation for Towards Computational Provenance."""
 
 from .task import task
 

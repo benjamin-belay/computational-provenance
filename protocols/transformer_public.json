@@ -1,0 +1,95 @@
+{
+  "schema": "exp33a.csw_am_tr_eng_p2.config.v1",
+  "identity": "CSW-AM-TR-ENG-P2",
+  "title": "PUBLIC ENGINEERED-TRANSFORMER RECEIPT-BOUND PROVENANCE TRANSFER",
+  "source_paths": [
+    "protocol/csw-am-tr-eng-p2/CONFIG.json",
+    "protocol/csw-am-tr-eng-p2/RECEIPT_PROTOCOL.json",
+    "tools/csw_am_tr_eng_p2.py",
+    "tools/csw_am_tr_eng_p2_reference.py",
+    "tests/test_csw_am_tr_eng_p2.py"
+  ],
+  "bindings": {
+    "p1_terminal_path": "artifacts/dev_only/csw-am-tr-eng-t1/causal/TERMINAL.json",
+    "p1_terminal_sha256": "f1528fefc04c099d60c7ab74133db7090ff1ce7409bd28fddb8781a79ab5bac9",
+    "p1_terminal": "MAIN_CSW_AM_TR_ENG_T1_PROVENANCE_MODEL_CAUSAL_SUBSTRATE_QUALIFIED",
+    "p1_official_path": "artifacts/dev_only/csw-am-tr-eng-t1/causal/OFFICIAL_RESULT.json",
+    "p1_official_sha256": "0dc77f5ae10352fc10e2af75be009611356a5db04837d6d99b92757811ef65c3",
+    "checkpoint_path": "artifacts/dev_only/csw-am-tr-eng-t1/training/checkpoint/TR_ENG_PROVENANCE_MODEL_1_STEP_12000.pt",
+    "checkpoint_sha256": "40ca3e886b0f0c4a8b24f2b8ab7286f2a69fff5d612460ae0d1d869490391881",
+    "public_rows_path": "artifacts/dev_only/csw-am-scb-m1-rng2-int-v1/release/REGISTERED_EXECUTION_ROWS.jsonl",
+    "public_rows_sha256": "b6783c90705211608a11eb5f5371b7475c99227d61567ab36bbe98cb93a7a022",
+    "receipt_protocol_path": "protocol/csw-am-tr-eng-p2/RECEIPT_PROTOCOL.json",
+    "receipt_protocol_sha256": "f4cb5bf184385b7035b3d23f69113fd33732bd4615fa8f096b1c93af49e7d17e",
+    "frozen_integration_path": "tools/csw_am_scb_m1_rng2_int_d0.py",
+    "frozen_integration_sha256": "8649c0a0f7776544b286f26926423c1bfd88a77d59617f253b71f109b6b78709",
+    "frozen_public_runner_path": "tools/csw_am_scb_r3_p2.py",
+    "frozen_public_runner_sha256": "a2cc463d7d32281f06846126abe550f238c472dd4f9216aa27a3e8d0496b7797",
+    "frozen_reference_path": "tools/csw_am_scb_r3_p2_reference.py",
+    "frozen_reference_sha256": "1e57dae5021f3956b15c1878cd6b8525fed3f429d43e118b739f7938186dd443"
+  },
+  "model": {
+    "model_id": "TR_ENG_PROVENANCE_MODEL_1",
+    "seed": 783201,
+    "checkpoint_step": 12000,
+    "parameter_count": 546088,
+    "architecture_identity": "TWO_STAGE_STRICT_HARD_CATEGORICAL_TRANSFORMER_V1"
+  },
+  "keys": {
+    "receipt_key_path": "/Users/benjamin/Documents/Research/AI Safety and Alignment/.csw-sealed-controllers/csw-am-tr-eng-p2/RECEIPT_KEY.bin",
+    "sampler_key_path": "/Users/benjamin/Documents/Research/AI Safety and Alignment/.csw-sealed-controllers/csw-am-tr-eng-p2/SAMPLER_KEY.bin",
+    "receipt_commitment_domain": "EXP33A|TR-ENG|P2|RECEIPT-KEY|V1",
+    "sampler_commitment_domain": "EXP33A|TR-ENG|P2|SAMPLER-KEY|V1"
+  },
+  "carrier": {
+    "T": 4.041451884327381,
+    "M": 0.0,
+    "outputs_per_execution_condition": 8,
+    "conditions": ["STATE", "CARRIER_OFF", "PROMPT", "ANSWER", "GENERIC"],
+    "candidate_authorities": 16,
+    "model_steps_per_output": 49,
+    "eligible_positions_per_output": 24
+  },
+  "denominators": {
+    "closures": 128,
+    "registered_execution_rows": 128,
+    "execution_packages": 256,
+    "receipt_envelopes": 1280,
+    "generation_authorizations": 1280,
+    "outputs": 10240,
+    "model_steps": 501760,
+    "eligible_positions": 245760,
+    "primitive_authority_scores": 163840,
+    "aggregate_authority_scores": 20480,
+    "attack_families": 8,
+    "attack_packages": 1024,
+    "closure_decisions": 128
+  },
+  "attacks": ["SAME_STATE_DIFFERENT_EXACT", "NATURAL_ALIAS_CROSS", "CORRECT_ABSTRACT_WRONG_EXACT", "WRONG_STATE_RECEIPT", "REPLAY_WRONG_CONTEXT", "MISSING_RECEIPT", "MALFORMED_ABSTRACT_RECEIPT", "INVALID_CHAIN"],
+  "gates": {
+    "minimum_complete_closure_successes": 128,
+    "minimum_complete_closure_fraction": 1.0,
+    "maximum_carrier_off_regression_events": 0,
+    "maximum_wrong_confusion_events": 0,
+    "maximum_attack_failures": 0,
+    "production_reference_exact_agreement": true
+  },
+  "boundaries": {
+    "r3_specific_adaptation": false,
+    "threshold_revision": false,
+    "output_count_revision": false,
+    "receipt_rule_revision": false,
+    "attack_revision": false,
+    "protected_identity_access": false,
+    "protected_release": false,
+    "exhaustive_domain_evaluation": false,
+    "automatic_successor": false
+  },
+  "terminals": {
+    "s0": "MAIN_CSW_AM_TR_ENG_P2_PUBLIC_INTEGRATION_PROTOCOL_READY",
+    "raw": "MAIN_CSW_AM_TR_ENG_P2_RAW_EVIDENCE_COMMITTED",
+    "positive": "MAIN_CSW_AM_TR_ENG_P2_PUBLIC_TRANSFORMER_PROVENANCE_QUALIFIED",
+    "negative": "MAIN_CSW_AM_TR_ENG_P2_VALID_PUBLIC_TRANSFORMER_PROVENANCE_NEGATIVE",
+    "invalid": "MAIN_CSW_AM_TR_ENG_P2_IMPLEMENTATION_OR_EVIDENCE_INVALID"
+  }
+}

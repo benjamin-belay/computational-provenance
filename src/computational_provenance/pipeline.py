@@ -27,15 +27,21 @@ def load_rows(architecture: str, split: str) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text().splitlines() if line]
 
 
-def load_model(architecture: str):
-    path = ROOT / "checkpoints" / f"{architecture}.pt"
+def load_model(architecture: str, checkpoint_path: Path | None = None):
+    """Load the released checkpoint or a checkpoint produced by ``scripts/train.py``."""
+    path = ROOT / "checkpoints" / f"{architecture}.pt" if checkpoint_path is None else checkpoint_path
     payload = torch.load(path, map_location="cpu", weights_only=False)
+    step = payload.get("step", payload.get("steps"))
+    parameter_count = payload.get("parameter_count", sum(value.numel() for value in payload["state_dict"].values()))
+    recorded_architecture = payload.get("architecture")
+    if recorded_architecture in ("feedforward", "transformer") and recorded_architecture != architecture:
+        raise ValueError("checkpoint architecture")
     if architecture == "feedforward":
-        if payload["parameter_count"] != 12648 or payload["step"] != 5000:
+        if parameter_count != 12648 or step != 5000:
             raise ValueError("feed-forward checkpoint identity")
         model = CausalStrictBottleneck()
     elif architecture == "transformer":
-        if payload["parameter_count"] != 546088 or payload["step"] != 12000:
+        if parameter_count != 546088 or step != 12000:
             raise ValueError("transformer checkpoint identity")
         model = EngineeredCausalTransformer()
     else:
@@ -50,11 +56,12 @@ def _observed(output: dict[str, torch.Tensor]) -> tuple[int, int, int]:
 
 
 @torch.no_grad()
-def replay(architecture: str, split: str, *, limit: int | None = None) -> dict[str, Any]:
+def replay(architecture: str, split: str, *, limit: int | None = None,
+           checkpoint_path: Path | None = None) -> dict[str, Any]:
     rows = load_rows(architecture, split)
     if limit is not None:
         rows = rows[:limit]
-    model, checkpoint = load_model(architecture)
+    model, checkpoint = load_model(architecture, checkpoint_path)
     receipt_key = hashlib.sha256(f"replay-receipt:{architecture}:{split}".encode()).digest()
     sampler_key = hashlib.sha256(f"replay-sampler:{architecture}:{split}".encode()).digest()
     cases = []
