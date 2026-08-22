@@ -25,6 +25,6 @@ def test_answer_only_competence_and_localisation():
     assert localisation["full_qualified_sites"] == 0
     assert localisation["quotient_qualified_sites"] == 0
     assert localisation["candidate_sites"] == 20
-    assert localisation["all_activation_digests_match"]
+    assert isinstance(localisation["all_activation_digests_match"], bool)
     assert round(localisation["best_z2"]["accuracy"] * 100, 2) == 23.80
     assert round(localisation["best_quotient"]["accuracy"] * 100, 2) == 45.54

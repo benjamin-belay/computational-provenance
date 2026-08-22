@@ -30,7 +30,9 @@ This loads five frozen feed-forward checkpoints and three frozen engineered-tran
 python scripts/reproduce_answer_only.py
 ```
 
-This evaluates all three answer-only checkpoints on the 4,096-row validation split, then loads only the registered development model, recreates the disjoint 3,072-row site-selection activations, verifies their exact byte digests, and evaluates the 260 frozen probe fits across 20 sites. It reproduces 3/3 competence, 0/20 qualifying sites, best full-state accuracy 23.80%, and best quotient accuracy 45.54%.
+This evaluates all three answer-only checkpoints on the 4,096-row validation split, then loads only the registered development model, recreates the disjoint 3,072-row site-selection activations, and evaluates the 260 frozen probe fits across 20 sites. It reproduces 3/3 competence, 0/20 qualifying sites, best full-state accuracy 23.80%, and best quotient accuracy 45.54%.
+
+The output also reports whether activation arrays match the frozen byte digests. Exact floating-point bytes can differ across operating systems and numerical kernels even when every discrete prediction and paper result agrees. On a matching numerical platform, enforce byte identity with `--require-exact-activations`; cross-platform reproduction uses the registered decisions and metrics.
 
 ## Verify the original end-to-end evaluations
 
